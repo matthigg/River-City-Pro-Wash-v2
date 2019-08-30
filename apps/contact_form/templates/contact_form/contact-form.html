@@ -1,11 +1,36 @@
+<!-- Show any messages/errors after a form submission (if any exist) -->
 {% if messages %}
   {% for message in messages %}
-    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    <div class="d-flex justify-content-center alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+      {{ message }}
+    </div>
   {% endfor %}
 {% endif %}
 
-<form class="contact-form" action="{% url 'contact-form:submit' %}" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <input type="submit" value="Submit">
-</form>
+{% if form.errors %}
+  {% for field in form %}
+    {% for error in field.errors %}
+      <div class="d-flex justify-content-center alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+<!-- Contact Form -->
+<div class="contact-form-heading">
+    <h2>Request A Free Estimate</h2>
+  </div>
+  <form class="contact-form" action="{% url 'contact-form:submit' %}" method="post">
+    <fieldset>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="contact-form-input">
+          {{ field }}
+          {{ field.label_tag }}
+        </div>
+      {% endfor %}
+      <p class="required-field-text">* indicates a required field</p>
+      <button type="submit" value="Submit">Get Your FREE Estimate!</button>
+    </fieldset>
+  </form>

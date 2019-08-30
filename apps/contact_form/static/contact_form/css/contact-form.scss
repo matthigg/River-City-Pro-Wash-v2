@@ -1,0 +1,124 @@
+// Colors
+$primary-color: white;
+$secondary-color: #F3D333;
+$tertiary-color: #6D6951;
+$quarternary-color: #4D3F22;
+$quinary-color: #182013;
+$senary-color:#020305;
+
+.alert {
+  display: inline-block;
+  font-size: calc(1rem + 0.5vw);
+  font-weight: 700;
+  text-align: center;
+}
+
+$contact-form-border: 2px solid $secondary-color;
+
+.contact-form-heading {
+  background-color: $senary-color;
+  border-left: $contact-form-border;
+  border-radius: calc(1rem + 0.1vw) calc(1rem + 0.1vw) 0 0;
+  border-right: $contact-form-border;
+  border-top: $contact-form-border;
+  padding: calc(0.5rem + 0.25vw);
+  & h2 {
+    color: $primary-color;
+    font-size: calc(1rem + 1vw);
+    font-weight: 900;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+.contact-form {
+  background-color: $senary-color;
+  border-bottom: $contact-form-border;
+  border-left: $contact-form-border;
+  border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
+  border-right: $contact-form-border;
+  margin: auto;
+  padding: calc(1rem + 1vw);
+  width: 100%;
+  & button {
+    background-color: $primary-color;
+    border: none;
+    border-radius: calc(0.5rem + 0.1vw);
+    color: $quinary-color;
+    display: block;
+    font-weight: 700;
+    font-size: calc(1rem + 0.25vw);
+    margin: auto;
+    padding: calc(0.25rem + 0.5vw) calc(1rem + 1vw);
+    &:hover {
+      background-color: $secondary-color;
+      color: $primary-color;
+      transition: 0.15s ease-in;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  & input {
+    border: 2px solid $secondary-color;
+    border-radius: calc(0.5rem + 0.1vw);
+    box-shadow: none;
+    color: $quinary-color;
+    display: block;
+    height: calc(2.5rem + 1vw);
+    outline: none;
+    padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
+    width: 100%;
+    &::placeholder {
+      opacity: 0;
+    }
+    &:focus {
+      border: 2px solid $quinary-color;
+    }
+  }
+  & label {
+    color: $quinary-color;
+    font-size: calc(1rem + 0.25vw);
+    font-style: italic;
+    left: calc(0.5rem + 0.1vw);
+    position: absolute;
+    top: 0;
+  }
+  & textarea {
+    border: 2px solid $secondary-color;
+    border-radius: calc(0.5rem + 0.1vw);
+    box-shadow: none;
+    color: $quinary-color;
+    display: block;
+    outline: none;
+    padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
+    width: 100%;
+    &::placeholder {
+      opacity: 0;
+    }
+    &:focus {
+      border: 2px solid $quinary-color;
+    }
+  }
+  & input:focus ~ label,
+  & input:not(:placeholder-shown) ~ label,
+  & textarea:focus ~ label,
+  & textarea:not(:placeholder-shown) ~ label {
+    color: $quinary-color;
+    font-size: calc(0.75rem + 0.1vw);
+    top: calc(0.05rem + 0.05vw);
+    transition: 0.1s;
+  }
+  & .contact-form-input {
+    margin-bottom: calc(1rem + 0.5vw);
+    position: relative;
+  }
+  & .required-field-asterisk {
+    color: $quinary-color;
+  }
+  & .required-field-text {
+    color: $primary-color;
+    font-size: calc(1rem + 0.25vw);
+  }
+}

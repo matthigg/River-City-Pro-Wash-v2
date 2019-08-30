@@ -15,13 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from .views import contact, index, ourwork, services, faq
+from .views import contact, index, our_work, services, faq
+from .views import house_washing, concrete_brick_washing, deck_patio_cleaning, deck_staining, grafitti_removal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',          index,    name='index'),
     path('contact/',  contact,  name='contact'),
-    path('ourwork/',  ourwork,  name='ourwork'),
+    path('our-work/',  our_work,  name='our-work'),
     path('services/', services, name='services'),
+    path('services/house-washing',          house_washing,          name='house-washing'),
+    path('services/concrete-brick-washing', concrete_brick_washing, name='concrete-brick-washing'),
+    path('services/deck-patio-cleaning',    deck_patio_cleaning,    name='deck-patio-cleaning'),
+    path('services/deck-staining',          deck_staining,          name='deck-staining'),
+    path('services/grafitti-removal',       grafitti_removal,       name='grafitti-removal'),
     path('faq/',      faq,      name='faq'),
 ]

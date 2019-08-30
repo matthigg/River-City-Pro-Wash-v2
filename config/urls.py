@@ -21,6 +21,7 @@ from .views import house_washing, concrete_brick_washing, deck_patio_cleaning, d
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',          index,    name='index'),
+    path('',          include('apps.contact_form.urls', namespace='contact_form')),
     path('contact/',  contact,  name='contact'),
     path('our-work/',  our_work,  name='our-work'),
     path('services/', services, name='services'),

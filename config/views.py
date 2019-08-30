@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from apps.contact_form.forms import CreateContactForm
 
 # Main Navigation
 
 def index(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'index.html', context)
 
 def services(request):
@@ -15,7 +17,8 @@ def our_work(request):
   return render(request, 'our-work.html', context)
 
 def contact(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'contact.html', context)
 
 def faq(request):
@@ -25,21 +28,26 @@ def faq(request):
 # Services
 
 def house_washing(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'services/house-washing.html', context)
 
 def concrete_brick_washing(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'services/concrete-brick-washing.html', context)
 
 def deck_patio_cleaning(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'services/deck-patio-cleaning.html', context)
 
 def deck_staining(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'services/deck-staining.html', context)
 
 def grafitti_removal(request):
-  context = {}
+  form = CreateContactForm
+  context = { 'form': form, }
   return render(request, 'services/grafitti-removal.html', context)

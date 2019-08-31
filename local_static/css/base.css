@@ -113,17 +113,17 @@
 .landing-page-footer .landing-page-footer-wrapper .icon-hours-of-operation {
   fill: none;
   stroke: #EEEEEE;
-  stroke-width: 6px;
-  height: 2rem;
+  stroke-width: calc(0.25rem + 0.1vw);
+  height: calc(1rem + 1vw);
   margin: 0 calc(1rem + 0.25vw);
-  width: 2rem;
+  width: calc(1rem + 1vw);
 }
 
 .landing-page-footer .landing-page-footer-wrapper .icon-phone {
-  height: 2rem;
+  height: calc(1rem + 1vw);
   fill: #EEEEEE;
   margin: 0 calc(1rem + 0.25vw);
-  width: 2rem;
+  width: calc(1rem + 1vw);
 }
 
 .section-1-row .card .card-img-top .card-img-house-washing, .section-1-row .card .card-img-top .card-img-deck-and-patio-washing, .section-1-row .card .card-img-top .card-img-deck-staining, .section-1-row .card .card-img-top .card-img-concrete-and-brick-washing, .section-1-row .card .card-img-top .card-img-fence-cleaning, .section-1-row .card .card-img-top .card-img-graffiti-removal {
@@ -307,6 +307,7 @@ footer .footer-contact .logo-rcpw {
 footer .footer-contact .footer-contact-phone {
   font-size: calc(1rem + 0.75vw);
   font-style: italic;
+  padding: calc(0.5rem + 0.5vw) 0;
 }
 
 footer .footer-contact .footer-contact-phone .icon-phone {
@@ -315,9 +316,23 @@ footer .footer-contact .footer-contact-phone .icon-phone {
   width: calc(1rem + 1vw);
 }
 
+footer .footer-contact .footer-contact-hours-of-operation {
+  font-size: calc(0.75rem + 0.5vw);
+  font-style: italic;
+  padding: calc(0.5rem + 0.5vw) 0;
+}
+
+footer .footer-contact .footer-contact-hours-of-operation .icon-hours-of-operation {
+  fill: none;
+  height: calc(1rem + 1vw);
+  stroke: #EEEEEE;
+  stroke-width: calc(0.25rem + 0.1vw);
+  width: calc(1rem + 1vw);
+}
+
 footer .footer-contact .footer-contact-text {
   font-size: calc(1rem + 0.25vw);
-  padding: calc(0.5rem + 0.5vw);
+  padding: calc(0.5rem + 0.5vw) 0;
 }
 
 footer .footer-copyright {

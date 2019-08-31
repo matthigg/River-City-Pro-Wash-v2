@@ -50,16 +50,16 @@
     & .icon-hours-of-operation {
       fill: none;
       stroke: $primary-color;
-      stroke-width: 6px;
-      height: 2rem;
+      stroke-width: calc(0.25rem + 0.1vw);
+      height: calc(1rem + 1vw);
       margin: 0 calc(1rem + 0.25vw);
-      width: 2rem;
+      width: calc(1rem + 1vw);
     }
     & .icon-phone {
-      height: 2rem;
+      height: calc(1rem + 1vw);
       fill: $primary-color;
       margin: 0 calc(1rem + 0.25vw);
-      width: 2rem;
+      width: calc(1rem + 1vw);
     }
   }
 }

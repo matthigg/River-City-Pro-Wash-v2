@@ -28,15 +28,28 @@ footer {
     & .footer-contact-phone {
       font-size: calc(1rem + 0.75vw);
       font-style: italic;
+      padding: calc(0.5rem + 0.5vw) 0;
       & .icon-phone {
         height: calc(1rem + 1vw);
         fill: $primary-color;
         width: calc(1rem + 1vw);
       }
     }
+    & .footer-contact-hours-of-operation {
+      font-size: calc(0.75rem + 0.5vw);
+      font-style: italic;
+      padding: calc(0.5rem + 0.5vw) 0;
+      & .icon-hours-of-operation {
+        fill: none;
+        height: calc(1rem + 1vw);
+        stroke: $primary-color;
+        stroke-width: calc(0.25rem + 0.1vw);
+        width: calc(1rem + 1vw);
+      }
+    }
     & .footer-contact-text {
       font-size: calc(1rem + 0.25vw);
-      padding: calc(0.5rem + 0.5vw);
+      padding: calc(0.5rem + 0.5vw) 0;
     }
   }
   & .footer-copyright {

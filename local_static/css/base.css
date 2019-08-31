@@ -7,9 +7,6 @@
 
 .navbar .nav-item {
   position: relative;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 
 .navbar .nav-item .nav-link {
@@ -22,6 +19,7 @@
   content: '';
   bottom: 0;
   height: calc(0.1rem + 0.1vw);
+  left: 0;
   position: absolute;
   -webkit-transition: 0.2s;
   transition: 0.2s;

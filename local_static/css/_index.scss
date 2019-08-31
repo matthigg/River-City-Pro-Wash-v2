@@ -76,14 +76,17 @@ $card-transition: 0.15s ease-in;
 
 .section-1-row {
   background-color: $primary-color;
+  display: flex;
+  flex-direction: row;
   padding: calc(2rem + 2vw);
   width: 100%;
   & .card {
     background-color: white;
     color: $quinary-color;
     cursor: pointer;
-    margin: 0 calc(1rem + 1vw);
+    margin: calc(1rem + 1vw);
     text-align: center;
+    width: 25vw;
     & .card-img-top {
       height: 20vh;
       overflow: hidden;

@@ -72,11 +72,6 @@ $card-transition: 0.15s ease-in;
   height: 100%;
   transition: $card-transition;
   width: 100%;
-  &:hover {
-    background-position: center;
-    transform: scale(1.1);
-    transition: $card-transition;
-  }
 }
 
 .section-1-row {
@@ -116,12 +111,32 @@ $card-transition: 0.15s ease-in;
         @extend %card-img;
       }
     }
-    & .card-title {
-      font-size: calc(1rem + 0.5vw);
+    & .card-body {
+      & .card-title {
+        display: inline-block;
+        font-size: calc(1rem + 0.5vw);
+        position: relative;
+        transition: $card-transition;
+      }
+      & .card-text {
+        transition: $card-transition;
+      }
     }
     & [class^="col-"],
     & [class*="col-"] {
       padding: 0 calc(0.5rem + 0.5vw);
+    }
+    &:hover {
+      & .card-img-zoom {
+      background-position: center;
+      transform: scale(1.1);
+      transition: $card-transition;
+      }
+      & .card-title,
+      & .card-text {
+        color: $tertiary-color;
+        transition: $card-transition;
+      }
     }
   }
 }

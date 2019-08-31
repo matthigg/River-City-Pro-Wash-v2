@@ -136,14 +136,6 @@
   width: 100%;
 }
 
-.section-1-row .card .card-img-top .card-img-house-washing:hover, .section-1-row .card .card-img-top .card-img-deck-and-patio-washing:hover, .section-1-row .card .card-img-top .card-img-deck-staining:hover, .section-1-row .card .card-img-top .card-img-concrete-and-brick-washing:hover, .section-1-row .card .card-img-top .card-img-fence-cleaning:hover, .section-1-row .card .card-img-top .card-img-graffiti-removal:hover {
-  background-position: center;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 0.15s ease-in;
-  transition: 0.15s ease-in;
-}
-
 .section-1-row {
   background-color: #EEEEEE;
   padding: calc(2rem + 2vw);
@@ -186,13 +178,37 @@
   background-image: url("/static/img/graffiti-02.jpg");
 }
 
-.section-1-row .card .card-title {
+.section-1-row .card .card-body .card-title {
+  display: inline-block;
   font-size: calc(1rem + 0.5vw);
+  position: relative;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+}
+
+.section-1-row .card .card-body .card-text {
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
 }
 
 .section-1-row .card [class^="col-"],
 .section-1-row .card [class*="col-"] {
   padding: 0 calc(0.5rem + 0.5vw);
+}
+
+.section-1-row .card:hover .card-img-zoom {
+  background-position: center;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+}
+
+.section-1-row .card:hover .card-title,
+.section-1-row .card:hover .card-text {
+  color: #00AEEF;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
 }
 
 * {

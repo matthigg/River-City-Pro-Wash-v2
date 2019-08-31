@@ -145,17 +145,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: calc(2rem + 2vw);
   width: 100%;
 }
 
 .section-1-row .card {
   background-color: white;
-  color: #0C132D;
   cursor: pointer;
   margin: calc(1rem + 1vw);
   text-align: center;
   width: 25vw;
+}
+
+.section-1-row .card a {
+  color: #0C132D;
+  text-decoration: none !important;
 }
 
 .section-1-row .card .card-img-top {
@@ -273,10 +280,6 @@ footer .logo-rcpw {
 * {
   margin: 0;
   padding: 0;
-}
-
-a {
-  text-decoration: none !important;
 }
 
 html {

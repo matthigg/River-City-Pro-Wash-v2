@@ -1,7 +1,9 @@
 $nav-transition: 0.2s;
 
-nav {
+.navbar {
   background-color: $quinary-color;
+  position: fixed;
+  width: 100%;
   & .nav-item {
     position: relative;
     width: max-content;

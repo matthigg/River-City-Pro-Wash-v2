@@ -1,20 +1,22 @@
-nav {
+.navbar {
   background-color: #0C132D;
+  position: fixed;
+  width: 100%;
 }
 
-nav .nav-item {
+.navbar .nav-item {
   position: relative;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
 
-nav .nav-item .nav-link {
+.navbar .nav-item .nav-link {
   color: #EEEEEE;
   font-size: calc(1rem + 0.25vw);
 }
 
-nav .nav-item .nav-link::before {
+.navbar .nav-item .nav-link::before {
   background-color: #EEEEEE;
   content: '';
   bottom: 0;
@@ -25,24 +27,24 @@ nav .nav-item .nav-link::before {
   width: 0;
 }
 
-nav .nav-item:hover .nav-link::before {
+.navbar .nav-item:hover .nav-link::before {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   width: 100%;
 }
 
-nav .nav-logo {
+.navbar .nav-logo {
   fill: #EEEEEE;
   height: calc(3.9rem + 3.9vw);
   width: calc(15rem + 15vw);
 }
 
-nav .navbar-toggler .nav-hamburger-icon {
+.navbar .navbar-toggler .nav-hamburger-icon {
   stroke: #EEEEEE;
   stroke-width: 6px;
 }
 
-nav .navbar-toggler:focus {
+.navbar .navbar-toggler:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
   outline: none;
@@ -60,5 +62,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+}
+
+.navbar-spacer {
+  width: 100%;
 }
 /*# sourceMappingURL=base.css.map */

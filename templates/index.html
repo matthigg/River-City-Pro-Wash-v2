@@ -13,25 +13,21 @@
   <!-- Landing Page Background -->
   <div class="landing-page-background"></div>
 
-  <div class="row landing-page-row">
-
-    <!-- Landing Page Caption -->
+  <!-- Landing Page -->
+  <section class="row landing-page-row">
     <div class="col-md-7 landing-page-col-left">
       <div class="landing-page-caption">
         Pressure washing services in Richmond, <br />
         Manassas, Central & Northern Virginia
       </div>
     </div>
-
-    <!-- Contact Form -->
     <div class="col-md-5 landing-page-col-right">
       {% include 'contact_form/contact-form.html' %}
     </div>
-
-  </div>
+  </section>
 
   <!-- Landing Page Footer -->
-  <div class="row landing-page-footer">
+  <section class="row landing-page-footer">
     <div class="landing-page-footer-wrapper">
       {% include 'svg/icon-phone.svg' %}
       {% include 'business_information/phone-number.html' %}
@@ -40,6 +36,96 @@
       {% include 'svg/icon-hours-of-operation.svg' %}
       {% include 'business_information/hours-of-operation.html' %}
     </div>
-  </div>
+  </section>
+
+  <!-- Section 1, Services -->
+  <section class="row section-1-row">
+
+    <!-- House Washing -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top">
+          <div class="card-img-house-washing"></div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">House Washing</h2>
+          <p class="card-text">Learn More</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deck & Patio Washing -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top">
+          <div class="card-img-deck-and-patio-washing"></div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Deck & Patio Washing</h2>
+          <p class="card-text">Learn More</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deck Staining -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top">
+          <div class="card-img-deck-staining"></div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Deck Staining</h2>
+          <p class="card-text">Learn More</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1, Services -->
+  <section class="row section-1-row">
+
+    <!-- Concrete & Brick Washing -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top">
+          <div class="card-img-concrete-and-brick-washing"></div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Concrete & Brick Washing</h2>
+          <p class="card-text">Learn More</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fence Cleaning -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top">
+          <div class="card-img-fence-cleaning"></div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Fence Cleaning</h2>
+          <p class="card-text">Learn More</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graffiti Removal -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top">
+          <div class="card-img-graffiti-removal"></div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Graffiti Removal</h2>
+          <p class="card-text">Learn More</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
 
 {% endblock %}

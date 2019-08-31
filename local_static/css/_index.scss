@@ -9,7 +9,6 @@
   background-size: cover;
   height: 100vh;
   left: 0;
-  margin: 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -18,7 +17,6 @@
 
 .landing-page-row {
   height: calc(100vh - 142px - 60px); // navbar + nav footer height
-  width: 100%;
   & .landing-page-col-left {
     padding: calc(1rem + 1vw);
     & .landing-page-caption {
@@ -62,6 +60,68 @@
       fill: $primary-color;
       margin: 0 calc(1rem + 0.25vw);
       width: 2rem;
+    }
+  }
+}
+
+$card-transition: 0.15s ease-in;
+%card-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  transition: $card-transition;
+  width: 100%;
+  &:hover {
+    background-position: center;
+    transform: scale(1.1);
+    transition: $card-transition;
+  }
+}
+
+.section-1-row {
+  background-color: $primary-color;
+  padding: calc(2rem + 2vw);
+  width: 100%;
+  & .card {
+    cursor: pointer;
+    margin: 0 calc(1rem + 1vw);
+    text-align: center;
+    & .card-img-top {
+      height: 20vh;
+      overflow: hidden;
+      width: 100%;
+      & .card-img-house-washing {
+        background-image: url('/static/img/house-02.jpg');
+        @extend %card-img;
+      }
+      & .card-img-deck-and-patio-washing {
+        background-image: url('/static/img/deck-washing-01.jpg');
+        @extend %card-img;
+      }
+      & .card-img-deck-staining {
+        background-image: url('/static/img/deck-staining-01.jpg');
+        @extend %card-img;
+      }
+      & .card-img-concrete-and-brick-washing {
+        background-image: url('/static/img/brick-washing-01.jpg');
+        @extend %card-img;
+      }
+      & .card-img-fence-cleaning {
+        background-image: url('/static/img/wooden-fence-01.jpg');
+        @extend %card-img;
+      }
+      & .card-img-graffiti-removal {
+        background-image: url('/static/img/graffiti-02.jpg');
+        @extend %card-img;
+      }
+    }
+    & .card-title {
+      font-size: calc(1rem + 0.5vw);
+    }
+    & [class^="col-"],
+    & [class*="col-"] {
+      padding: 0 calc(0.5rem + 0.5vw);
     }
   }
 }

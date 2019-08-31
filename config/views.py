@@ -52,7 +52,7 @@ def fence_cleaning(request):
   context = { 'form': form, }
   return render(request, 'services/fence-cleaning.html', context)
 
-def grafitti_removal(request):
+def graffiti_removal(request):
   form = CreateContactForm
   context = { 'form': form, }
-  return render(request, 'services/grafitti-removal.html', context)
+  return render(request, 'services/graffiti-removal.html', context)

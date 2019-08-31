@@ -79,6 +79,7 @@ $card-transition: 0.15s ease-in;
   padding: calc(2rem + 2vw);
   width: 100%;
   & .card {
+    color: $quinary-color;
     cursor: pointer;
     margin: 0 calc(1rem + 1vw);
     text-align: center;
@@ -127,6 +128,7 @@ $card-transition: 0.15s ease-in;
       padding: 0 calc(0.5rem + 0.5vw);
     }
     &:hover {
+      text-decoration: none;
       & .card-img-zoom {
       background-position: center;
       transform: scale(1.1);

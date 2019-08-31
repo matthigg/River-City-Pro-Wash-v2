@@ -10,6 +10,36 @@
 <!-- Content -->
 {% block content %}
 
-  <h1>River City Pro Wash</h1>
+  <!-- Landing Page Background -->
+  <div class="landing-page-background"></div>
+
+  <div class="row landing-page-row">
+
+    <!-- Landing Page Caption -->
+    <div class="col-md-7 landing-page-col-left">
+      <div class="landing-page-caption">
+        Pressure washing services in Richmond, <br />
+        Manassas, Central & Northern Virginia
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-md-5 landing-page-col-right">
+      {% include 'contact_form/contact-form.html' %}
+    </div>
+
+  </div>
+
+  <!-- Landing Page Footer -->
+  <div class="row landing-page-footer">
+    <div class="landing-page-footer-wrapper">
+      {% include 'svg/icon-phone.svg' %}
+      {% include 'business_information/phone-number.html' %}
+    </div>
+    <div class="landing-page-footer-wrapper">
+      {% include 'svg/icon-hours-of-operation.svg' %}
+      {% include 'business_information/hours-of-operation.html' %}
+    </div>
+  </div>
 
 {% endblock %}

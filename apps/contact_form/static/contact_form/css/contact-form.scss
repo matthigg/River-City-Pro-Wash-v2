@@ -1,10 +1,14 @@
-// Colors
-$primary-color: white;
-$secondary-color: #F3D333;
-$tertiary-color: #6D6951;
-$quarternary-color: #4D3F22;
-$quinary-color: #182013;
-$senary-color:#020305;
+$primary-color: #EEEEEE;
+$secondary-color: #ABE4F9;
+$tertiary-color: #00AEEF;
+$quarternary-color: #262262;
+$quinary-color: #0C132D;
+
+$primary-color-rgba: rgba(238, 238, 238, 0.75);
+$secondary-color-rgba: rgba(171, 228, 249, 0.75);
+$tertiary-color-rgba: rgba(0, 174, 239, 0.75);
+$quarternary-color-rgba: rgba(38, 34, 98, 0.75);
+$quinary-color-rgba: rgba(12, 19, 45, 0.75);
 
 .alert {
   display: inline-block;
@@ -13,10 +17,11 @@ $senary-color:#020305;
   text-align: center;
 }
 
-$contact-form-border: 2px solid $secondary-color;
+$contact-form-border: 0px solid $quinary-color-rgba;
+$contact-form-transition: 0.15s ease-in;
 
 .contact-form-heading {
-  background-color: $senary-color;
+  background-color: $quinary-color-rgba;
   border-left: $contact-form-border;
   border-radius: calc(1rem + 0.1vw) calc(1rem + 0.1vw) 0 0;
   border-right: $contact-form-border;
@@ -25,14 +30,18 @@ $contact-form-border: 2px solid $secondary-color;
   & h2 {
     color: $primary-color;
     font-size: calc(1rem + 1vw);
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 0;
     text-align: center;
+  }
+  & .contact-form-heading-emphasis {
+    font-style: italic;
+    font-weight: 900;
   }
 }
 
 .contact-form {
-  background-color: $senary-color;
+  background-color: $quinary-color-rgba;
   border-bottom: $contact-form-border;
   border-left: $contact-form-border;
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
@@ -40,7 +49,7 @@ $contact-form-border: 2px solid $secondary-color;
   margin: auto;
   padding: calc(1rem + 1vw);
   width: 100%;
-  & button {
+  & .contact-form-submit-button {
     background-color: $primary-color;
     border: none;
     border-radius: calc(0.5rem + 0.1vw);
@@ -50,23 +59,32 @@ $contact-form-border: 2px solid $secondary-color;
     font-size: calc(1rem + 0.25vw);
     margin: auto;
     padding: calc(0.25rem + 0.5vw) calc(1rem + 1vw);
+    transition: $contact-form-transition;
+    & .contact-form-submit-button-emphasis {
+      font-style: italic;
+      font-weight: 700;
+    }
     &:hover {
-      background-color: $secondary-color;
+      background-color: $tertiary-color;
       color: $primary-color;
-      transition: 0.15s ease-in;
+      cursor: pointer;
+      transition: $contact-form-transition;
     }
     &:focus {
       outline: none;
       box-shadow: none;
     }
   }
+  & fieldset {
+    border: 0;
+  }
   & input {
-    border: 2px solid $secondary-color;
+    border: 2px solid $quinary-color;
     border-radius: calc(0.5rem + 0.1vw);
     box-shadow: none;
     color: $quinary-color;
     display: block;
-    height: calc(2.5rem + 1vw);
+    height: calc(2rem + 1vw);
     outline: none;
     padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
     width: 100%;
@@ -86,7 +104,7 @@ $contact-form-border: 2px solid $secondary-color;
     top: 0;
   }
   & textarea {
-    border: 2px solid $secondary-color;
+    border: 2px solid $quinary-color;
     border-radius: calc(0.5rem + 0.1vw);
     box-shadow: none;
     color: $quinary-color;
@@ -108,10 +126,10 @@ $contact-form-border: 2px solid $secondary-color;
     color: $quinary-color;
     font-size: calc(0.75rem + 0.1vw);
     top: calc(0.05rem + 0.05vw);
-    transition: 0.1s;
+    transition: $contact-form-transition;
   }
   & .contact-form-input {
-    margin-bottom: calc(1rem + 0.5vw);
+    margin-bottom: calc(0.25rem + 0.25vw);
     position: relative;
   }
   & .required-field-asterisk {
@@ -120,5 +138,6 @@ $contact-form-border: 2px solid $secondary-color;
   & .required-field-text {
     color: $primary-color;
     font-size: calc(1rem + 0.25vw);
+    text-align: center;
   }
 }

@@ -20,5 +20,9 @@ class CreateContactForm(ModelForm):
       'name': TextInput(attrs={'placeholder': 'name'}),
       'email': TextInput(attrs={'placeholder': 'email'}),
       'phone': TextInput(attrs={'placeholder': 'phone'}),
-      'message': Textarea(attrs={'placeholder': 'message'}),
+      'message': Textarea(attrs={
+        'placeholder': 'message',
+        'rows': 6,
+        'cols': 40,
+        }),
     }

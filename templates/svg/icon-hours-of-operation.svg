@@ -1,0 +1,11 @@
+<svg class="icon-hours-of-operation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 99">
+  <g transform="translate(-1805 -326)">
+    <g transform="translate(1805 326)">
+      <circle cx="49.5" cy="49.5" r="44.5"/>
+    </g>
+    <g transform="translate(1854.346 343.5)">
+      <line  y2="25" transform="translate(0 8)" stroke-linecap="round"/>
+      <line  x1="20.654" y1="8" transform="translate(0.5 33)" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

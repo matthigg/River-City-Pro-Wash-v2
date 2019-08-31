@@ -6,66 +6,83 @@
 }
 
 .contact-form-heading {
-  background-color: #020305;
-  border-left: 2px solid #F3D333;
+  background-color: rgba(12, 19, 45, 0.75);
+  border-left: 0px solid rgba(12, 19, 45, 0.75);
   border-radius: calc(1rem + 0.1vw) calc(1rem + 0.1vw) 0 0;
-  border-right: 2px solid #F3D333;
-  border-top: 2px solid #F3D333;
+  border-right: 0px solid rgba(12, 19, 45, 0.75);
+  border-top: 0px solid rgba(12, 19, 45, 0.75);
   padding: calc(0.5rem + 0.25vw);
 }
 
 .contact-form-heading h2 {
-  color: white;
+  color: #EEEEEE;
   font-size: calc(1rem + 1vw);
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 0;
   text-align: center;
 }
 
+.contact-form-heading .contact-form-heading-emphasis {
+  font-style: italic;
+  font-weight: 900;
+}
+
 .contact-form {
-  background-color: #020305;
-  border-bottom: 2px solid #F3D333;
-  border-left: 2px solid #F3D333;
+  background-color: rgba(12, 19, 45, 0.75);
+  border-bottom: 0px solid rgba(12, 19, 45, 0.75);
+  border-left: 0px solid rgba(12, 19, 45, 0.75);
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
-  border-right: 2px solid #F3D333;
+  border-right: 0px solid rgba(12, 19, 45, 0.75);
   margin: auto;
   padding: calc(1rem + 1vw);
   width: 100%;
 }
 
-.contact-form button {
-  background-color: white;
+.contact-form .contact-form-submit-button {
+  background-color: #EEEEEE;
   border: none;
   border-radius: calc(0.5rem + 0.1vw);
-  color: #182013;
+  color: #0C132D;
   display: block;
   font-weight: 700;
   font-size: calc(1rem + 0.25vw);
   margin: auto;
   padding: calc(0.25rem + 0.5vw) calc(1rem + 1vw);
-}
-
-.contact-form button:hover {
-  background-color: #F3D333;
-  color: white;
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;
 }
 
-.contact-form button:focus {
+.contact-form .contact-form-submit-button .contact-form-submit-button-emphasis {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.contact-form .contact-form-submit-button:hover {
+  background-color: #00AEEF;
+  color: #EEEEEE;
+  cursor: pointer;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+}
+
+.contact-form .contact-form-submit-button:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
+.contact-form fieldset {
+  border: 0;
+}
+
 .contact-form input {
-  border: 2px solid #F3D333;
+  border: 2px solid #0C132D;
   border-radius: calc(0.5rem + 0.1vw);
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #182013;
+  color: #0C132D;
   display: block;
-  height: calc(2.5rem + 1vw);
+  height: calc(2rem + 1vw);
   outline: none;
   padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
   width: 100%;
@@ -88,11 +105,11 @@
 }
 
 .contact-form input:focus {
-  border: 2px solid #182013;
+  border: 2px solid #0C132D;
 }
 
 .contact-form label {
-  color: #182013;
+  color: #0C132D;
   font-size: calc(1rem + 0.25vw);
   font-style: italic;
   left: calc(0.5rem + 0.1vw);
@@ -101,11 +118,11 @@
 }
 
 .contact-form textarea {
-  border: 2px solid #F3D333;
+  border: 2px solid #0C132D;
   border-radius: calc(0.5rem + 0.1vw);
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #182013;
+  color: #0C132D;
   display: block;
   outline: none;
   padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
@@ -129,31 +146,32 @@
 }
 
 .contact-form textarea:focus {
-  border: 2px solid #182013;
+  border: 2px solid #0C132D;
 }
 
 .contact-form input:focus ~ label,
 .contact-form input:not(:placeholder-shown) ~ label,
 .contact-form textarea:focus ~ label,
 .contact-form textarea:not(:placeholder-shown) ~ label {
-  color: #182013;
+  color: #0C132D;
   font-size: calc(0.75rem + 0.1vw);
   top: calc(0.05rem + 0.05vw);
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
 }
 
 .contact-form .contact-form-input {
-  margin-bottom: calc(1rem + 0.5vw);
+  margin-bottom: calc(0.25rem + 0.25vw);
   position: relative;
 }
 
 .contact-form .required-field-asterisk {
-  color: #182013;
+  color: #0C132D;
 }
 
 .contact-form .required-field-text {
-  color: white;
+  color: #EEEEEE;
   font-size: calc(1rem + 0.25vw);
+  text-align: center;
 }
 /*# sourceMappingURL=contact-form.css.map */

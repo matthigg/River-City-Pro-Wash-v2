@@ -1,7 +1,8 @@
 .navbar {
-  background-color: #0C132D;
+  background-color: rgba(12, 19, 45, 0.75);
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .navbar .nav-item {
@@ -48,6 +49,84 @@
   -webkit-box-shadow: none;
           box-shadow: none;
   outline: none;
+}
+
+.landing-page-background {
+  background-color: #0C132D;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 3, 5, 0.25)), to(rgba(2, 3, 5, 0.25))), url("/static/img/house-01.jpg");
+  background-image: linear-gradient(rgba(2, 3, 5, 0.25), rgba(2, 3, 5, 0.25)), url("/static/img/house-01.jpg");
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.landing-page-row {
+  width: 100%;
+}
+
+.landing-page-row .landing-page-col-left {
+  padding: calc(1rem + 1vw);
+}
+
+.landing-page-row .landing-page-col-left .landing-page-caption {
+  color: #EEEEEE;
+  font-size: calc(1rem + 0.5vw);
+  font-style: italic;
+  font-weight: 600;
+  padding: calc(1rem + 1vw);
+}
+
+.landing-page-row .landing-page-col-right {
+  padding: calc(1rem + 1vw);
+}
+
+.landing-page-footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(12, 19, 45, 0.75);
+  color: #EEEEEE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: calc(1rem + 0.5vw);
+  font-style: italic;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.landing-page-footer .landing-page-footer-wrapper {
+  margin: 0 calc(2rem + 1vw);
+}
+
+.landing-page-footer .landing-page-footer-wrapper .icon-hours-of-operation {
+  fill: none;
+  stroke: #EEEEEE;
+  stroke-width: 6px;
+  height: 2rem;
+  margin: 0 calc(1rem + 0.25vw);
+  width: 2rem;
+}
+
+.landing-page-footer .landing-page-footer-wrapper .icon-phone {
+  height: 2rem;
+  fill: #EEEEEE;
+  margin: 0 calc(1rem + 0.25vw);
+  width: 2rem;
 }
 
 * {

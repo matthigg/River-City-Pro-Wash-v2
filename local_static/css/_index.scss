@@ -79,6 +79,7 @@ $card-transition: 0.15s ease-in;
   padding: calc(2rem + 2vw);
   width: 100%;
   & .card {
+    background-color: white;
     color: $quinary-color;
     cursor: pointer;
     margin: 0 calc(1rem + 1vw);
@@ -120,7 +121,24 @@ $card-transition: 0.15s ease-in;
         transition: $card-transition;
       }
       & .card-text {
+        align-items: center;
+        display: flex;
+        justify-content: center;
         transition: $card-transition;
+        & .icon-arrow-right {
+          height: calc(0.5rem + 0.5vw);
+          margin: 0 calc(0.25rem + 0.1vw);
+          width: calc(0.5rem + 0.5vw);
+          & circle {
+            fill: white;
+            transition: $card-transition;
+          }
+          & line {
+            stroke: $quinary-color;
+            stroke-width: calc(0.5rem + 0.25vw);
+            transition: $card-transition;
+          }
+        }
       }
     }
     & [class^="col-"],
@@ -138,6 +156,16 @@ $card-transition: 0.15s ease-in;
       & .card-text {
         color: $tertiary-color;
         transition: $card-transition;
+      }
+      & .card-text .icon-arrow-right {
+        & circle {
+          fill: $tertiary-color;
+          transition: $card-transition;
+        }
+        & line {
+          stroke: $primary-color;
+          transition: $card-transition;
+        }
       }
     }
   }

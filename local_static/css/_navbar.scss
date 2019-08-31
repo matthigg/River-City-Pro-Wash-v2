@@ -1,0 +1,43 @@
+$nav-transition: 0.2s;
+
+nav {
+  background-color: $quinary-color;
+  & .nav-item {
+    position: relative;
+    width: max-content;
+    & .nav-link {
+      color: $primary-color;
+      font-size: calc(1rem + 0.25vw);
+      &::before {
+        background-color: $primary-color;
+        content: '';
+        bottom: 0;
+        height: calc(0.1rem + 0.1vw);
+        position: absolute;
+        transition: $nav-transition;
+        width: 0;
+      }
+    }
+    &:hover {
+      & .nav-link::before {
+        transition: $nav-transition;
+        width: 100%;
+      }
+    }
+  }
+  & .nav-logo {
+    fill: $primary-color;
+    height: calc(3.9rem + 3.9vw);
+    width: calc(15rem + 15vw);
+  }
+  & .navbar-toggler {
+    & .nav-hamburger-icon {
+      stroke: $primary-color;
+      stroke-width: 6px;
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}

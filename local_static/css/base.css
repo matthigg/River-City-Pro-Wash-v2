@@ -1,0 +1,64 @@
+nav {
+  background-color: #0C132D;
+}
+
+nav .nav-item {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+nav .nav-item .nav-link {
+  color: #EEEEEE;
+  font-size: calc(1rem + 0.25vw);
+}
+
+nav .nav-item .nav-link::before {
+  background-color: #EEEEEE;
+  content: '';
+  bottom: 0;
+  height: calc(0.1rem + 0.1vw);
+  position: absolute;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: 0;
+}
+
+nav .nav-item:hover .nav-link::before {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: 100%;
+}
+
+nav .nav-logo {
+  fill: #EEEEEE;
+  height: calc(3.9rem + 3.9vw);
+  width: calc(15rem + 15vw);
+}
+
+nav .navbar-toggler .nav-hamburger-icon {
+  stroke: #EEEEEE;
+  stroke-width: 6px;
+}
+
+nav .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+/*# sourceMappingURL=base.css.map */

@@ -17,6 +17,7 @@
 }
 
 .landing-page-row {
+  height: calc(100vh - 142px - 60px); // navbar + nav footer height
   width: 100%;
   & .landing-page-col-left {
     padding: calc(1rem + 1vw);

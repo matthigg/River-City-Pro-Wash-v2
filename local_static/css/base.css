@@ -66,6 +66,7 @@
 }
 
 .landing-page-row {
+  height: calc(100vh - 142px - 60px);
   width: 100%;
 }
 
@@ -144,6 +145,7 @@ html {
 }
 
 .navbar-spacer {
+  height: 142px;
   width: 100%;
 }
 /*# sourceMappingURL=base.css.map */

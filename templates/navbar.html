@@ -1,5 +1,12 @@
 <nav class="navbar navbar-expand-md">
-  <a class="navbar-brand" href="#">{% include 'svg/nav-logo.svg' %}</a>
+  <a class="navbar-brand" href="#">
+    <div>
+      {% include 'svg/nav-logo-text.svg' %}
+    </div>
+    <div class="nav-logo-wand-subtext-wrapper">
+      {% include 'svg/nav-logo-wand-subtext.svg' %}
+    </div>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rcpw-navbar" aria-controls="rcpw-navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon">{% include 'svg/nav-hamburger-icon.svg' %}</span>
   </button>

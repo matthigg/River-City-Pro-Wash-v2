@@ -1,5 +1,7 @@
 .navbar {
   background-color: rgba(12, 19, 45, 0.75);
+  padding-left: calc(1rem + 1vw);
+  padding-right: calc(1rem + 1vw);
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -32,10 +34,34 @@
   width: 100%;
 }
 
-.navbar .nav-logo {
+.navbar .navbar-brand {
   fill: #EEEEEE;
-  height: calc(3.9rem + 3.9vw);
-  width: calc(15rem + 15vw);
+}
+
+.navbar .navbar-brand .nav-logo-text {
+  height: calc(1.75rem + 1.75vw);
+  padding: calc(0.1rem + 0.1vw);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.navbar .navbar-brand .nav-logo-text.minimized {
+  height: calc(1rem + 1vw);
+}
+
+.navbar .navbar-brand .nav-logo-wand-subtext,
+.navbar .navbar-brand .nav-logo-wand-subtext-wrapper {
+  height: calc(1.85rem + 1.85vw);
+  padding: calc(0.1rem + 0.1vw);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.navbar .navbar-brand .nav-logo-wand-subtext.minimized,
+.navbar .navbar-brand .nav-logo-wand-subtext-wrapper.minimized {
+  height: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .navbar .navbar-toggler .nav-hamburger-icon {
@@ -47,6 +73,10 @@
   -webkit-box-shadow: none;
           box-shadow: none;
   outline: none;
+}
+
+.navbar.solid-background {
+  background-color: #0C132D;
 }
 
 .landing-page-background {

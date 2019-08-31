@@ -10,6 +10,7 @@
 
     <!-- Custom JavaScript -->
     <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
     {% block javascript %}{% endblock %}
     
     <!-- Bootstrap CSS -->
@@ -23,10 +24,10 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
 
-  <!-- Navbar -->
-  <header>{% include 'navbar.html' %}</header>  
-
   <body>
+
+    <!-- Navbar -->
+    <header>{% include 'navbar.html' %}</header>  
 
     <!-- Navbar Spacer -->
     <div class="navbar-spacer"></div>

@@ -37,10 +37,10 @@ def concrete_brick_washing(request):
   context = { 'form': form, }
   return render(request, 'services/concrete-brick-washing.html', context)
 
-def deck_patio_cleaning(request):
+def deck_patio_washing(request):
   form = CreateContactForm
   context = { 'form': form, }
-  return render(request, 'services/deck-patio-cleaning.html', context)
+  return render(request, 'services/deck-patio-washing.html', context)
 
 def deck_staining(request):
   form = CreateContactForm

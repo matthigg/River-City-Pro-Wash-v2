@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from .views import contact, index, our_work, services, faq
-from .views import house_washing, concrete_brick_washing, deck_patio_washing, deck_staining, grafitti_removal
+from .views import house_washing, concrete_brick_washing, deck_patio_washing, deck_staining, fence_cleaning, grafitti_removal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +30,6 @@ urlpatterns = [
     path('services/concrete-brick-washing', concrete_brick_washing, name='concrete-brick-washing'),
     path('services/deck-patio-washing',     deck_patio_washing,     name='deck-patio-washing'),
     path('services/deck-staining',          deck_staining,          name='deck-staining'),
+    path('services/fence-cleaning',         fence_cleaning,         name='fence-cleaning'),
     path('services/grafitti-removal',       grafitti_removal,       name='grafitti-removal'),
 ]

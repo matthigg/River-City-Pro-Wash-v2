@@ -47,6 +47,11 @@ def deck_staining(request):
   context = { 'form': form, }
   return render(request, 'services/deck-staining.html', context)
 
+def fence_cleaning(request):
+  form = CreateContactForm
+  context = { 'form': form, }
+  return render(request, 'services/fence-cleaning.html', context)
+
 def grafitti_removal(request):
   form = CreateContactForm
   context = { 'form': form, }

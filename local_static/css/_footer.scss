@@ -1,6 +1,76 @@
+$footer-transition: 0.1s ease-in;
+
 footer {
-  & .logo-rcpw {
-    height: calc(4rem + 4vw);
-    width: calc(4rem + 4vw);
+  background-color: $quinary-color-rgba;
+  padding-bottom: calc(2rem + 2vw);
+  color: $primary-color;
+  text-align: center;
+  & .footer-back-to-top {
+    & .icon-back-to-top {
+      height: calc(2rem);
+      fill: $primary-color;
+      transition: $footer-transition;
+      width: calc(2rem);
+      &:hover {
+        cursor: pointer;
+        fill: $tertiary-color;
+        transition: $footer-transition;
+      }
+    }
+  }
+  & .footer-contact {
+    padding: calc(2rem + 1vw);
+    & .logo-rcpw {
+      height: calc(8rem + 8vw);
+      width: calc(8rem + 8vw);
+      margin: calc(1rem + 1vw);
+    }
+    & .footer-contact-phone {
+      font-size: calc(1rem + 0.75vw);
+      font-style: italic;
+      & .icon-phone {
+        height: calc(1rem + 1vw);
+        fill: $primary-color;
+        width: calc(1rem + 1vw);
+      }
+    }
+    & .footer-contact-text {
+      font-size: calc(1rem + 0.25vw);
+      padding: calc(0.5rem + 0.5vw);
+    }
+  }
+  & .footer-copyright {
+    font-size: calc(0.5rem + 0.5vw);
+    padding: calc(0.5rem + 0.5vw);
+  }
+  & .footer-flair {
+    padding: calc(2rem + 1vw);
+    & .logo-facebook {
+      padding: calc(0.5rem + 0.5vw);
+      width: 20vw;
+    }
+    & .logo-google {
+      padding: calc(0.5rem + 0.5vw);
+      width: 20vw;
+    }
+    & .logo-pittsburgh-penguins {
+      padding: calc(0.5rem + 0.5vw);
+      width: 20vw;
+    }
+  }
+  & .footer-map {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(2rem + 1vw);
+    & .footer-map-iframe {
+      height: 100%;
+      width: 100%;
+    }
+    & .footer-map-text {
+      font-size: calc(0.5rem + 0.35vw);
+      padding: calc(0.5rem + 0.5vw);
+    }
   }
 }

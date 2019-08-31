@@ -272,9 +272,103 @@
   transition: 0.15s ease-in;
 }
 
-footer .logo-rcpw {
-  height: calc(4rem + 4vw);
-  width: calc(4rem + 4vw);
+footer {
+  background-color: rgba(12, 19, 45, 0.75);
+  padding-bottom: calc(2rem + 2vw);
+  color: #EEEEEE;
+  text-align: center;
+}
+
+footer .footer-back-to-top .icon-back-to-top {
+  height: calc(2rem);
+  fill: #EEEEEE;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  width: calc(2rem);
+}
+
+footer .footer-back-to-top .icon-back-to-top:hover {
+  cursor: pointer;
+  fill: #00AEEF;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+footer .footer-contact {
+  padding: calc(2rem + 1vw);
+}
+
+footer .footer-contact .logo-rcpw {
+  height: calc(8rem + 8vw);
+  width: calc(8rem + 8vw);
+  margin: calc(1rem + 1vw);
+}
+
+footer .footer-contact .footer-contact-phone {
+  font-size: calc(1rem + 0.75vw);
+  font-style: italic;
+}
+
+footer .footer-contact .footer-contact-phone .icon-phone {
+  height: calc(1rem + 1vw);
+  fill: #EEEEEE;
+  width: calc(1rem + 1vw);
+}
+
+footer .footer-contact .footer-contact-text {
+  font-size: calc(1rem + 0.25vw);
+  padding: calc(0.5rem + 0.5vw);
+}
+
+footer .footer-copyright {
+  font-size: calc(0.5rem + 0.5vw);
+  padding: calc(0.5rem + 0.5vw);
+}
+
+footer .footer-flair {
+  padding: calc(2rem + 1vw);
+}
+
+footer .footer-flair .logo-facebook {
+  padding: calc(0.5rem + 0.5vw);
+  width: 20vw;
+}
+
+footer .footer-flair .logo-google {
+  padding: calc(0.5rem + 0.5vw);
+  width: 20vw;
+}
+
+footer .footer-flair .logo-pittsburgh-penguins {
+  padding: calc(0.5rem + 0.5vw);
+  width: 20vw;
+}
+
+footer .footer-map {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: calc(2rem + 1vw);
+}
+
+footer .footer-map .footer-map-iframe {
+  height: 100%;
+  width: 100%;
+}
+
+footer .footer-map .footer-map-text {
+  font-size: calc(0.5rem + 0.35vw);
+  padding: calc(0.5rem + 0.5vw);
 }
 
 * {

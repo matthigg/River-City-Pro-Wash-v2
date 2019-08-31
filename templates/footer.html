@@ -1,15 +1,54 @@
 <footer>
   <div class="row footer-row">
     <div class="col-md-4 footer-contact">
+
+      <div class="footer-contact-text">
+        If you need it cleaned, we've got you covered! Call us today for a FREE quote!
+      </div>
+
+      <div class="footer-contact-phone">
+        {% include 'svg/icon-phone.svg' %}
+        {% include 'business_information/phone-number.html' %}
+      </div>
+
       {% include 'svg/logo-rcpw.svg' %}
+
     </div>
-    <div class="col-md-4 footer-map"></div>
-    <div class="col-md-4 footer-flair"></div>
+    <div class="col-md-4 footer-map">
+      <iframe class="footer-map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.353878401782!2d-77.48589688456087!3d38.732640879596275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b65d4546024203%3A0x9586d1b686f36ea5!2sRiver%20City%20Pro%20Wash!5e0!3m2!1sen!2sus!4v1567273249826!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      <div class="footer-map-text">
+        Richmond VA &middot;
+        Manassas VA &middot;
+        Fredericksburg VA &middot;
+        Reston VA &middot;
+        Short Pump VA &middot;
+        Glen Allen VA &middot;
+        Centreville VA &middot;
+        Chantilly VA &middot;
+        Arlington VA &middot;
+        Dulles VA &middot;
+        Tysons VA &middot;
+        Falls Church VA &middot;
+        Bethesda MD &middot;
+        Silver Spring MD &middot;
+        Rockville MD &middot;
+        Washington DC
+      </div>
+    </div>
+    <div class="col-md-4 footer-flair">
+      <a href="https://g.page/river-city-pro-wash-manassas?share" target="_blank" rel="noopener noreferrer">{% include 'svg/logo-google.svg' %}</a>
+      <a href="https://www.facebook.com/River-City-Pro-Wash-722079708136598/" target="_blank" rel="noopener noreferrer">{% include 'svg/logo-facebook.svg' %}</a>
+      <a href="https://www.nhl.com/penguins" target="_blank" rel="noopener noreferrer">{% include 'svg/logo-pittsburgh-penguins.svg' %}</a>
+    </div>
   </div>
 
   <div class="row footer-row">
-    <div class="col-md-4 footer-copyright"></div>
-    <div class="col-md-4 footer-back-to-top"></div>
+    <div class="col-md-4 footer-copyright">River City Pro Wash © 2019</div>
+    <div class="col-md-4 footer-back-to-top">
+      <a href="#">
+        {% include 'svg/icon-back-to-top.svg' %}
+      </a>
+    </div>
     <div class="col-md-4 footer-recaptcha"></div>
   </div>
 </footer>

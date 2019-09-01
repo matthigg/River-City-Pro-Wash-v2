@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   
   // Show 'FREE Quote' button
-  document.querySelector('.nav-free-quote').style.display = 'block'
+  if (window.innerWidth < 768) {
+    document.querySelector('.nav-free-quote').style.display = 'block'
+  }
 
   // Hide contact form if screen is too small so that it doesn't
   // bleed into the next section

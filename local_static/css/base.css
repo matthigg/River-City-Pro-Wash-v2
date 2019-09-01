@@ -207,7 +207,7 @@
 }
 
 .landing-page-row {
-  height: calc(100vh - 142px - 60px);
+  height: calc(100vh - 133px - 60px);
 }
 
 .landing-page-row .landing-page-col-left {
@@ -525,18 +525,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: calc(1.25rem + 0.75vw);
+  font-size: calc(1.25rem + 0.5vw);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: calc(1rem + 1vw);
-  text-align: center;
 }
 
 .service-wrapper .service-row .service-col-text .nav-logo-text {
-  height: calc(1.25rem + 0.75vw);
+  height: calc(1.25rem + 0.5vw);
   position: relative;
-  bottom: calc(0.1rem + 0.075vw);
+  bottom: calc(0.1rem + 0.05vw);
 }
 
 .service-wrapper .service-row .service-col-text .service-phone-number {
@@ -559,6 +558,10 @@
   height: calc(1rem + 1vw);
   stroke: #000B28;
   stroke-width: calc(0.5rem + 0.5vw);
+}
+
+.service-wrapper .service-row .service-col-text.centered {
+  text-align: center;
 }
 
 .service-wrapper .service-row .service-col-contact-form {
@@ -731,7 +734,7 @@ html {
 }
 
 .navbar-spacer {
-  height: 142px;
+  height: 133px;
   width: 100%;
 }
 

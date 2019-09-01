@@ -15,6 +15,59 @@
 <!-- Content -->
 {% block content %}
 
-  <h1>Grafitti Removal</h1>
+<!-- Service Page Background -->
+<div class="service-page-background"></div>
+
+<!-- Service -->
+<div class="service-wrapper">
+  <div class="beginning-of-page-spacer-mobile"></div>
+
+  <!-- Service Title -->
+  <h1 class="service-header">Graffiti Removal Services</h1>
+
+  <!-- Service Copy -->
+  <section class="row service-row">
+    <div class="col-md-6 service-col-image">
+      <img class="service-image" src="{% static 'img/graffiti-02.jpg' %}" alt="Graffiti Removal">
+    </div>
+    <div class="col-md-6 service-col-text">
+      <p>
+        Graffiti can ruin the appearance of a home or personal
+        property, as well as destroy the legitimacy of a business. 
+        The longer graffiti remains, the more likely it is to attract 
+        more graffiti and the harder it is to remove since it can 
+        settle into the foundation of the structure that it covers.
+      </p>
+      <p>
+        If your property was defaced by some unscrupulous ragamuffin
+        in the night and is in need of a good 
+        old-fashioned gas-powered scrub-down, contact 
+        {% include 'svg/nav-logo-text.svg' %} today!
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Contact Form -->
+  <section class="row service-row">
+    <div class="col-md-6 service-col-text centered">
+      <p>
+        If you're ready to have your property shining like new, 
+        give us a call or fill out our form to request a FREE 
+        quote and a member from our team will get back to you ASAP!
+      </p>
+      <div class="service-phone-number">
+        {% include 'svg/icon-phone.svg' %}
+        {% include 'business_information/phone-number.html' %}
+      </div>
+      <div class="service-hours-of-operation">
+        {% include 'svg/icon-hours-of-operation.svg' %}
+        {% include 'business_information/hours-of-operation.html' %}
+      </div>
+    </div>
+    <div class="col-md-6 service-col-contact-form">
+      {% include 'contact_form/contact-form.html' %}
+    </div>
+  </section>
+</div>
 
 {% endblock %}

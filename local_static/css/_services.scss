@@ -46,14 +46,13 @@
       color: $quinary-color;
       display: flex;
       flex-direction: column;
-      font-size: calc(1.25rem + 0.75vw);
+      font-size: calc(1.25rem + 0.5vw);
       justify-content: center;
       padding: calc(1rem + 1vw);
-      text-align: center;
       & .nav-logo-text {
-        height: calc(1.25rem + 0.75vw);
+        height: calc(1.25rem + 0.5vw);
         position: relative;
-        bottom: calc(0.1rem + 0.075vw);
+        bottom: calc(0.1rem + 0.05vw);
       }
       & .service-phone-number {
         font-style: italic;
@@ -72,6 +71,9 @@
           stroke: $quinary-color;
           stroke-width: calc(0.5rem + 0.5vw);
         }
+      }
+      &.centered {
+        text-align: center;
       }
     }
     & .service-col-contact-form {

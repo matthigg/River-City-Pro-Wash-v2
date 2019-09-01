@@ -25,6 +25,9 @@
       font-style: italic;
       font-weight: 600;
       padding: calc(1rem + 1vw);
+      @media (max-width: 767.98px) {
+        display: none;
+      }
     }
   }
   & .landing-page-col-right {
@@ -175,5 +178,11 @@ $card-transition: 0.15s ease-in;
         }
       }
     }
+  }
+}
+
+.contact-form-wrapper {
+  @media(max-width: 767.98px) {
+    display: none;
   }
 }

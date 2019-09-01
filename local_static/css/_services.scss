@@ -51,21 +51,29 @@
         bottom: calc(0.1rem + 0.05vw);
       }
       & .service-phone-number {
+        align-items: center;
+        display: flex;
         font-style: italic;
         padding: calc(0.5rem + 0.5vw);
         & .icon-phone {
-          height: calc(1rem + 1vw);
           fill: $quinary-color;
+          height: calc(1rem + 1vw);
+          margin: 0 calc(0.25rem + 0.1vw);
+          width: calc(1rem + 1vw);
         }
       }
       & .service-hours-of-operation {
+        align-items: center;
+        display: flex;
         font-style: italic;
         padding: calc(0.5rem + 0.5vw);
         & .icon-hours-of-operation {
           fill: none;
-          height: calc(1rem + 1vw);
           stroke: $quinary-color;
-          stroke-width: calc(0.5rem + 0.5vw);
+          stroke-width: calc(0.25rem + 0.25vw);
+          height: calc(1rem + 1vw);
+          margin: 0 calc(0.25rem + 0.1vw);
+          width: calc(1rem + 1vw);
         }
       }
       &.centered {

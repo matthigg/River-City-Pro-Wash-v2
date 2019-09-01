@@ -535,25 +535,41 @@
 }
 
 .service-wrapper .service-row .service-col-text .service-phone-number {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-style: italic;
   padding: calc(0.5rem + 0.5vw);
 }
 
 .service-wrapper .service-row .service-col-text .service-phone-number .icon-phone {
-  height: calc(1rem + 1vw);
   fill: #000B28;
+  height: calc(1rem + 1vw);
+  margin: 0 calc(0.25rem + 0.1vw);
+  width: calc(1rem + 1vw);
 }
 
 .service-wrapper .service-row .service-col-text .service-hours-of-operation {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-style: italic;
   padding: calc(0.5rem + 0.5vw);
 }
 
 .service-wrapper .service-row .service-col-text .service-hours-of-operation .icon-hours-of-operation {
   fill: none;
-  height: calc(1rem + 1vw);
   stroke: #000B28;
-  stroke-width: calc(0.5rem + 0.5vw);
+  stroke-width: calc(0.25rem + 0.25vw);
+  height: calc(1rem + 1vw);
+  margin: 0 calc(0.25rem + 0.1vw);
+  width: calc(1rem + 1vw);
 }
 
 .service-wrapper .service-row .service-col-text.centered {

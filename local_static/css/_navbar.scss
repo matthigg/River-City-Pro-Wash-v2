@@ -110,7 +110,7 @@ $nav-logo-transition: 0.5s;
       left: 5vw;
       padding: 0 calc(0.5rem + 0.5vw);
       position: fixed;
-      top: 12vh;
+      top: $call-now-free-quote-buttons-top-offset;
       z-index: 1;
       & .icon-phone {
         height: 2rem;
@@ -130,7 +130,6 @@ $nav-logo-transition: 0.5s;
 .nav-free-quote {
   display: none;
   @media (max-width: 767.98px) {
-    display: block;
     position: relative;
     & .nav-free-quote-button {
       align-items: center;
@@ -145,7 +144,7 @@ $nav-logo-transition: 0.5s;
       right: 5vw;
       padding: 0 calc(0.5rem + 0.5vw);
       position: fixed;
-      top: 12vh;
+      top: $call-now-free-quote-buttons-top-offset;
       z-index: 1;
       &:focus {
         background-color: $tertiary-color;

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-{% load static %}
+
+<!-- Meta Description -->
+{% block metatag %}
+  <meta name="description" content="{% include 'business_information/name.html' %} offers deck & patio washing services in {% include 'business_information/location.html' %} - request a FREE quote today!">
+{% endblock%}{% load static %}
 
 <!-- Custom JavaScript -->
 {% block javascript %} <script src="{% static 'js/services.js' %}"></script> {% endblock %}

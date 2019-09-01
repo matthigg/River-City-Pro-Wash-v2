@@ -6,16 +6,16 @@
 }
 
 .contact-form-heading {
-  background-color: rgba(12, 19, 45, 0.75);
-  border-left: 0px solid rgba(12, 19, 45, 0.75);
+  background-color: rgba(0, 11, 41, 0.75);
+  border-left: 0px solid rgba(0, 11, 41, 0.75);
   border-radius: calc(1rem + 0.1vw) calc(1rem + 0.1vw) 0 0;
-  border-right: 0px solid rgba(12, 19, 45, 0.75);
-  border-top: 0px solid rgba(12, 19, 45, 0.75);
+  border-right: 0px solid rgba(0, 11, 41, 0.75);
+  border-top: 0px solid rgba(0, 11, 41, 0.75);
   padding: calc(0.5rem + 0.25vw);
 }
 
 .contact-form-heading h2 {
-  color: #EEEEEE;
+  color: #EFF4F8;
   font-size: calc(1rem + 1vw);
   font-weight: 700;
   margin-bottom: 0;
@@ -28,7 +28,7 @@
 }
 
 .contact-form {
-  background-color: rgba(12, 19, 45, 0.75);
+  background-color: rgba(0, 11, 41, 0.75);
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
   margin: auto;
   padding: calc(1rem + 1vw);
@@ -36,10 +36,10 @@
 }
 
 .contact-form .contact-form-submit-button {
-  background-color: #EEEEEE;
+  background-color: #EFF4F8;
   border: none;
   border-radius: calc(0.5rem + 0.1vw);
-  color: #0C132D;
+  color: #000B28;
   display: block;
   font-weight: 700;
   font-size: calc(1rem + 0.25vw);
@@ -56,7 +56,7 @@
 
 .contact-form .contact-form-submit-button:hover {
   background-color: #00AEEF;
-  color: #EEEEEE;
+  color: #EFF4F8;
   cursor: pointer;
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;
@@ -69,12 +69,12 @@
 }
 
 .contact-form input {
-  background-color: #EEEEEE;
-  border: 3px solid #EEEEEE;
+  background-color: #EFF4F8;
+  border: 3px solid #EFF4F8;
   border-radius: calc(0.5rem + 0.1vw);
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #0C132D;
+  color: #000B28;
   display: block;
   height: calc(2rem + 1vw);
   outline: none;
@@ -103,7 +103,7 @@
 }
 
 .contact-form label {
-  color: #0C132D;
+  color: #000B28;
   font-size: calc(1rem + 0.25vw);
   font-style: italic;
   left: calc(0.5rem + 0.1vw);
@@ -112,12 +112,12 @@
 }
 
 .contact-form textarea {
-  background-color: #EEEEEE;
-  border: 3px solid #EEEEEE;
+  background-color: #EFF4F8;
+  border: 3px solid #EFF4F8;
   border-radius: calc(0.5rem + 0.1vw);
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #0C132D;
+  color: #000B28;
   display: block;
   outline: none;
   padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
@@ -148,7 +148,7 @@
 .contact-form input:not(:placeholder-shown) ~ label,
 .contact-form textarea:focus ~ label,
 .contact-form textarea:not(:placeholder-shown) ~ label {
-  color: #0C132D;
+  color: #000B28;
   font-size: calc(0.5rem + 0.25vw);
   top: calc(0.05rem + 0.05vw);
   -webkit-transition: 0.15s ease-in;
@@ -161,11 +161,11 @@
 }
 
 .contact-form .required-field-asterisk {
-  color: #0C132D;
+  color: #000B28;
 }
 
 .contact-form .required-field-text {
-  color: #EEEEEE;
+  color: #EFF4F8;
   font-size: calc(1rem + 0.25vw);
   text-align: center;
 }

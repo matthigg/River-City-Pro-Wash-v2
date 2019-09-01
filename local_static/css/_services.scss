@@ -1,0 +1,58 @@
+.beginning-of-page-spacer-mobile {
+  padding-top: calc(#{$call-now-free-quote-buttons-top-offset} + 2rem);
+}
+.service-wrapper {
+  background-color: $primary-color;
+  & .service-header {
+    color: $quinary-color;
+    text-align: center;
+  }
+  & .service-row {
+    padding: calc(1rem + 1vw);
+    & .service-col-image {
+      padding: calc(1rem + 1vw);
+      & .service-image {
+        border-radius: calc(1rem + 1vw);
+        height: 100%;
+        margin: auto;
+        width: 100%;
+      }
+    }
+    & .service-col-text {
+      align-items: center;
+      color: $quinary-color;
+      display: flex;
+      flex-direction: column;
+      font-size: calc(1.25rem + 0.75vw);
+      justify-content: center;
+      padding: calc(1rem + 1vw);
+      text-align: center;
+      & .nav-logo-text {
+        height: calc(1.25rem + 0.75vw);
+        position: relative;
+        bottom: calc(0.1rem + 0.075vw);
+      }
+      & .service-phone-number {
+        font-style: italic;
+        padding: calc(0.5rem + 0.5vw);
+        & .icon-phone {
+          height: calc(1rem + 1vw);
+          fill: $quinary-color;
+        }
+      }
+      & .service-hours-of-operation {
+        font-style: italic;
+        padding: calc(0.5rem + 0.5vw);
+        & .icon-hours-of-operation {
+          fill: none;
+          height: calc(1rem + 1vw);
+          stroke: $quinary-color;
+          stroke-width: calc(0.5rem + 0.5vw);
+        }
+      }
+    }
+    & .service-col-contact-form {
+      padding: calc(1rem + 1vw);
+    }
+  }
+}

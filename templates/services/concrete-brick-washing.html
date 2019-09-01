@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!-- Meta Description -->
+{% block metatag %}
+  <meta name="description" content="{% include 'business_information/name.html' %} offers concrete & brick washing services in {% include 'business_information/location.html' %} - request a FREE quote today!">
+{% endblock%}
+
 <!-- Custom JavaScript -->
 {% block javascript %} <script src="{% static 'js/services.js' %}"></script> {% endblock %}
 
@@ -10,6 +15,46 @@
 <!-- Content -->
 {% block content %}
 
-  <h1>Concrete & Brick Washing Services</h1>
+  <div class="service-wrapper">
+    <div class="beginning-of-page-spacer-mobile"></div>
+
+    <h1 class="service-header">Concrete & Brick Washing Services</h1>
+
+    <section class="row service-row">
+      <div class="col-md-6 service-col-image">
+        <img class="service-image" src="{% static 'img/brick-washing-01.jpg' %}" alt="Brick Washing">
+      </div>
+      <div class="col-md-6 service-col-text">
+        <p>
+          Hard surfaces such as concrete and brick can accumulate 
+          dirt, stains, algae, mold, and other pollutants over time. 
+          If your concrete or brick surfaces are in need of a good 
+          old-fashioned gas-powered scrub-down, contact 
+          {% include 'svg/nav-logo-text.svg' %} today!
+        </p>
+      </div>
+    </section>
+
+    <section class="row service-row">
+      <div class="col-md-6 service-col-text">
+        <p>
+          If you're ready to have your property shining like new, 
+          give us a call or fill out our form to request a FREE 
+          quote and a member from our team will get back to you ASAP!
+        </p>
+        <div class="service-phone-number">
+          {% include 'svg/icon-phone.svg' %}
+          {% include 'business_information/phone-number.html' %}
+        </div>
+        <div class="service-hours-of-operation">
+          {% include 'svg/icon-hours-of-operation.svg' %}
+          {% include 'business_information/hours-of-operation.html' %}
+        </div>
+      </div>
+      <div class="col-md-6 service-col-contact-form">
+        {% include 'contact_form/contact-form.html' %}
+      </div>
+    </section>
+  </div>
 
 {% endblock %}

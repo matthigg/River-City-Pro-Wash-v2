@@ -41,7 +41,6 @@
       }
     }
     & .service-col-text {
-      align-items: center;
       color: $quinary-color;
       display: flex;
       flex-direction: column;
@@ -49,6 +48,7 @@
       justify-content: center;
       padding: calc(1rem + 1vw);
       & .nav-logo-text {
+        fill: $quinary-color;
         height: calc(1.25rem + 0.5vw);
         position: relative;
         bottom: calc(0.1rem + 0.05vw);
@@ -61,8 +61,11 @@
         & .icon-phone {
           fill: $quinary-color;
           height: calc(1rem + 1vw);
-          margin: 0 calc(0.25rem + 0.1vw);
+          margin-right: calc(0.25rem + 0.1vw);
           width: calc(1rem + 1vw);
+        }
+        @media (max-width: 767.98px) {
+          font-size: calc(1rem + 0.25vw);
         }
       }
       & .service-hours-of-operation {
@@ -75,8 +78,11 @@
           stroke: $quinary-color;
           stroke-width: calc(0.25rem + 0.25vw);
           height: calc(1rem + 1vw);
-          margin: 0 calc(0.25rem + 0.1vw);
+          margin-right: calc(0.25rem + 0.1vw);
           width: calc(1rem + 1vw);
+        }
+        @media (max-width: 767.98px) {
+          font-size: calc(0.75rem + 0.25vw);
         }
       }
       &.centered {

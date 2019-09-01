@@ -367,6 +367,12 @@
   background-image: url("/static/img/graffiti-02.jpg");
 }
 
+@media (max-width: 767.98px) {
+  .section-1-row .card .card-img-top {
+    height: 30vh;
+  }
+}
+
 .section-1-row .card .card-body .card-title {
   display: inline-block;
   font-size: calc(1rem + 0.5vw);
@@ -442,6 +448,12 @@
   stroke: #EEEEEE;
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;
+}
+
+@media (max-width: 767.98px) {
+  .section-1-row .card {
+    width: 80vw;
+  }
 }
 
 @media (max-width: 767.98px) {

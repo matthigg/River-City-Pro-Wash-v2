@@ -140,6 +140,9 @@ $card-transition: 0.15s ease-in;
         background-image: url('/static/img/graffiti-02.jpg');
         @extend %card-img;
       }
+      @media (max-width: 767.98px) {
+        height: 30vh;
+      }
     }
     & .card-body {
       & .card-title {
@@ -195,6 +198,9 @@ $card-transition: 0.15s ease-in;
           transition: $card-transition;
         }
       }
+    }
+    @media (max-width: 767.98px) {
+      width: 80vw;
     }
   }
 }

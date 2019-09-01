@@ -7,7 +7,7 @@
 {% endblock%}
 
 <!-- Custom JavaScript -->
-{% block javascript %} <script src="{% static 'js/ourwork.js' %}"></script> {% endblock %}
+{% block javascript %} <script src="{% static 'js/our-work.js' %}"></script> {% endblock %}
 
 <!-- Title -->
 {% block title %} Restore Your Property To New Condition With Pressure Washing Services in {% include 'business_information/location.html' %} | {% include 'business_information/name.html' %} {% endblock %}
@@ -15,6 +15,43 @@
 <!-- Content -->
 {% block content %}
 
-  <h1>Our Work</h1>
+<!-- Our Work Page Background -->
+<div class="our-work-page-background"></div>
+
+<!-- Our Work -->
+<div class="our-work-wrapper">
+
+  <!-- Navbar Spacer -->
+  <div class="navbar-spacer"></div>
+
+  <!-- Spacer for "Call Now" and "Free Quote" buttons -->
+  <div class="beginning-of-page-spacer-mobile"></div>
+
+  <!-- Our Work Title -->
+  <h1 class="our-work-header">Our Work</h1>
+
+  <!-- Our Work Images -->
+  <section class="row our-work-row">
+
+    <!-- BAAP, House 01 -->
+    <div class="section-1-baap-group" 
+      data-id="ba-house-01" 
+      data-src="{% static 'img' %}"
+      data-toggle="modal" 
+      data-target="#modal-baap-template"
+    >
+      <div class="section-1-baap-group-before">
+        <img src="{% static 'img/ba-house-01-before.jpg' %}">
+      </div>
+      <div class="section-1-baap-group-after">
+        <img src="{% static 'img/ba-house-01-after.jpg' %}">
+      </div>
+    </div>
+
+  </section>
+
+  {% include 'modals/our-work-modals.html' %}
+
+</div>
 
 {% endblock %}

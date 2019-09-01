@@ -1,0 +1,46 @@
+{% load static %}
+
+<!-- Our Work Re-usable Modal, BAAP -->
+<div class="modal fade" id="modal-baap-template" tabindex="-1" role="dialog" aria-labelledby="modal-baap-template-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-baap-template-title">
+          {% include 'business_information/name.html' %}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body justify-content-around">
+        <div class="modal-baap-group-before">
+          <img class="modal-baap-group-img-before" src="">
+        </div>
+        <div class="modal-baap-group-after">
+          <img class="modal-baap-group-img-after" src="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Work Re-usable Modal, Single Image -->
+<div class="modal fade" id="modal-single-image-template" tabindex="-1" role="dialog" aria-labelledby="modal-baap-template-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {% include 'business_information/name.html' %}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body justify-content-around">
+        <div class="modal-single-image">
+          <img class="modal-single-image-element" src="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,8 @@
+$landing-page-footer-height-desktop: 60px;
+$landing-page-footer-height-mobile: 100px;
+$navbar-spacer-height-desktop: 142px;
+$navbar-spacer-height-mobile: 58px;
+
 @import 'colors';
 @import 'navbar';
 @import 'index';
@@ -19,8 +24,11 @@ html {
 // This spacer is supposed to accommodate for the space beneath the
 // navbar
 .navbar-spacer {
-  height: 142px;
+  height: $navbar-spacer-height-desktop;
   width: 100%;
+  @media (max-width: 767.98px) {
+    height: $navbar-spacer-height-mobile;
+  }
 }
 
 // No gutters

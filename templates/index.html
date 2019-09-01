@@ -17,8 +17,8 @@
   <section class="row landing-page-row">
     <div class="col-md-7 landing-page-col-left">
       <div class="landing-page-caption">
-        Pressure washing services in Richmond, <br />
-        Manassas, Central & Northern Virginia
+        Offering pressure washing services in
+        {% include 'business_information/location.html' %}
       </div>
     </div>
     <div class="col-md-5 landing-page-col-right">
@@ -28,7 +28,11 @@
 
   <!-- Landing Page Footer -->
   <section class="row landing-page-footer">
-    <div class="landing-page-footer-wrapper">
+    <div class="landing-page-caption-footer">
+      Offering pressure washing services in
+      {% include 'business_information/location.html' %}
+    </div>
+    <div class="landing-page-footer-wrapper landing-page-footer-phone">
       {% include 'svg/icon-phone.svg' %}
       {% include 'business_information/phone-number.html' %}
     </div>

@@ -2,10 +2,11 @@
   background-color: $quinary-color;
   background-image: 
     linear-gradient(
-      rgba(2, 3, 5, 0.25),
-      rgba(2, 3, 5, 0.25),
+      rgba(2, 3, 5, 0.35),
+      rgba(2, 3, 5, 0.35),
     ),
     url('/static/img/house-01.jpg');
+  background-position: center;
   background-size: cover;
   height: 100vh;
   left: 0;
@@ -16,7 +17,7 @@
 }
 
 .landing-page-row {
-  height: calc(100vh - 142px - 60px); // navbar + nav footer height
+  height: calc(100vh - #{$navbar-spacer-height-desktop} - #{$landing-page-footer-height-desktop}); // navbar + landing page footer height
   & .landing-page-col-left {
     padding: calc(1rem + 1vw);
     & .landing-page-caption {
@@ -25,6 +26,7 @@
       font-style: italic;
       font-weight: 600;
       padding: calc(1rem + 1vw);
+      text-align: center;
       @media (max-width: 767.98px) {
         display: none;
       }
@@ -32,6 +34,9 @@
   }
   & .landing-page-col-right {
     padding: calc(1rem + 1vw);
+  }
+  @media (max-width: 767.98px) {
+    height: calc(100vh - #{$navbar-spacer-height-mobile} - #{$landing-page-footer-height-mobile});
   }
 }
 
@@ -44,10 +49,16 @@
   font-size: calc(1rem + 0.5vw);
   font-style: italic;
   justify-content: center;
-  height: 60px;
+  height: $landing-page-footer-height-desktop;
   margin: 0;
   text-align: center;
   width: 100%;
+  & .landing-page-caption-footer {
+    display: none;
+    @media (max-width: 767.98px) {
+      display: block;
+    }
+  }
   & .landing-page-footer-wrapper {
     margin: 0 calc(2rem + 1vw);
     & .icon-hours-of-operation {
@@ -55,14 +66,21 @@
       stroke: $primary-color;
       stroke-width: calc(0.25rem + 0.1vw);
       height: calc(1rem + 1vw);
-      margin: 0 calc(1rem + 0.25vw);
+      margin: 0 calc(0.25rem + 0.1vw);
       width: calc(1rem + 1vw);
     }
     & .icon-phone {
       height: calc(1rem + 1vw);
       fill: $primary-color;
-      margin: 0 calc(1rem + 0.25vw);
+      margin: 0 calc(0.25rem + 0.1vw);
       width: calc(1rem + 1vw);
+    }
+  }
+  @media (max-width: 767.98px) {
+    font-size: calc(0.75rem + 0.75vw);   
+    height: $landing-page-footer-height-mobile;
+    & .landing-page-footer-phone {
+      display: none;
     }
   }
 }

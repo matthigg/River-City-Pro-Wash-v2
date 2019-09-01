@@ -22,6 +22,9 @@
 
 .service-wrapper {
   background-color: $primary-color;
+  & .navbar-spacer {
+    background-color: $primary-color;
+  }
   & .service-header {
     color: $quinary-color;
     text-align: center;

@@ -489,6 +489,10 @@
   background-color: #EFF4F8;
 }
 
+.service-wrapper .navbar-spacer {
+  background-color: #EFF4F8;
+}
+
 .service-wrapper .service-header {
   color: #000B28;
   text-align: center;

@@ -60,6 +60,8 @@
     }
   }
   & .landing-page-footer-wrapper {
+    align-items: center;
+    display: flex;
     margin: 0 calc(2rem + 1vw);
     & .icon-hours-of-operation {
       fill: none;

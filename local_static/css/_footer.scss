@@ -6,6 +6,7 @@ footer {
   color: $primary-color;
   text-align: center;
   & .footer-back-to-top {
+    padding: calc(1rem + 1vw);
     & .icon-back-to-top {
       height: calc(2rem);
       fill: $primary-color;
@@ -53,8 +54,8 @@ footer {
     }
   }
   & .footer-copyright {
-    font-size: calc(0.5rem + 0.5vw);
-    padding: calc(0.5rem + 0.5vw);
+    font-size: calc(0.75rem + 0.75vw);
+    padding: calc(1rem + 1vw);
   }
   & .footer-flair {
     padding: calc(2rem + 1vw);
@@ -69,6 +70,20 @@ footer {
     & .logo-pittsburgh-penguins {
       padding: calc(0.5rem + 0.5vw);
       width: 20vw;
+    }
+    @media (max-width: 767.98px) {
+      & .logo-facebook {
+        padding: calc(1rem + 1vw);
+        width: 60vw;
+      }
+      & .logo-google {
+        padding: calc(1rem + 1vw);
+        width: 60vw;
+      }
+      & .logo-pittsburgh-penguins {
+        padding: calc(1rem + 1vw);
+        width: 60vw;
+      }
     }
   }
   & .footer-map {
@@ -85,5 +100,15 @@ footer {
       font-size: calc(0.5rem + 0.35vw);
       padding: calc(0.5rem + 0.5vw);
     }
+    @media (max-width: 767.98px) {
+      padding-bottom: 0;
+      padding-top: 0;
+      & .footer-map-iframe {
+        height: 50vh;
+      }
+    }
+  }
+  & .footer-recaptcha {
+    padding: calc(1rem + 1vw);
   }
 }

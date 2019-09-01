@@ -269,6 +269,12 @@
 }
 
 .landing-page-footer .landing-page-footer-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 calc(2rem + 1vw);
 }
 
@@ -469,6 +475,10 @@ footer {
   text-align: center;
 }
 
+footer .footer-back-to-top {
+  padding: calc(1rem + 1vw);
+}
+
 footer .footer-back-to-top .icon-back-to-top {
   height: calc(2rem);
   fill: #EEEEEE;
@@ -526,8 +536,8 @@ footer .footer-contact .footer-contact-text {
 }
 
 footer .footer-copyright {
-  font-size: calc(0.5rem + 0.5vw);
-  padding: calc(0.5rem + 0.5vw);
+  font-size: calc(0.75rem + 0.75vw);
+  padding: calc(1rem + 1vw);
 }
 
 footer .footer-flair {
@@ -547,6 +557,21 @@ footer .footer-flair .logo-google {
 footer .footer-flair .logo-pittsburgh-penguins {
   padding: calc(0.5rem + 0.5vw);
   width: 20vw;
+}
+
+@media (max-width: 767.98px) {
+  footer .footer-flair .logo-facebook {
+    padding: calc(1rem + 1vw);
+    width: 60vw;
+  }
+  footer .footer-flair .logo-google {
+    padding: calc(1rem + 1vw);
+    width: 60vw;
+  }
+  footer .footer-flair .logo-pittsburgh-penguins {
+    padding: calc(1rem + 1vw);
+    width: 60vw;
+  }
 }
 
 footer .footer-map {
@@ -574,6 +599,20 @@ footer .footer-map .footer-map-iframe {
 footer .footer-map .footer-map-text {
   font-size: calc(0.5rem + 0.35vw);
   padding: calc(0.5rem + 0.5vw);
+}
+
+@media (max-width: 767.98px) {
+  footer .footer-map {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  footer .footer-map .footer-map-iframe {
+    height: 50vh;
+  }
+}
+
+footer .footer-recaptcha {
+  padding: calc(1rem + 1vw);
 }
 
 * {

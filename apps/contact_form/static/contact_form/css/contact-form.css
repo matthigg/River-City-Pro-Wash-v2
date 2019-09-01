@@ -29,10 +29,7 @@
 
 .contact-form {
   background-color: rgba(12, 19, 45, 0.75);
-  border-bottom: 0px solid rgba(12, 19, 45, 0.75);
-  border-left: 0px solid rgba(12, 19, 45, 0.75);
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
-  border-right: 0px solid rgba(12, 19, 45, 0.75);
   margin: auto;
   padding: calc(1rem + 1vw);
   width: 100%;
@@ -47,7 +44,7 @@
   font-weight: 700;
   font-size: calc(1rem + 0.25vw);
   margin: auto;
-  padding: calc(0.25rem + 0.5vw) calc(1rem + 1vw);
+  padding: calc(0.25rem + 0.25vw) calc(1rem + 1vw);
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;
 }
@@ -71,12 +68,9 @@
           box-shadow: none;
 }
 
-.contact-form fieldset {
-  border: 0;
-}
-
 .contact-form input {
-  border: 2px solid #0C132D;
+  background-color: #EEEEEE;
+  border: 3px solid #EEEEEE;
   border-radius: calc(0.5rem + 0.1vw);
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -105,7 +99,7 @@
 }
 
 .contact-form input:focus {
-  border: 2px solid #0C132D;
+  border: 3px solid #00AEEF;
 }
 
 .contact-form label {
@@ -118,7 +112,8 @@
 }
 
 .contact-form textarea {
-  border: 2px solid #0C132D;
+  background-color: #EEEEEE;
+  border: 3px solid #EEEEEE;
   border-radius: calc(0.5rem + 0.1vw);
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -146,7 +141,7 @@
 }
 
 .contact-form textarea:focus {
-  border: 2px solid #0C132D;
+  border: 3px solid #00AEEF;
 }
 
 .contact-form input:focus ~ label,
@@ -154,7 +149,7 @@
 .contact-form textarea:focus ~ label,
 .contact-form textarea:not(:placeholder-shown) ~ label {
   color: #0C132D;
-  font-size: calc(0.75rem + 0.1vw);
+  font-size: calc(0.5rem + 0.25vw);
   top: calc(0.05rem + 0.05vw);
   -webkit-transition: 0.15s ease-in;
   transition: 0.15s ease-in;

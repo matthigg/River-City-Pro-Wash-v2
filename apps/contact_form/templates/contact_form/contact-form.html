@@ -1,3 +1,7 @@
+{% load static %}
+
+<script src="{% static 'js/contact-form.js' %}"></script>
+
 <!-- Show any messages/errors after a form submission (if any exist) -->
 {% if messages %}
   {% for message in messages %}
@@ -18,8 +22,9 @@
 {% endif %}
 
 <!-- Contact Form -->
-<div class="contact-form-heading">
-    <h2>Request A <span class="contact-form-heading-emphasis">FREE</span> Estimate</h2>
+<div class="contact-form-wrapper">
+  <div class="contact-form-heading">
+    <h2>Request A <span class="contact-form-heading-emphasis">FREE</span> Quote</h2>
   </div>
   <form class="contact-form" action="{% url 'contact-form:submit' %}" method="post">
     <fieldset>
@@ -31,6 +36,7 @@
         </div>
       {% endfor %}
       <p class="required-field-text">* indicates a required field</p>
-      <button class="contact-form-submit-button" type="submit" value="Submit">Get Your <span class="contact-form-submit-button-emphasis">FREE</span> Estimate!</button>
+      <button class="contact-form-submit-button" type="submit" value="Submit">Get Your <span class="contact-form-submit-button-emphasis">FREE</span> Quote!</button>
     </fieldset>
   </form>
+</div>

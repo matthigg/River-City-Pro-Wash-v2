@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Minimize logo & darken navbar background when user scrolls down
   window.addEventListener('scroll', () => {
-    console.log('scroll')
     if (window.scrollY > 0) {
       document.querySelector('.navbar').classList.add('solid-background')
       document.querySelector('.nav-logo-text').classList.add('minimized')

@@ -42,10 +42,7 @@ $contact-form-transition: 0.15s ease-in;
 
 .contact-form {
   background-color: $quinary-color-rgba;
-  border-bottom: $contact-form-border;
-  border-left: $contact-form-border;
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
-  border-right: $contact-form-border;
   margin: auto;
   padding: calc(1rem + 1vw);
   width: 100%;
@@ -58,7 +55,7 @@ $contact-form-transition: 0.15s ease-in;
     font-weight: 700;
     font-size: calc(1rem + 0.25vw);
     margin: auto;
-    padding: calc(0.25rem + 0.5vw) calc(1rem + 1vw);
+    padding: calc(0.25rem + 0.25vw) calc(1rem + 1vw);
     transition: $contact-form-transition;
     & .contact-form-submit-button-emphasis {
       font-style: italic;
@@ -75,11 +72,9 @@ $contact-form-transition: 0.15s ease-in;
       box-shadow: none;
     }
   }
-  & fieldset {
-    border: 0;
-  }
   & input {
-    border: 2px solid $quinary-color;
+    background-color: $primary-color;
+    border: 3px solid $primary-color;
     border-radius: calc(0.5rem + 0.1vw);
     box-shadow: none;
     color: $quinary-color;
@@ -92,7 +87,7 @@ $contact-form-transition: 0.15s ease-in;
       opacity: 0;
     }
     &:focus {
-      border: 2px solid $quinary-color;
+      border: 3px solid $tertiary-color;
     }
   }
   & label {
@@ -104,7 +99,8 @@ $contact-form-transition: 0.15s ease-in;
     top: 0;
   }
   & textarea {
-    border: 2px solid $quinary-color;
+    background-color: $primary-color;
+    border: 3px solid $primary-color;
     border-radius: calc(0.5rem + 0.1vw);
     box-shadow: none;
     color: $quinary-color;
@@ -116,7 +112,7 @@ $contact-form-transition: 0.15s ease-in;
       opacity: 0;
     }
     &:focus {
-      border: 2px solid $quinary-color;
+      border: 3px solid $tertiary-color;
     }
   }
   & input:focus ~ label,
@@ -124,7 +120,7 @@ $contact-form-transition: 0.15s ease-in;
   & textarea:focus ~ label,
   & textarea:not(:placeholder-shown) ~ label {
     color: $quinary-color;
-    font-size: calc(0.75rem + 0.1vw);
+    font-size: calc(0.5rem + 0.25vw);
     top: calc(0.05rem + 0.05vw);
     transition: $contact-form-transition;
   }

@@ -1,0 +1,251 @@
+.beginning-of-page-spacer-mobile {
+  padding-top: calc(#{$call-now-free-quote-buttons-top-offset} + 2rem);
+}
+
+.our-work-page-background {
+  background-color: $quinary-color;
+  background-image: 
+    linear-gradient(
+      rgba(2, 3, 5, 0.35),
+      rgba(2, 3, 5, 0.35),
+    ),
+    url('/static/img/house-01.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+$baap-transition: 0.2s ease-out;
+
+// Our Work Images
+.our-work-wrapper {
+  background-color: $primary-color;
+  & .navbar-spacer {
+    background-color: $primary-color;
+  }
+  & .our-work-header {
+    color: $quinary-color;
+    text-align: center;
+  }
+  & .our-work-row {
+    background-color: $primary-color;
+    justify-content: space-around;
+    padding: 0 calc(1rem + 3vw);
+    & .our-work-subsection-heading {
+      color: $quinary-color;
+      font-size: calc(1.25rem + 0.5vw);
+      padding-top: calc(1rem + 1vw);
+      text-align: center;
+    }
+    & .our-work-baap-group {
+      display: flex;
+      justify-content: space-around;
+      margin: calc(1rem + 1vw) 0;
+      & .our-work-baap-group-before {
+        border: calc(0.15rem + 0.15vw) solid $quinary-color;
+        margin-right: calc(0.25rem + 0.25vw);
+        position: relative;
+        &::after {
+          content: '';
+          height: 100%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+        &::before {
+          background-color: $quinary-color;
+          color: $primary-color;
+          content: "BEFORE";
+          font-size: calc(0.5rem + 0.25vw);
+          font-style: italic;
+          font-weight: 600;
+          left: calc(0.25rem + 0.25vw);
+          padding: 0 calc(0.1rem + 0.1vw);
+          position: absolute;
+          top: calc(0.25rem + 0.25vw);
+          z-index: 1;
+        }
+      }
+      & .our-work-baap-group-after {
+        border: calc(0.15rem + 0.15vw) solid $quinary-color;
+        position: relative;
+        &::after {
+          content: '';
+          height: 100%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+        &::before {
+          background-color: $quinary-color;
+          color: $primary-color;
+          content: "AFTER";
+          font-size: calc(0.5rem + 0.25vw);
+          font-style: italic;
+          font-weight: 600;
+          left: calc(0.25rem + 0.25vw);
+          padding: 0 calc(0.1rem + 0.1vw);
+          position: absolute;
+          top: calc(0.25rem + 0.25vw);
+          z-index: 1;
+        }
+      }
+      & img {
+        border: none;
+        height: 15vw;
+        object-fit: cover;
+        width: 20vw;
+        @media (max-width: 767.98px) {
+          height: 20vh;
+          width: 40vw;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        & .our-work-baap-group-after,
+        & .our-work-baap-group-before {
+          &::after {
+            height: 100%;
+            opacity: 1;
+            width: 100%;
+            transition: $baap-transition;
+            @include quinary-color-rgba-background(0.5);
+          }
+        }
+      }
+    }
+    & .our-work-single-image-wrapper {
+      border: calc(0.15rem + 0.15vw) solid $quinary-color;
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      margin: calc(1rem + 1vw) 0;
+      & img {
+        height: 15vw;
+        object-fit: cover;
+        width: 20vw;
+        @media (max-width: 767.98px) {
+          height: 20vh;
+          width: 40vw;
+        }
+      }
+      &::after {
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      &:hover {
+        cursor: pointer;
+        &::after {
+          height: 100%;
+          opacity: 1;
+          width: 100%;
+          transition: $baap-transition;
+          @include quinary-color-rgba-background(0.5);
+        }
+      }
+    }
+  }
+
+  // Our Work Modals
+  .modal {
+    & .modal-dialog {
+      max-width: max-content;
+      margin: auto;
+    }
+    & .modal-body {
+      display: flex;
+      @media (max-width: 767.98px) {
+        display: block;
+      }
+    }
+    & .modal-baap-group-before {
+      border: calc(0.15rem + 0.15vw) solid $quinary-color;
+      margin-right: calc(0.25rem + 0.25vw);
+      position: relative;
+      width: 100%;
+      &::before {
+        background-color: $quinary-color;
+        color: $primary-color;
+        content: "BEFORE";
+        font-size: calc(1rem + 0.25vw);
+        font-style: italic;
+        font-weight: 600;
+        left: calc(0.25rem + 0.25vw);
+        padding: 0 calc(0.5rem + 0.1vw);
+        position: absolute;
+        top: calc(0.25rem + 0.25vw);
+        @media (max-width: 767.98px) {
+          font-size: calc(0.5rem + 0.1vw);
+        }
+      }
+      @media (max-width: 767.98px) {
+        margin-bottom: calc(0.25rem + 0.25vw);
+        margin-right: 0;
+      }
+    }
+    & .modal-baap-group-after {
+      border: calc(0.15rem + 0.15vw) solid $quinary-color;
+      position: relative;
+      &::before {
+        background-color: $quinary-color;
+        color: $primary-color;
+        content: "AFTER";
+        font-size: calc(1rem + 0.25vw);
+        font-style: italic;
+        font-weight: 600;
+        left: calc(0.25rem + 0.25vw);
+        padding: 0 calc(0.5rem + 0.1vw);
+        position: absolute;
+        top: calc(0.25rem + 0.25vw);
+        @media (max-width: 767.98px) {
+          font-size: calc(0.5rem + 0.1vw);
+        }
+      }
+    }
+    & .modal-single-image {
+      border: calc(0.15rem + 0.15vw) solid $quinary-color;
+      width: 100%;
+    }
+    & .modal-content {
+      border: 0;
+    }
+    & .modal-header {
+      background-color: $quinary-color;
+    }
+    & .modal-title {
+      color: $primary-color;
+      font-family: 'Stencil', 'Segoe UI', sans-serif;
+      font-size: calc(1rem + 0.5vw);
+    }
+    & img {
+      height: 100%;
+      width: 45vw;
+      object-fit: cover;
+      @media (max-width: 767.98px) {
+        height: 100%;
+        width: 75vw;
+      }
+    }
+    & .close {
+      color: $primary-color;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

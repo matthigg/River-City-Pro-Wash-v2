@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   
+  // Show 'FREE Quote' button
+  if (window.innerWidth < 768) {
+    document.querySelector('.nav-free-quote').style.display = 'block'
+  }
+
   // Modals
   //
   // When a <div> .section-1-baap-group element or any of its children (all of 
@@ -15,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // as the data-id, and the data-src attribute's value, together with the data-id 
   // attribute's value is then used to construct a path to the before & after 
   // images that we're looking for.
-  const baap_groups = document.querySelectorAll('.section-1-baap-group');
+  const baap_groups = document.querySelectorAll('.our-work-baap-group');
   baap_groups.forEach((baap_group) => {
     baap_group.addEventListener('click', (event) => {
       let element = event.target;

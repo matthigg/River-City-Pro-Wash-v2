@@ -11,3 +11,19 @@ $tertiary-color-rgba: rgba(0, 174, 239, 0.75);
 $quarternary-color-rgba: rgba(38, 34, 98, 0.75);
 $quinary-color-rgba: rgba(0, 11, 41, 0.75);
 // $quinary-color-rgba: rgba(12, 19, 45, 0.75);
+
+@mixin primary-color-rgba-background($opacity) {
+  background-color: rgba(238, 238, 238, $opacity);
+}
+@mixin secondary-color-rgba-background($opacity) {
+  background-color: rgba(171, 228, 249, $opacity);
+}
+@mixin tertiary-color-rgba-background($opacity) {
+  background-color: rgba(0, 174, 239, $opacity);
+}
+@mixin quarternary-color-rgba-background($opacity) {
+  background-color: rgba(38, 34, 98, $opacity);
+}
+@mixin quinary-color-rgba-background($opacity) {
+  background-color: rgba(0, 11, 41, $opacity);
+}

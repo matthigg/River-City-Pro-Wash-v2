@@ -2,7 +2,7 @@
   padding-top: calc(#{$call-now-free-quote-buttons-top-offset} + 2rem);
 }
 
-.service-page-background {
+.contact-page-background {
   background-color: $quinary-color;
   background-image: 
     linear-gradient(
@@ -20,27 +20,19 @@
   z-index: -1;
 }
 
-.service-wrapper {
+
+.contact-wrapper {
   background-color: $primary-color;
   & .navbar-spacer {
     background-color: $primary-color;
   }
-  & .service-header {
+  & .contact-header {
     color: $quinary-color;
     text-align: center;
   }
-  & .service-row {
+  & .contact-row {
     padding: calc(1rem + 1vw);
-    & .service-col-image {
-      padding: calc(1rem + 1vw);
-      & .service-image {
-        border-radius: calc(1rem + 1vw);
-        height: 100%;
-        margin: auto;
-        width: 100%;
-      }
-    }
-    & .service-col-text {
+    & .contact-col-text {
       color: $quinary-color;
       display: flex;
       flex-direction: column;
@@ -89,7 +81,7 @@
         text-align: center;
       }
     }
-    & .service-col-contact-form {
+    & .contact-col-contact-form {
       padding: calc(1rem + 1vw);
     }
   }

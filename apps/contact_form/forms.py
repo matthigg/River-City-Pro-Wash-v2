@@ -22,7 +22,7 @@ class CreateContactForm(ModelForm):
       'phone': TextInput(attrs={'placeholder': 'phone'}),
       'message': Textarea(attrs={
         'placeholder': 'message',
-        'rows': 6,
+        'rows': 4,
         'cols': 40,
         }),
     }

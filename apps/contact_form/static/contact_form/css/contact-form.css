@@ -16,7 +16,7 @@
 
 .contact-form-heading h2 {
   color: #EFF4F8;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1rem + 0.5vw);
   font-weight: 700;
   margin-bottom: 0;
   text-align: center;
@@ -31,7 +31,7 @@
   background-color: rgba(0, 11, 41, 0.75);
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
   margin: auto;
-  padding: calc(1rem + 1vw);
+  padding: calc(0.75rem + 0.75vw);
   width: 100%;
 }
 

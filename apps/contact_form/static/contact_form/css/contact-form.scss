@@ -31,7 +31,7 @@ $contact-form-transition: 0.15s ease-in;
   padding: calc(0.5rem + 0.25vw) calc(0.5rem + 0.25vw) 0 calc(0.5rem + 0.25vw);
   & h2 {
     color: $primary-color;
-    font-size: calc(1rem + 1vw);
+    font-size: calc(1rem + 0.5vw);
     font-weight: 700;
     margin-bottom: 0;
     text-align: center;
@@ -46,7 +46,7 @@ $contact-form-transition: 0.15s ease-in;
   background-color: $quinary-color-rgba;
   border-radius: 0 0 calc(1rem + 0.1vw) calc(1rem + 0.1vw);
   margin: auto;
-  padding: calc(1rem + 1vw);
+  padding: calc(0.75rem + 0.75vw);
   width: 100%;
   & .contact-form-submit-button {
     background-color: $primary-color;

@@ -7,7 +7,7 @@ $nav-logo-transition: 0.25s;
   padding-right: calc(1rem + 1vw);
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   & .navbar-nav {
     & .nav-item {
       position: relative;
@@ -111,7 +111,7 @@ $nav-logo-transition: 0.25s;
       padding: 0 calc(0.5rem + 0.5vw);
       position: fixed;
       top: $call-now-free-quote-buttons-top-offset;
-      z-index: 1;
+      z-index: 2;
       & .icon-phone {
         height: 2rem;
         fill: $primary-color;
@@ -145,7 +145,7 @@ $nav-logo-transition: 0.25s;
       padding: 0 calc(0.5rem + 0.5vw);
       position: fixed;
       top: $call-now-free-quote-buttons-top-offset;
-      z-index: 1;
+      z-index: 2;
       &:focus {
         background-color: $tertiary-color;
         box-shadow: none;

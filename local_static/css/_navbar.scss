@@ -47,7 +47,7 @@ $nav-logo-transition: 0.25s;
   & .navbar-brand {
     fill: $primary-color;
     & .nav-logo-text {
-      height: calc(1.5rem + 1.5vw);
+      height: calc(1.25rem + 1.25vw);
       padding: calc(0.1rem + 0.1vw);
       transition: $nav-logo-transition;
       &.minimized {
@@ -56,7 +56,7 @@ $nav-logo-transition: 0.25s;
     }
     & .nav-logo-wand-subtext,
     & .nav-logo-wand-subtext-wrapper {
-      height: calc(1.65rem + 1.65vw);
+      height: calc(1.45rem + 1.45vw);
       padding: calc(0.1rem + 0.1vw);
       transition: $nav-logo-transition;
       &.minimized {

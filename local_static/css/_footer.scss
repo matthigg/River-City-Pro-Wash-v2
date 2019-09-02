@@ -51,6 +51,12 @@ footer {
     & .footer-contact-text {
       font-size: calc(1rem + 0.25vw);
       padding: calc(0.5rem + 0.5vw) 0;
+      & .nav-logo-text {
+        bottom: calc(0.1rem + 0.05vw);
+        fill: $primary-color;
+        height: calc(1rem + 0.25vw);
+        position: relative;
+      }
     }
   }
   & .footer-copyright {

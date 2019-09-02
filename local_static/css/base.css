@@ -970,6 +970,13 @@ footer .footer-contact .footer-contact-text {
   padding: calc(0.5rem + 0.5vw) 0;
 }
 
+footer .footer-contact .footer-contact-text .nav-logo-text {
+  bottom: calc(0.1rem + 0.05vw);
+  fill: #EFF4F8;
+  height: calc(1rem + 0.25vw);
+  position: relative;
+}
+
 footer .footer-copyright {
   font-size: calc(0.75rem + 0.75vw);
   padding: calc(1rem + 1vw);

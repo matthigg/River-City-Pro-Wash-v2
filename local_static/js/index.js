@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const contact_form = document.querySelector('.contact-form-wrapper')
   const navbar = document.querySelector('.navbar')
   const landing_page_footer = document.querySelector('.landing-page-footer')
-  if (contact_form.offsetHeight > window.innerHeight - (navbar.offsetHeight + landing_page_footer.offsetHeight + 60)) {
+  if (contact_form.offsetHeight > window.innerHeight - (navbar.offsetHeight + landing_page_footer.offsetHeight + 20)) {
     contact_form.style.display = "none"
   } 
 })

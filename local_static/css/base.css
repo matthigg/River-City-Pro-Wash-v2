@@ -976,6 +976,16 @@ footer .footer-copyright {
 }
 
 footer .footer-flair {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: calc(2rem + 1vw);
 }
 
@@ -994,7 +1004,22 @@ footer .footer-flair .logo-pittsburgh-penguins {
   width: 20vw;
 }
 
-@media (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
+  footer .footer-flair .logo-facebook {
+    padding: calc(1rem + 1vw);
+    width: 40vw;
+  }
+  footer .footer-flair .logo-google {
+    padding: calc(1rem + 1vw);
+    width: 40vw;
+  }
+  footer .footer-flair .logo-pittsburgh-penguins {
+    padding: calc(1rem + 1vw);
+    width: 40vw;
+  }
+}
+
+@media (max-width: 575.98px) {
   footer .footer-flair .logo-facebook {
     padding: calc(1rem + 1vw);
     width: 60vw;

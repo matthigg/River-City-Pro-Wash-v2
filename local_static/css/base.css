@@ -13,7 +13,7 @@
 
 .navbar .navbar-nav .nav-item .nav-link {
   color: #EFF4F8;
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(0.75rem + 0.75vw);
 }
 
 .navbar .navbar-nav .nav-item .nav-link::before {

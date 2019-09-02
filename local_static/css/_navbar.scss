@@ -13,7 +13,7 @@ $nav-logo-transition: 0.5s;
       position: relative;
       & .nav-link {
         color: $primary-color;
-        font-size: calc(1rem + 0.5vw);
+        font-size: calc(0.75rem + 0.75vw);
         &::before {
           background-color: $primary-color;
           content: '';

@@ -11,7 +11,7 @@
   border-radius: calc(1rem + 0.1vw) calc(1rem + 0.1vw) 0 0;
   border-right: 0px solid rgba(0, 11, 41, 0.75);
   border-top: 0px solid rgba(0, 11, 41, 0.75);
-  padding: calc(0.5rem + 0.25vw);
+  padding: calc(0.5rem + 0.25vw) calc(0.5rem + 0.25vw) 0 calc(0.5rem + 0.25vw);
 }
 
 .contact-form-heading h2 {

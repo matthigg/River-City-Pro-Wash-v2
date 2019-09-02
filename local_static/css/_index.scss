@@ -28,7 +28,7 @@
     padding: calc(1rem + 1vw);
     & .landing-page-caption {
       color: $primary-color;
-      font-size: calc(1rem + 0.5vw);
+      font-size: calc(1rem + 0.25vw);
       font-style: italic;
       font-weight: 600;
       padding: calc(1rem + 1vw);
@@ -52,7 +52,7 @@
   color: $primary-color;
   display: flex;
   flex-direction: row;
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(1rem + 0.25vw);
   font-style: italic;
   justify-content: center;
   height: $landing-page-footer-height-desktop;
@@ -78,14 +78,14 @@
       width: calc(1rem + 1vw);
     }
     & .icon-phone {
-      height: calc(1rem + 1vw);
+      height: calc(1rem + 0.5vw);
       fill: $primary-color;
       margin: 0 calc(0.25rem + 0.1vw);
-      width: calc(1rem + 1vw);
+      width: calc(1rem + 0.5vw);
     }
   }
   @media (max-width: 767.98px) {
-    font-size: calc(0.75rem + 0.75vw);   
+    font-size: calc(0.75rem + 0.5vw);   
     height: $landing-page-footer-height-mobile;
     & .landing-page-footer-phone {
       display: none;

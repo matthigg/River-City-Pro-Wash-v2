@@ -28,7 +28,7 @@ $contact-form-transition: 0.15s ease-in;
   border-radius: calc(1rem + 0.1vw) calc(1rem + 0.1vw) 0 0;
   border-right: $contact-form-border;
   border-top: $contact-form-border;
-  padding: calc(0.5rem + 0.25vw);
+  padding: calc(0.5rem + 0.25vw) calc(0.5rem + 0.25vw) 0 calc(0.5rem + 0.25vw);
   & h2 {
     color: $primary-color;
     font-size: calc(1rem + 1vw);

@@ -3,19 +3,6 @@ from apps.contact_form.forms import CreateContactForm
 
 # Main Navigation
 
-def index(request):
-  form = CreateContactForm
-  context = { 'form': form, }
-  return render(request, 'index.html', context)
-
-def services(request):
-  context = {}
-  return render(request, 'services.html', context)
-
-def our_work(request):
-  context = {}
-  return render(request, 'our-work.html', context)
-
 def contact(request):
   form = CreateContactForm
   context = { 'form': form, }
@@ -24,6 +11,23 @@ def contact(request):
 def faq(request):
   context = {}
   return render(request, 'faq.html', context)
+
+def index(request):
+  form = CreateContactForm
+  context = { 'form': form, }
+  return render(request, 'index.html', context)
+
+def our_work(request):
+  context = {}
+  return render(request, 'our-work.html', context)
+
+def services(request):
+  context = {}
+  return render(request, 'services.html', context)
+
+def thanks(request):
+  context = {}
+  return render(request, 'thanks.html', context)
 
 # Services
 

@@ -1,0 +1,49 @@
+.beginning-of-page-spacer-mobile {
+  padding-top: calc(#{$call-now-free-quote-buttons-top-offset} + 2rem);
+}
+
+.thanks-page-background {
+  background-color: $quinary-color;
+  background-image: 
+    linear-gradient(
+      rgba(2, 3, 5, 0.35),
+      rgba(2, 3, 5, 0.35),
+    ),
+    url('/static/img/house-01.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.thanks-wrapper {
+  background-color: $primary-color;
+  & .navbar-spacer {
+    background-color: $primary-color;
+  }
+  & .thanks-header {
+    color: $quinary-color;
+    margin-bottom: calc(2rem + 2vw);
+    text-align: center;
+  }
+  & .thanks-row {
+    color: $quinary-color;
+    padding: calc(1rem + 1vw);
+    & .thanks-col {
+      font-size: calc(1rem + 0.25vw);
+    }
+    & .thanks-image {
+      & img {
+        border-radius: calc(1rem + 1vw);
+        display: block;
+        margin: calc(1rem + 1vw) auto;
+        object-fit: cover;
+        width: 50vw;
+      }
+    }
+  }
+}

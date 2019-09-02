@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Meta Description -->
+{% block metatag %}
+  <meta name="description" content="">
+{% endblock%}
+
+<!-- Custom JavaScript -->
+{% block javascript %} <script src="{% static 'js/thanks.js' %}"></script> {% endblock %}
+
+<!-- Title -->
+{% block title %} Thanks for contacting {% include 'business_information/name.html' %}! {% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<!-- Thanks Page Background -->
+<div class="thanks-page-background"></div>
+
+<!-- Thanks -->
+<div class="thanks-wrapper">
+
+  <!-- Navbar Spacer -->
+  <div class="navbar-spacer"></div>
+
+  <!-- Spacer for "Call Now" and "Free Quote" buttons -->
+  <div class="beginning-of-page-spacer-mobile"></div>
+
+  <!-- Thanks Header -->
+  <h1 class="thanks-header">Your Message Has Been Sent!</h1>
+
+  <!-- Thanks -->
+  <section class="row thanks-row">
+
+    <!-- Thanks Spacer -->
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 thanks-col">
+      We will be in touch with you as soon as possible! If you have further 
+      questions or need to contact us immediately, don't hesitate to call us 
+      at {% include 'business_information/phone-number.html' %}.
+      <div class="thanks-image">
+        <img src="{% static 'img/thanks.jpg' %}" alt="Thanks!">
+      </div>
+    </div>
+
+    <!-- Thanks Spacer -->
+    <div class="col-md-3"></div>
+
+  </section>
+</div>
+
+{% endblock %}

@@ -10,8 +10,8 @@ def submit(request):
     # object with a success message, and redirect to contact.html
     if form.is_valid():
       form.save()
-      messages.add_message(request, messages.INFO, 'Form is valid!')
-      return redirect('contact')
+      # messages.add_message(request, messages.INFO, 'Form is valid!')
+      return redirect('thanks')
 
     # Django stores error messages in form.error. Create & send a new
     # blank empty form when there's an error.

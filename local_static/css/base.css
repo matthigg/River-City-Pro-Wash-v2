@@ -1243,6 +1243,56 @@ footer .footer-recaptcha {
   padding: calc(1rem + 1vw);
 }
 
+.beginning-of-page-spacer-mobile {
+  padding-top: calc(12vh + 2rem);
+}
+
+.thanks-page-background {
+  background-color: #000B28;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 3, 5, 0.35)), to(rgba(2, 3, 5, 0.35))), url("/static/img/house-01.jpg");
+  background-image: linear-gradient(rgba(2, 3, 5, 0.35), rgba(2, 3, 5, 0.35)), url("/static/img/house-01.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.thanks-wrapper {
+  background-color: #EFF4F8;
+}
+
+.thanks-wrapper .navbar-spacer {
+  background-color: #EFF4F8;
+}
+
+.thanks-wrapper .thanks-header {
+  color: #000B28;
+  margin-bottom: calc(2rem + 2vw);
+  text-align: center;
+}
+
+.thanks-wrapper .thanks-row {
+  color: #000B28;
+  padding: calc(1rem + 1vw);
+}
+
+.thanks-wrapper .thanks-row .thanks-col {
+  font-size: calc(1rem + 0.25vw);
+}
+
+.thanks-wrapper .thanks-row .thanks-image img {
+  border-radius: calc(1rem + 1vw);
+  display: block;
+  margin: calc(1rem + 1vw) auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50vw;
+}
+
 * {
   margin: 20;
   padding: 0;

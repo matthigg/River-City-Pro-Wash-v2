@@ -1019,6 +1019,51 @@
   padding: calc(1rem + 1vw);
 }
 
+.beginning-of-page-spacer-mobile {
+  padding-top: calc(12vh + 2rem);
+}
+
+.faq-page-background {
+  background-color: #000B28;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 3, 5, 0.35)), to(rgba(2, 3, 5, 0.35))), url("/static/img/house-01.jpg");
+  background-image: linear-gradient(rgba(2, 3, 5, 0.35), rgba(2, 3, 5, 0.35)), url("/static/img/house-01.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.faq-wrapper {
+  background-color: #EFF4F8;
+}
+
+.faq-wrapper .navbar-spacer {
+  background-color: #EFF4F8;
+}
+
+.faq-wrapper .faq-header {
+  color: #000B28;
+  margin-bottom: calc(2rem + 2vw);
+  text-align: center;
+}
+
+.faq-wrapper .faq-row {
+  color: #000B28;
+  padding: calc(1rem + 1vw);
+}
+
+.faq-wrapper .faq-row .faq-col h2 {
+  font-size: calc(1rem + 0.5vw);
+}
+
+.faq-wrapper .faq-row .faq-col p {
+  font-size: calc(1rem + 0.25vw);
+}
+
 footer {
   background-color: rgba(0, 11, 41, 0.75);
   padding-bottom: calc(2rem + 2vw);

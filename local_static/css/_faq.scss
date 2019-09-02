@@ -1,0 +1,45 @@
+.beginning-of-page-spacer-mobile {
+  padding-top: calc(#{$call-now-free-quote-buttons-top-offset} + 2rem);
+}
+
+.faq-page-background {
+  background-color: $quinary-color;
+  background-image: 
+    linear-gradient(
+      rgba(2, 3, 5, 0.35),
+      rgba(2, 3, 5, 0.35),
+    ),
+    url('/static/img/house-01.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.faq-wrapper {
+  background-color: $primary-color;
+  & .navbar-spacer {
+    background-color: $primary-color;
+  }
+  & .faq-header {
+    color: $quinary-color;
+    margin-bottom: calc(2rem + 2vw);
+    text-align: center;
+  }
+  & .faq-row {
+    color: $quinary-color;
+    padding: calc(1rem + 1vw);
+    & .faq-col {
+      & h2 {
+        font-size: calc(1rem + 0.5vw);
+      }
+      & p {
+        font-size: calc(1rem + 0.25vw);
+      }
+    }
+  }
+}

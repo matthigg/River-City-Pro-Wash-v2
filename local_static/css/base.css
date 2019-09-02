@@ -53,8 +53,8 @@
 .navbar .navbar-brand .nav-logo-text {
   height: calc(1.75rem + 1.75vw);
   padding: calc(0.1rem + 0.1vw);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .navbar .navbar-brand .nav-logo-text.minimized {
@@ -65,15 +65,15 @@
 .navbar .navbar-brand .nav-logo-wand-subtext-wrapper {
   height: calc(1.85rem + 1.85vw);
   padding: calc(0.1rem + 0.1vw);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .navbar .navbar-brand .nav-logo-wand-subtext.minimized,
 .navbar .navbar-brand .nav-logo-wand-subtext-wrapper.minimized {
   height: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 @media (max-width: 767.98px) {

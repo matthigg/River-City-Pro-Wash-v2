@@ -45,8 +45,8 @@ ALLOWED_HOSTS = [
   'RiverCityProWashV2-env.ep9rnc2fhe.us-east-1.elasticbeanstalk.com',
 ]
 
-if os.environ['RCPW_LOCAL_HOST_IP'] == '127.0.0.1':
-  ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
+# if os.environ['RCPW_LOCAL_HOST_IP'] == '127.0.0.1':
+#   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
 
 # Application definition
 

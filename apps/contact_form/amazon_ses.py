@@ -10,12 +10,10 @@ def send_email(request_POST):
   # Replace sender@example.com with your "From" address.
   # This address must be verified with Amazon SES.
   SENDER = "Sender Name <{}>".format(os.environ['RCPW_EMAIL_SENDER'])
-  print('SENDER: ', SENDER)
 
   # Replace recipient@example.com with a "To" address. If your account 
   # is still in the sandbox, this address must be verified.
   RECIPIENT = "{}".format(email)
-  print('RECIPIENT: ', RECIPIENT)
 
   # If necessary, replace us-west-2 with the AWS Region you're using for Amazon SES.
   AWS_REGION = "us-east-1"
@@ -35,7 +33,6 @@ def send_email(request_POST):
               "Phone: {} "
               "Message: {} ".format(name, email, phone, message)
               )
-  print(BODY_TEXT)
               
   # The HTML body of the email.
   BODY_HTML = """<html>
@@ -58,7 +55,6 @@ def send_email(request_POST):
   </body>
   </html>
               """.format(name, email, phone, message)
-  print(BODY_HTML)
 
   # The character encoding for the email.
   CHARSET = "UTF-8"

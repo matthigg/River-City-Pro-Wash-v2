@@ -33,12 +33,12 @@ SECURE_BROWSER_XSS_FILTER       = True
 X_FRAME_OPTIONS                 = 'DENY'
 
 # These settings prevent local production on Google Chrome 76
-# if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
-#   print('========== SSL, HSTS ==========')
-SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-SECURE_HSTS_PRELOAD             = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-SECURE_HSTS_SECONDS             = 60
+if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
+  print('========== SSL, HSTS ==========')
+  SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
+  SECURE_HSTS_PRELOAD             = True
+  SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+  SECURE_HSTS_SECONDS             = 60
 
 ALLOWED_HOSTS = [
   'rivercityprowash.com',
@@ -46,10 +46,10 @@ ALLOWED_HOSTS = [
   'RiverCityProWashV2-env.ep9rnc2fhe.us-east-1.elasticbeanstalk.com',
 ]
 
-# if os.environ['RCPW_LOCAL_HOST']:
-#   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
-# if os.environ['RCPW_LOCAL_HOST_IP']:
-#   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
+if os.environ['RCPW_LOCAL_HOST']:
+  ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
+if os.environ['RCPW_LOCAL_HOST_IP']:
+  ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
 
 # Application definition
 

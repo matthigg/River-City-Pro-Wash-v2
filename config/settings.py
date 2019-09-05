@@ -19,8 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['RCPW_SECRET_KEY']
+DEBUG = os.environ['RCPW_DEBUG'] == '1'
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
@@ -33,14 +33,11 @@ SECURE_BROWSER_XSS_FILTER       = True
 X_FRAME_OPTIONS                 = 'DENY'
 
 # These settings prevent local production on Google Chrome 76
-if not os.environ['RCPW_LOCAL_HOST']:
-  SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-  SECURE_HSTS_PRELOAD             = True
-  SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-  SECURE_HSTS_SECONDS             = 60
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['RCPW_DEBUG'] == '1'
+# if not os.environ['RCPW_LOCAL_HOST']:
+SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
+SECURE_HSTS_PRELOAD             = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+SECURE_HSTS_SECONDS             = 60
 
 ALLOWED_HOSTS = [
   'rivercityprowash.com',

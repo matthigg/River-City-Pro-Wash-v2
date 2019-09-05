@@ -20,7 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 SECRET_KEY = os.environ['RCPW_SECRET_KEY']
-DEBUG = os.environ['RCPW_DEBUG'] == '1'
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
@@ -31,14 +30,20 @@ SECURE_FRAME_DENY               = True
 SECURE_CONTENT_TYPE_NOSNIFF     = True
 SECURE_BROWSER_XSS_FILTER       = True
 X_FRAME_OPTIONS                 = 'DENY'
+# SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
+# SECURE_HSTS_PRELOAD             = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+# SECURE_HSTS_SECONDS             = 60
 
 # These settings prevent local production on Google Chrome 76
-if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
-  print('========== SSL, HSTS ==========')
-  SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-  SECURE_HSTS_PRELOAD             = True
-  SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-  SECURE_HSTS_SECONDS             = 60
+# if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
+#   print('========== SSL, HSTS ==========')
+#   SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
+#   SECURE_HSTS_PRELOAD             = True
+#   SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+#   SECURE_HSTS_SECONDS             = 60
+
+DEBUG = os.environ['RCPW_DEBUG'] == '1'
 
 ALLOWED_HOSTS = [
   'rivercityprowash.com',
@@ -46,9 +51,9 @@ ALLOWED_HOSTS = [
   'RiverCityProWashV2-env.ep9rnc2fhe.us-east-1.elasticbeanstalk.com',
 ]
 
-if os.environ['RCPW_LOCAL_HOST']:
+if os.environ['RCPW_LOCAL_HOST'] == 'localhost':
   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
-if os.environ['RCPW_LOCAL_HOST_IP']:
+if os.environ['RCPW_LOCAL_HOST_IP'] == '127.0.0.1':
   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
 
 # Application definition

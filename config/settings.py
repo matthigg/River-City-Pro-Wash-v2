@@ -33,7 +33,8 @@ SECURE_BROWSER_XSS_FILTER       = True
 X_FRAME_OPTIONS                 = 'DENY'
 
 # These settings prevent local production on Google Chrome 76
-# if not os.environ['RCPW_LOCAL_HOST']:
+# if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
+#   print('========== SSL, HSTS ==========')
 SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
 SECURE_HSTS_PRELOAD             = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
@@ -45,7 +46,9 @@ ALLOWED_HOSTS = [
   'RiverCityProWashV2-env.ep9rnc2fhe.us-east-1.elasticbeanstalk.com',
 ]
 
-# if os.environ['RCPW_LOCAL_HOST_IP'] == '127.0.0.1':
+# if os.environ['RCPW_LOCAL_HOST']:
+#   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
+# if os.environ['RCPW_LOCAL_HOST_IP']:
 #   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
 
 # Application definition

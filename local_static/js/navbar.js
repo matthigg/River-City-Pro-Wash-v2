@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'value': '1',
       'event_callback': function() {
         console.log('free quote callback fired')
-        // window.location.href = '/'
-        // console.log(window.location.origin)
-        // console.log(window.location.href.slice(0, -1) + event.target.dataset.url)
-        // console.log(window.location.origin.slice(0, -1) + event.target.dataset.url)
         // window.open(window.location.href.slice(0, -1) + event.target.dataset.url, '_self')
         window.open(window.location.origin + event.target.dataset.url, '_self')
       },

@@ -30,10 +30,6 @@ SECURE_FRAME_DENY               = True
 SECURE_CONTENT_TYPE_NOSNIFF     = True
 SECURE_BROWSER_XSS_FILTER       = True
 X_FRAME_OPTIONS                 = 'DENY'
-# SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-# SECURE_HSTS_PRELOAD             = True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-# SECURE_HSTS_SECONDS             = 60
 
 # These settings prevent local production on Google Chrome 76
 if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':

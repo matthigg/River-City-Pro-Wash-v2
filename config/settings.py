@@ -36,12 +36,12 @@ X_FRAME_OPTIONS                 = 'DENY'
 # SECURE_HSTS_SECONDS             = 60
 
 # These settings prevent local production on Google Chrome 76
-# if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
-#   print('========== SSL, HSTS ==========')
-#   SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-#   SECURE_HSTS_PRELOAD             = True
-#   SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-#   SECURE_HSTS_SECONDS             = 60
+if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
+  print('========== SSL, HSTS ==========')
+  SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
+  SECURE_HSTS_PRELOAD             = True
+  SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+  SECURE_HSTS_SECONDS             = 60
 
 DEBUG = os.environ['RCPW_DEBUG'] == '1'
 

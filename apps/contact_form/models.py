@@ -9,3 +9,4 @@ class ContactForm(models.Model):
   phone = models.CharField(max_length = 24)
   message = models.TextField(max_length = 500)
   date = models.DateTimeField(auto_now_add=True, null=True)
+  ip_address = models.GenericIPAddressField(null=True)

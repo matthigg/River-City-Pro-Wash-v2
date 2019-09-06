@@ -28,7 +28,7 @@ def our_work(request):
       'img_alt': img.img_alt,
       'img_category': img.img_category,
       'img_notes': img.img_notes,
-      
+      'img_file': img.img_file,
     }
   print(context)
 

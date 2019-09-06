@@ -10,3 +10,4 @@ class UploadedImages(models.Model):
   img_alt = models.CharField(max_length=64)
   img_category = models.CharField(max_length=64, null=True)
   img_notes = models.CharField(max_length=200, null=True)
+  img_file = models.ImageField(upload_to='images/', null=True)

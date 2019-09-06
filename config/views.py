@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from apps.contact_form.forms import CreateContactForm
+from apps.uploaded_images.models import UploadedImages
 
 # Main Navigation
 
@@ -19,6 +20,16 @@ def index(request):
 
 def our_work(request):
   context = {}
+  # [print('===', x.img_name, x.img_alt, x.img_notes) for x in UploadedImages.objects.all()]
+  
+  for img in UploadedImages.objects.all():
+    context[img.img_name] = {
+      'img_name': img.img_name,
+      'img_alt': img.img_alt,
+      'img_notes': img.img_notes,
+    }
+  print(context)
+  
   return render(request, 'our-work.html', context)
 
 def services(request):

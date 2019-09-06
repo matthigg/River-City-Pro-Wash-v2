@@ -24,7 +24,6 @@ SECRET_KEY = os.environ['RCPW_SECRET_KEY']
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
 SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE           = True
 CSRF_COOKIE_SECURE              = True
 SECURE_FRAME_DENY               = True
 SECURE_CONTENT_TYPE_NOSNIFF     = True
@@ -33,11 +32,11 @@ X_FRAME_OPTIONS                 = 'DENY'
 
 # These settings prevent local production on Google Chrome 76
 if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
-  print('========== SSL, HSTS ==========')
-  SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-  SECURE_HSTS_PRELOAD             = True
-  SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-  SECURE_HSTS_SECONDS             = 60
+  SESSION_COOKIE_SECURE           = True  # prevents admin login on localhost
+  SECURE_SSL_REDIRECT             = True  # requires SLL certificate in AWS
+  SECURE_HSTS_PRELOAD             = True  # can really screw up local development
+  SECURE_HSTS_INCLUDE_SUBDOMAINS  = True  
+  SECURE_HSTS_SECONDS             = 60    # keep this low until 100% certain
 
 DEBUG = os.environ['RCPW_DEBUG'] == '1'
 
@@ -62,6 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.contact_form',
+    'apps.uploaded_images',
 ]
 
 MIDDLEWARE = [

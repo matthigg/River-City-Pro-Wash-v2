@@ -26,10 +26,11 @@ def our_work(request):
     context[img.img_name] = {
       'img_name': img.img_name,
       'img_alt': img.img_alt,
+      'img_category': img.img_category,
       'img_notes': img.img_notes,
     }
   print(context)
-  
+
   return render(request, 'our-work.html', context)
 
 def services(request):

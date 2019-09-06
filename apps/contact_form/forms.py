@@ -12,17 +12,19 @@ class CreateContactForm(ModelForm):
     model = ContactForm
     fields = [
       'name',
+      'address',
       'email',
       'phone',
       'message',
     ]
     widgets = {
       'name': TextInput(attrs={'placeholder': 'name'}),
+      'address': TextInput(attrs={'placeholder': 'address'}),
       'email': TextInput(attrs={'placeholder': 'email'}),
       'phone': TextInput(attrs={'placeholder': 'phone'}),
       'message': Textarea(attrs={
         'placeholder': 'message',
-        'rows': 4,
+        'rows': 3,
         'cols': 40,
         }),
     }

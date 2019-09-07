@@ -35,9 +35,11 @@
 
       <!-- BAAP, Houses -->
       {% for house in Houses %}
+        {{ house.Category }}
         <div class="our-work-baap-group" 
-          data-id="ba-house-01" 
-          data-src="{% static 'img' %}"
+          data-category="{{ house.Category }}" 
+          data-before-src="{{ house.Before_Picture.url }}"
+          data-after-src="{{ house.After_Picture.url }}"
           data-toggle="modal" 
           data-target="#modal-baap-template"
         >

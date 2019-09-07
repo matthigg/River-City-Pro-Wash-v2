@@ -158,10 +158,13 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, 'local_static'),
-  os.path.join(BASE_DIR, 'apps/contact_form/static/contact_form'),
-]
+
+# This gets hi-jacked (I think) when django-storages takes over controlling static 
+# files
+# STATICFILES_DIRS = [
+#   os.path.join(BASE_DIR, 'local_static'),
+#   os.path.join(BASE_DIR, 'apps/contact_form/static/contact_form'),
+# ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

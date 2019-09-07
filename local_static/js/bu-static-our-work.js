@@ -24,27 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
   baap_groups.forEach((baap_group) => {
     baap_group.addEventListener('click', (event) => {
       let element = event.target;
-      if (element.dataset.category === undefined) {
+      if (element.dataset.id === undefined) {
         while (element.parentNode) {
           element = element.parentNode;
-          if (element.dataset.category) {
-            console.log(element.dataset.category)
-            assignModalBAAPImage(element.dataset.before-src, element.dataset.after-src);
+          if (element.dataset.id) {
+            assignModalBAAPImage(element.dataset.src, element.dataset.id);
             return
           } 
         }
       } else {
-        assignModalBAAPImage(element.dataset.before-src, element.dataset.after-src);
+        assignModalBAAPImage(element.dataset.src, element.dataset.id);
       }
     })
   })
-  function assignModalBAAPImage(before_src, after_src) {
-
-    console.log(before_src, after_src)
-
-    // const img_src_before = src + '/' + id + '-before.jpg';
-    // const img_src_after = src + '/' + id + '-after.jpg';            
-    // document.querySelector('.modal-baap-group-img-before').src = img_src_before;
-    // document.querySelector('.modal-baap-group-img-after').src = img_src_after;
+  function assignModalBAAPImage(src, id) {
+    const img_src_before = src + '/' + id + '-before.jpg';
+    const img_src_after = src + '/' + id + '-after.jpg';            
+    document.querySelector('.modal-baap-group-img-before').src = img_src_before;
+    document.querySelector('.modal-baap-group-img-after').src = img_src_after;
   }
 })

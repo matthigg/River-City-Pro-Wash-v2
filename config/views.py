@@ -25,6 +25,7 @@ def our_work(request):
   context = defaultdict(list)
   for img in UploadedImages.objects.all():
     context[img.Category].append({
+      'Category': img.Category,
       'Before_Picture_Description': img.Before_Picture_Description,
       'Before_Picture': img.Before_Picture,
       'After_Picture_Description': img.After_Picture_Description,

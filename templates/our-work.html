@@ -35,7 +35,7 @@
 
       <!-- BAAP, Houses -->
       {% if Houses %}
-        <h2 className="our-work-subsection-heading">Houses</h2>
+        <h2 class="our-work-subsection-heading">Houses</h2>
       {% endif %}
 
       {% for house in Houses %}
@@ -55,7 +55,33 @@
         </div>
       {% endfor %}
 
+      <!-- BAAP, Decks -->
+      {% if Decks %}
+        <h2 class="our-work-subsection-heading">Decks</h2>
+      {% endif %}
+
+      {% for house in Decks %}
+        <div class="our-work-baap-group" 
+          data-category="{{ house.Category }}" 
+          data-before-src="{{ house.Before_Picture.url }}"
+          data-after-src="{{ house.After_Picture.url }}"
+          data-toggle="modal" 
+          data-target="#modal-baap-template"
+        >
+          <div class="our-work-baap-group-before">
+            <img src="{{ house.Before_Picture.url }}" alt="{{ house.Before_Picture_Description }}" />
+          </div>
+          <div class="our-work-baap-group-after">
+            <img src="{{ house.After_Picture.url }}" alt="{{ house.After_Picture_Description }}" />
+          </div>
+        </div>
+      {% endfor %}
+
       <!-- BAAP, Sidewalks -->
+      {% if Sidewalks %}
+        <h2 class="our-work-subsection-heading">Sidewalks</h2>
+      {% endif %}
+
       {% for sidewalk in Sidewalks %}
         <div class="our-work-baap-group" 
           data-category="{{ sidewalk.Category }}" 

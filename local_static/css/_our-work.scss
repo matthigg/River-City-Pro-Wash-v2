@@ -35,11 +35,10 @@ $baap-transition: 0.2s ease-out;
   & .our-work-row {
     background-color: $primary-color;
     justify-content: space-around;
-    padding: 0 calc(1rem + 3vw);
+    padding: calc(1rem + 1vw);
     & .our-work-subsection-heading {
       color: $quinary-color;
       font-size: calc(1.25rem + 0.5vw);
-      padding-top: calc(1.5rem + 1vw);
       text-align: center;
     }
     & .our-work-baap-group {

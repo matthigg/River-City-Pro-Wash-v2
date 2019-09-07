@@ -605,13 +605,12 @@
   background-color: #EFF4F8;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 0 calc(1rem + 3vw);
+  padding: calc(1rem + 1vw);
 }
 
 .our-work-wrapper .our-work-row .our-work-subsection-heading {
   color: #000B28;
   font-size: calc(1.25rem + 0.5vw);
-  padding-top: calc(1.5rem + 1vw);
   text-align: center;
 }
 

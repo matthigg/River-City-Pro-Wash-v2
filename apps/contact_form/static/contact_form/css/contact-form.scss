@@ -81,9 +81,9 @@ $contact-form-transition: 0.15s ease-in;
     box-shadow: none;
     color: $quinary-color;
     display: block;
-    height: calc(2rem + 1vw);
+    height: calc(1.85rem + 1vw);
     outline: none;
-    padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
+    padding: calc(0.5rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
     width: 100%;
     &::placeholder {
       opacity: 0;
@@ -94,7 +94,7 @@ $contact-form-transition: 0.15s ease-in;
   }
   & label {
     color: $quinary-color;
-    font-size: calc(1rem + 0.25vw);
+    font-size: calc(0.75rem + 0.25vw);
     font-style: italic;
     left: calc(0.5rem + 0.1vw);
     position: absolute;

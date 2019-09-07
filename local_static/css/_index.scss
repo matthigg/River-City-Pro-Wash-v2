@@ -16,16 +16,10 @@
   z-index: -1;
 }
 
-.landing-page-col-right .contact-form-wrapper {
-  @media(max-width: 767.98px) {
-    display: none;
-  }
-}
-
 .landing-page-row {
   height: calc(100vh - #{$navbar-spacer-height-desktop} - #{$landing-page-footer-height-desktop}); // navbar + landing page footer height
   & .landing-page-col-left {
-    padding: calc(1rem + 1vw);
+    padding: calc(0.5rem + 0.5vw);
     & .landing-page-caption {
       background-color: $quinary-color-rgba;
       border-radius: calc(0.5rem + 0.5vw);
@@ -42,7 +36,12 @@
     }
   }
   & .landing-page-col-right {
-    padding: calc(1rem + 1vw);
+    padding: calc(0.5rem + 0.5vw);
+    @media(max-width: 767.98px) {
+      & .contact-form-wrapper {
+        display: none;
+      }
+    }
   }
   @media (max-width: 767.98px) {
     height: calc(100vh - #{$navbar-spacer-height-mobile} - #{$landing-page-footer-height-mobile});

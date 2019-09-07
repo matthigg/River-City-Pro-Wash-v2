@@ -76,9 +76,9 @@
           box-shadow: none;
   color: #000B28;
   display: block;
-  height: calc(2rem + 1vw);
+  height: calc(1.85rem + 1vw);
   outline: none;
-  padding: calc(1rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
+  padding: calc(0.5rem + 0.1vw) 0 0 calc(0.5rem + 0.1vw);
   width: 100%;
 }
 
@@ -104,7 +104,7 @@
 
 .contact-form label {
   color: #000B28;
-  font-size: calc(1rem + 0.25vw);
+  font-size: calc(0.75rem + 0.25vw);
   font-style: italic;
   left: calc(0.5rem + 0.1vw);
   position: absolute;

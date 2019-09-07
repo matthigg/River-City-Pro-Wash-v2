@@ -52,7 +52,6 @@ if os.environ['RCPW_LOCAL_HOST_IP'] == '127.0.0.1':
   ALLOWED_HOSTS.append(os.environ['RCPW_LOCAL_HOST_IP'])
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,6 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.contact_form',
     'apps.uploaded_images',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -165,3 +165,25 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+# This will tell boto that when it uploads files to S3, it should set properties 
+# on them so that when S3 serves them, it'll include some HTTP headers in the 
+# response. Those HTTP headers, in turn, will tell browsers that they can cache 
+# these files for a very long time.
+# https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+
+AWS_STORAGE_BUCKET_NAME = 'rcpw-eb-static-and-media-files'
+AWS_S3_REGION_NAME = 'us-east-1'  # e.g. us-east-2
+AWS_ACCESS_KEY_ID = os.environ['RCPW_AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['RCPW_AWS_SECRET_ACCESS_KEY']
+
+# Tell django-storages the domain to use to refer to static files.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# Tell the staticfiles app to use S3Boto3 storage when writing the collected 
+# static files (when you run `collectstatic`).
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

@@ -28,8 +28,10 @@
   }
   & .thanks-header {
     color: $quinary-color;
-    margin-bottom: calc(2rem + 2vw);
     text-align: center;
+    @media (min-width: 768px) {
+      margin: calc(1rem + 1vw) 0;
+    }
   }
   & .thanks-row {
     color: $quinary-color;

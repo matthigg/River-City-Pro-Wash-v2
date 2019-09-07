@@ -32,7 +32,9 @@ $baap-transition: 0.2s ease-out;
   & .our-work-header {
     color: $quinary-color;
     text-align: center;
-    margin-bottom: calc(0.5rem + 0.25vw);
+    @media (min-width: 768px) {
+      margin: calc(1rem + 1vw) 0;
+    }
   }
   & .our-work-subsection-heading {
     color: $quinary-color;

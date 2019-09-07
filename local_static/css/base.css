@@ -1329,6 +1329,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.modal-open {
+  overflow: scroll;
+}
+
 .navbar-spacer {
   height: 133px;
   width: 100%;

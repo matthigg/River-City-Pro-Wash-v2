@@ -62,39 +62,48 @@ def send_email(request_POST):
   # Create a new SES resource and specify a region.
   client = boto3.client('ses',region_name=AWS_REGION)
 
-  # Try to send the email.
+  # Try to send a response email to the person who submitted the contact form.
   try:
-
-    #Provide the contents of the email.
     response = client.send_email(
       Destination={
         'ToAddresses': [
           RECIPIENT,
+        ],
+      },
+      Message={
+        'Body': {
+            'Html': { 'Charset': CHARSET, 'Data': BODY_HTML, },
+            'Text': { 'Charset': CHARSET, 'Data': BODY_TEXT, },
+          },
+          'Subject': { 'Charset': CHARSET, 'Data': SUBJECT, },
+        },
+        Source=SENDER,
+      )
+  except ClientError as e:
+    print("=== ERROR: User input an invalid email address,", e.response['Error']['Message'])
+  else:
+    print("Email sent! Message ID:"),
+    print(response['MessageId'])
+
+  # Try to send the email to the website owner.
+  try:
+    response = client.send_email(
+      Destination={
+        'ToAddresses': [
           os.environ['RCPW_EMAIL_SENDER'],
         ],
       },
       Message={
         'Body': {
-            'Html': {
-              'Charset': CHARSET,
-              'Data': BODY_HTML,
-            },
-            'Text': {
-              'Charset': CHARSET,
-              'Data': BODY_TEXT,
-            },
+            'Html': { 'Charset': CHARSET, 'Data': BODY_HTML, },
+            'Text': { 'Charset': CHARSET, 'Data': BODY_TEXT, },
           },
-          'Subject': {
-            'Charset': CHARSET,
-            'Data': SUBJECT,
-          },
+          'Subject': { 'Charset': CHARSET, 'Data': SUBJECT, },
         },
         Source=SENDER,
       )
-
-  # Display an error if something goes wrong.	
   except ClientError as e:
-    print(e.response['Error']['Message'])
+    print("=== ERROR: User input an invalid email address,", e.response['Error']['Message'])
   else:
     print("Email sent! Message ID:"),
     print(response['MessageId'])

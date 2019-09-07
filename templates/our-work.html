@@ -35,7 +35,6 @@
 
       <!-- BAAP, Houses -->
       {% for house in Houses %}
-        {{ house.Category }}
         <div class="our-work-baap-group" 
           data-category="{{ house.Category }}" 
           data-before-src="{{ house.Before_Picture.url }}"
@@ -55,8 +54,9 @@
       <!-- BAAP, Sidewalks -->
       {% for sidewalk in Sidewalks %}
         <div class="our-work-baap-group" 
-          data-id="ba-sidewalk-01" 
-          data-src="{% static 'img' %}"
+          data-category="{{ sidewalk.Category }}" 
+          data-before-src="{{ sidewalk.Before_Picture.url }}"
+          data-after-src="{{ sidewalk.After_Picture.url }}"
           data-toggle="modal" 
           data-target="#modal-baap-template"
         >

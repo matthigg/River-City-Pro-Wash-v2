@@ -28,19 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
         while (element.parentNode) {
           element = element.parentNode;
           if (element.dataset.category) {
-            console.log(element.dataset.category)
-            assignModalBAAPImage(element.dataset.before-src, element.dataset.after-src);
+            console.log(element.dataset)
+            assignModalBAAPImage(element.dataset.beforeSrc, element.dataset.afterSrc);
             return
           } 
         }
       } else {
-        assignModalBAAPImage(element.dataset.before-src, element.dataset.after-src);
+        assignModalBAAPImage(element.dataset.beforeSrc, element.dataset.afterSrc);
       }
     })
   })
   function assignModalBAAPImage(before_src, after_src) {
 
     console.log(before_src, after_src)
+
+    document.querySelector('.modal-baap-group-img-before').src = before_src
+    document.querySelector('.modal-baap-group-img-after').src = after_src
 
     // const img_src_before = src + '/' + id + '-before.jpg';
     // const img_src_after = src + '/' + id + '-after.jpg';            

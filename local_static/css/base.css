@@ -215,6 +215,7 @@
 }
 
 .landing-page-row .landing-page-col-left .landing-page-caption {
+  border-radius: calc(0.5rem + 0.5vw);
   color: #EFF4F8;
   font-size: calc(1rem + 0.25vw);
   font-style: italic;

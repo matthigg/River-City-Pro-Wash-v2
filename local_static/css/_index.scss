@@ -2,8 +2,8 @@
   background-color: $quinary-color;
   background-image: 
     linear-gradient(
-      rgba(2, 3, 5, 0.35),
-      rgba(2, 3, 5, 0.35),
+    rgba(2, 3, 5, 0.35),
+    rgba(2, 3, 5, 0.35),
     );
     // url('/static/img/house-01.jpg');
   background-position: center;
@@ -27,6 +27,8 @@
   & .landing-page-col-left {
     padding: calc(1rem + 1vw);
     & .landing-page-caption {
+      // background-color: $quinary-color-rgba;
+      border-radius: calc(0.5rem + 0.5vw);
       color: $primary-color;
       font-size: calc(1rem + 0.25vw);
       font-style: italic;

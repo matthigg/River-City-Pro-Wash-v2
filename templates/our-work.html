@@ -33,8 +33,6 @@
   <!-- Section 1 -->
   <section class="row our-work-row">
 
-    {{ Houses }}
-
       <!-- BAAP, Houses -->
       {% for house in Houses %}
         <div class="our-work-baap-group" 
@@ -61,10 +59,10 @@
           data-target="#modal-baap-template"
         >
           <div class="our-work-baap-group-before">
-            <img src="{% get_media_prefix %}{{ sidewalk.img_before }}" alt="{{ sidewalk.img_alt_before }}" />
+            <img src="{{ sidewalk.img_before.url }}" alt="{{ sidewalk.img_alt_before }}" />
           </div>
           <div class="our-work-baap-group-after">
-            <img src="{% get_media_prefix %}{{ sidewalk.img_after }}" alt="{{ sidewalk.img_alt_after }}" />
+            <img src="{{ sidewalk.img_after.url }}" alt="{{ sidewalk.img_alt_after }}" />
           </div>
         </div>
       {% endfor %}

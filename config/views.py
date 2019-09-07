@@ -25,10 +25,10 @@ def our_work(request):
   context = defaultdict(list)
   for img in UploadedImages.objects.all():
     context[img.img_category].append({
-      'img_alt_before': img.img_alt_before,
-      'img_before': img.img_before,
-      'img_alt_after': img.img_alt_after,
-      'img_after': img.img_after,
+      'Before_Picture_Description': img.Before_Picture_Description,
+      'Before_Picture': img.Before_Picture,
+      'After_Picture_Description': img.After_Picture_Description,
+      'After_Picture': img.After_Picture,
     })
 
   return render(request, 'our-work.html', context)

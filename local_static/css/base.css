@@ -221,6 +221,9 @@
   font-weight: 600;
   padding: calc(0.5rem + 0.25vw);
   text-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 @media (max-width: 767.98px) {

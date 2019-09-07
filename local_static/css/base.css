@@ -570,8 +570,10 @@
   padding: calc(1rem + 1vw);
 }
 
-.beginning-of-page-spacer-mobile {
-  padding-top: calc(12vh + 2rem);
+@media (max-width: 767.98px) {
+  .beginning-of-page-spacer-mobile {
+    padding-top: calc(12vh + 2rem);
+  }
 }
 
 .our-work-page-background {
@@ -599,6 +601,15 @@
 .our-work-wrapper .our-work-header {
   color: #000B28;
   text-align: center;
+  margin-bottom: calc(0.5rem + 0.25vw);
+}
+
+.our-work-wrapper .our-work-subsection-heading {
+  color: #000B28;
+  font-size: calc(1.25rem + 0.5vw);
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .our-work-wrapper .our-work-row {
@@ -606,12 +617,6 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: calc(1rem + 1vw);
-}
-
-.our-work-wrapper .our-work-row .our-work-subsection-heading {
-  color: #000B28;
-  font-size: calc(1.25rem + 0.5vw);
-  text-align: center;
 }
 
 .our-work-wrapper .our-work-row .our-work-baap-group {

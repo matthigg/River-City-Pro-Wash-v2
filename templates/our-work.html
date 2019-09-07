@@ -30,74 +30,80 @@
   <!-- Our Work Title -->
   <h1 class="our-work-header">Our Work</h1>
 
-  <!-- Section 1 -->
+  <!-- BAAP, Houses -->
+  {% if Houses %}
   <section class="row our-work-row">
-
-      <!-- BAAP, Houses -->
-      {% if Houses %}
-        <h2 class="our-work-subsection-heading">Houses</h2>
-      {% endif %}
-
-      {% for house in Houses %}
-        <div class="our-work-baap-group" 
-          data-category="{{ house.Category }}" 
-          data-before-src="{{ house.Before_Picture.url }}"
-          data-after-src="{{ house.After_Picture.url }}"
-          data-toggle="modal" 
-          data-target="#modal-baap-template"
-        >
-          <div class="our-work-baap-group-before">
-            <img src="{{ house.Before_Picture.url }}" alt="{{ house.Before_Picture_Description }}" />
-          </div>
-          <div class="our-work-baap-group-after">
-            <img src="{{ house.After_Picture.url }}" alt="{{ house.After_Picture_Description }}" />
-          </div>
+    <h2 class="our-work-subsection-heading">Houses</h2>
+  </section>
+  {% endif %}
+  <section class="row our-work-row">
+    {% for house in Houses %}
+      <div class="our-work-baap-group" 
+        data-category="{{ house.Category }}" 
+        data-before-src="{{ house.Before_Picture.url }}"
+        data-after-src="{{ house.After_Picture.url }}"
+        data-toggle="modal" 
+        data-target="#modal-baap-template"
+      >
+        <div class="our-work-baap-group-before">
+          <img src="{{ house.Before_Picture.url }}" alt="{{ house.Before_Picture_Description }}" />
         </div>
-      {% endfor %}
-
-      <!-- BAAP, Decks -->
-      {% if Decks %}
-        <h2 class="our-work-subsection-heading">Decks</h2>
-      {% endif %}
-
-      {% for house in Decks %}
-        <div class="our-work-baap-group" 
-          data-category="{{ house.Category }}" 
-          data-before-src="{{ house.Before_Picture.url }}"
-          data-after-src="{{ house.After_Picture.url }}"
-          data-toggle="modal" 
-          data-target="#modal-baap-template"
-        >
-          <div class="our-work-baap-group-before">
-            <img src="{{ house.Before_Picture.url }}" alt="{{ house.Before_Picture_Description }}" />
-          </div>
-          <div class="our-work-baap-group-after">
-            <img src="{{ house.After_Picture.url }}" alt="{{ house.After_Picture_Description }}" />
-          </div>
+        <div class="our-work-baap-group-after">
+          <img src="{{ house.After_Picture.url }}" alt="{{ house.After_Picture_Description }}" />
         </div>
-      {% endfor %}
+      </div>
+    {% endfor %}
+  </section>
 
-      <!-- BAAP, Sidewalks -->
-      {% if Sidewalks %}
-        <h2 class="our-work-subsection-heading">Sidewalks</h2>
-      {% endif %}
-
-      {% for sidewalk in Sidewalks %}
-        <div class="our-work-baap-group" 
-          data-category="{{ sidewalk.Category }}" 
-          data-before-src="{{ sidewalk.Before_Picture.url }}"
-          data-after-src="{{ sidewalk.After_Picture.url }}"
-          data-toggle="modal" 
-          data-target="#modal-baap-template"
-        >
-          <div class="our-work-baap-group-before">
-            <img src="{{ sidewalk.Before_Picture.url }}" alt="{{ sidewalk.Before_Picture_Description }}" />
-          </div>
-          <div class="our-work-baap-group-after">
-            <img src="{{ sidewalk.After_Picture.url }}" alt="{{ sidewalk.After_Picture_Description }}" />
-          </div>
+  <!-- BAAP, Decks -->
+  {% if Decks %}
+  <section class="row our-work-row">
+    <h2 class="our-work-subsection-heading">Decks</h2>
+  </section>
+  {% endif %}
+  <section class="row our-work-row">
+    {% for house in Decks %}
+      <div class="our-work-baap-group" 
+        data-category="{{ house.Category }}" 
+        data-before-src="{{ house.Before_Picture.url }}"
+        data-after-src="{{ house.After_Picture.url }}"
+        data-toggle="modal" 
+        data-target="#modal-baap-template"
+      >
+        <div class="our-work-baap-group-before">
+          <img src="{{ house.Before_Picture.url }}" alt="{{ house.Before_Picture_Description }}" />
         </div>
-      {% endfor %}
+        <div class="our-work-baap-group-after">
+          <img src="{{ house.After_Picture.url }}" alt="{{ house.After_Picture_Description }}" />
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+  <!-- BAAP, Sidewalks -->
+  {% if Sidewalks %}
+  <section class="row our-work-row">
+    <h2 class="our-work-subsection-heading">Sidewalks</h2>
+  </section>
+  {% endif %}
+  <section class="row our-work-row">
+    {% for sidewalk in Sidewalks %}
+      <div class="our-work-baap-group" 
+        data-category="{{ sidewalk.Category }}" 
+        data-before-src="{{ sidewalk.Before_Picture.url }}"
+        data-after-src="{{ sidewalk.After_Picture.url }}"
+        data-toggle="modal" 
+        data-target="#modal-baap-template"
+      >
+        <div class="our-work-baap-group-before">
+          <img src="{{ sidewalk.Before_Picture.url }}" alt="{{ sidewalk.Before_Picture_Description }}" />
+        </div>
+        <div class="our-work-baap-group-after">
+          <img src="{{ sidewalk.After_Picture.url }}" alt="{{ sidewalk.After_Picture_Description }}" />
+        </div>
+      </div>
+    {% endfor %}
+  </section>
 
     <!-- BAAP, House 01 -->
     <!-- <div class="our-work-baap-group" 

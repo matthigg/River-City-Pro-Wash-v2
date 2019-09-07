@@ -34,6 +34,10 @@
   <section class="row our-work-row">
 
       <!-- BAAP, Houses -->
+      {% if Houses %}
+        <h2 className="our-work-subsection-heading">Houses</h2>
+      {% endif %}
+
       {% for house in Houses %}
         <div class="our-work-baap-group" 
           data-category="{{ house.Category }}" 

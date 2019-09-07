@@ -188,8 +188,8 @@
 
 .landing-page-background {
   background-color: #000B28;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 3, 5, 0.35)), to(rgba(2, 3, 5, 0.35))), url("/static/img/house-01.jpg");
-  background-image: linear-gradient(rgba(2, 3, 5, 0.35), rgba(2, 3, 5, 0.35)), url("/static/img/house-01.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 3, 5, 0.35)), to(rgba(2, 3, 5, 0.35)));
+  background-image: linear-gradient(rgba(2, 3, 5, 0.35), rgba(2, 3, 5, 0.35));
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -352,30 +352,6 @@
   height: 20vh;
   overflow: hidden;
   width: 100%;
-}
-
-.section-1-row .card .card-img-top .card-img-house-washing {
-  background-image: url("/static/img/house-02.jpg");
-}
-
-.section-1-row .card .card-img-top .card-img-deck-and-patio-washing {
-  background-image: url("/static/img/deck-washing-01.jpg");
-}
-
-.section-1-row .card .card-img-top .card-img-deck-staining {
-  background-image: url("/static/img/deck-staining-01.jpg");
-}
-
-.section-1-row .card .card-img-top .card-img-concrete-and-brick-washing {
-  background-image: url("/static/img/brick-washing-01.jpg");
-}
-
-.section-1-row .card .card-img-top .card-img-fence-cleaning {
-  background-image: url("/static/img/wooden-fence-01.jpg");
-}
-
-.section-1-row .card .card-img-top .card-img-graffiti-removal {
-  background-image: url("/static/img/graffiti-02.jpg");
 }
 
 @media (max-width: 767.98px) {
@@ -635,7 +611,7 @@
 .our-work-wrapper .our-work-row .our-work-subsection-heading {
   color: #000B28;
   font-size: calc(1.25rem + 0.5vw);
-  padding-top: calc(1rem + 1vw);
+  padding-top: calc(1.5rem + 1vw);
   text-align: center;
 }
 

@@ -44,10 +44,10 @@
           data-target="#modal-baap-template"
         >
           <div class="our-work-baap-group-before">
-            <img src="{% get_media_prefix %}{{ house.img_before }}" alt="{{ house.img_alt_before }}" />
+            <img src="{{ house.img_before.url }}" alt="{{ house.img_alt_before }}" />
           </div>
           <div class="our-work-baap-group-after">
-            <img src="{% get_media_prefix %}{{ house.img_after }}" alt="{{ house.img_alt_after }}" />
+            <img src="{{ house.img_after.url }}" alt="{{ house.img_alt_after }}" />
           </div>
         </div>
       {% endfor %}

@@ -150,10 +150,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Django's built-in message object that can be used to sent success messages,
+# warnings, alerts, etc.
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
@@ -163,8 +165,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # This will tell boto that when it uploads files to S3, it should set properties 
 # on them so that when S3 serves them, it'll include some HTTP headers in the 
@@ -186,4 +186,14 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected 
 # static files (when you run `collectstatic`).
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Use custom storage classes for both static and media file storage by 
+# subclassing S3Boto3Storage. This creates 2 subdirectories in the S3 bucket and
+# conveniently separates static & media files
+# https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'

@@ -1320,6 +1320,10 @@ body {
   background-color: #EFF4F8;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

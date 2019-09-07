@@ -9,7 +9,7 @@ def send_email(request_POST):
 
   # Replace sender@example.com with your "From" address.
   # This address must be verified with Amazon SES.
-  SENDER = "Sender Name <{}>".format(os.environ['RCPW_EMAIL_SENDER'])
+  SENDER = "<{}>".format(os.environ['RCPW_EMAIL_SENDER'])
 
   # Replace recipient@example.com with a "To" address. If your account 
   # is still in the sandbox, this address must be verified.
@@ -19,7 +19,7 @@ def send_email(request_POST):
   AWS_REGION = "us-east-1"
 
   # The subject line for the email.
-  SUBJECT = "Thank You For Contacting River City Pro Wash"
+  SUBJECT = "Thank You For Contacting River City Pro Wash!"
 
   # The email body for recipients with non-HTML email clients.
   BODY_TEXT = ("River City Pro Wash\r\n"

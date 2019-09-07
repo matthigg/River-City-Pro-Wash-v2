@@ -25,10 +25,11 @@ def our_work(request):
   context = defaultdict(list)
   for img in UploadedImages.objects.all():
     context[img.img_category].append({
-      'img_alt': img.img_alt,
-      'img_notes': img.img_notes,
+      'img_alt_before': img.img_alt_before,
       'img_before': img.img_before,
+      'img_alt_after': img.img_alt_after,
       'img_after': img.img_after,
+      'img_notes': img.img_notes,
     })
   print(context)
 

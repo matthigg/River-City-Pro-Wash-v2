@@ -35,19 +35,19 @@
 
       <!-- BAAP, House 01 -->
       {% for house in Houses %}
-          <div class="our-work-baap-group" 
-            data-id="ba-house-01" 
-            data-src="{% static 'img' %}"
-            data-toggle="modal" 
-            data-target="#modal-baap-template"
-          >
-            <div class="our-work-baap-group-before">
-              <img src="{% get_media_prefix %}{{ house.img_before }}" />
-            </div>
-            <div class="our-work-baap-group-after">
-              <img src="{% get_media_prefix %}{{ house.img_after }}">
-            </div>
+        <div class="our-work-baap-group" 
+          data-id="ba-house-01" 
+          data-src="{% static 'img' %}"
+          data-toggle="modal" 
+          data-target="#modal-baap-template"
+        >
+          <div class="our-work-baap-group-before">
+            <img src="{% get_media_prefix %}{{ house.img_before }}" alt="{{ house.img_alt_before }}" />
           </div>
+          <div class="our-work-baap-group-after">
+            <img src="{% get_media_prefix %}{{ house.img_after }}" alt="{{ house.img_alt_before }}" />
+          </div>
+        </div>
       {% endfor %}
 
     <!-- BAAP, House 01 -->

@@ -29,9 +29,7 @@ def our_work(request):
       'img_before': img.img_before,
       'img_alt_after': img.img_alt_after,
       'img_after': img.img_after,
-      'img_notes': img.img_notes,
     })
-  print(context)
 
   return render(request, 'our-work.html', context)
 

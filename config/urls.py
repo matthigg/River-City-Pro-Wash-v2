@@ -38,9 +38,12 @@ urlpatterns = [
     path('services/fence-cleaning',         fence_cleaning,         name='fence-cleaning'),
     path('services/graffiti-removal',       graffiti_removal,       name='graffiti-removal'),
     path('thanks',    thanks,   name='thanks'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Needed for the uploaded_images app to view uploaded images locally
 # https://wsvincent.com/django-image-uploads/
-if settings.DEBUG:
-  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# https://stackoverflow.com/questions/5517950/django-media-url-and-media-root
+# https://docs.djangoproject.com/en/1.9/howto/static-files/#serving-files-uploaded-by-a-user-during-development
+# if settings.DEBUG:
+#   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#   print(urlpatterns)

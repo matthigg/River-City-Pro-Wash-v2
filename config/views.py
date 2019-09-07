@@ -16,20 +16,20 @@ def faq(request):
 def index(request):
   form = CreateContactForm
   context = { 'form': form, }
+  print(context)
   return render(request, 'index.html', context)
 
 def our_work(request):
-  context = {}
-  # [print('===', x.img_name, x.img_alt, x.img_notes) for x in UploadedImages.objects.all()]
-  
+
+  from collections import defaultdict
+  context = defaultdict(list)
   for img in UploadedImages.objects.all():
-    context[img.img_name] = {
-      'img_name': img.img_name,
+    context[img.img_category].append({
       'img_alt': img.img_alt,
-      'img_category': img.img_category,
       'img_notes': img.img_notes,
-      'img_file': img.img_file,
-    }
+      'img_before': img.img_before,
+      'img_after': img.img_after,
+    })
   print(context)
 
   return render(request, 'our-work.html', context)

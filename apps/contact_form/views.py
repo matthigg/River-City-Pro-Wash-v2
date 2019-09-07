@@ -13,7 +13,8 @@ def submit(request):
     'https://www.google.com/recaptcha/api/siteverify', 
     params={
       'response': request.POST["g-recaptcha-response"],
-      'secret': os.environ["RECAPTCHA_SECRET_KEY"],
+      # 'secret': os.environ["RECAPTCHA_SECRET_KEY"],
+      'secret': 'test',
     }
   )
 

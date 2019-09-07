@@ -213,12 +213,13 @@
 }
 
 .landing-page-row .landing-page-col-left .landing-page-caption {
+  background-color: rgba(0, 11, 41, 0.75);
   border-radius: calc(0.5rem + 0.5vw);
   color: #EFF4F8;
   font-size: calc(1rem + 0.25vw);
   font-style: italic;
   font-weight: 600;
-  padding: calc(1rem + 1vw);
+  padding: calc(0.5rem + 0.25vw);
   text-align: center;
 }
 

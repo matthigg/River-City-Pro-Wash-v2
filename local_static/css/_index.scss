@@ -27,13 +27,13 @@
   & .landing-page-col-left {
     padding: calc(1rem + 1vw);
     & .landing-page-caption {
-      // background-color: $quinary-color-rgba;
+      background-color: $quinary-color-rgba;
       border-radius: calc(0.5rem + 0.5vw);
       color: $primary-color;
       font-size: calc(1rem + 0.25vw);
       font-style: italic;
       font-weight: 600;
-      padding: calc(1rem + 1vw);
+      padding: calc(0.5rem + 0.25vw);
       text-align: center;
       @media (max-width: 767.98px) {
         display: none;

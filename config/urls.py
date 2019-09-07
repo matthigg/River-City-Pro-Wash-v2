@@ -18,7 +18,8 @@ from django.urls import include, path
 from .views import contact, faq, index, our_work, services, thanks
 from .views import house_washing, concrete_brick_washing, deck_patio_washing, deck_staining, fence_cleaning, graffiti_removal
 
-# Needed for the uploaded_images app
+# Needed to serve MEDIA files associated with the uploaded_images app in local 
+# development
 # https://wsvincent.com/django-image-uploads/
 from django.conf import settings
 from django.conf.urls.static import static
@@ -40,10 +41,10 @@ urlpatterns = [
     path('thanks',    thanks,   name='thanks'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# Needed for the uploaded_images app to view uploaded images locally
+# Last line in urlpatterns[] is needed to serve MEDIA files associated with the 
+# uploaded_images app in local development
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#
 # https://wsvincent.com/django-image-uploads/
 # https://stackoverflow.com/questions/5517950/django-media-url-and-media-root
 # https://docs.djangoproject.com/en/1.9/howto/static-files/#serving-files-uploaded-by-a-user-during-development
-# if settings.DEBUG:
-#   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#   print(urlpatterns)

@@ -192,8 +192,10 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 # subclassing S3Boto3Storage. This creates 2 subdirectories in the S3 bucket and
 # conveniently separates static & media files
 # https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
+  STATICFILES_LOCATION = 'static'
+  STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'

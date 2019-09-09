@@ -12,12 +12,11 @@
 from PIL import Image
 import os, sys
 
-# Ideal image size (in bytes) & number of times to run each resize function
-size_target = 140000
-max_iterations = 7
-L = 1
-R = 100
-quality = 50
+size_target = 140000  # Ideal image size (in bytes)
+max_iterations = 7    # Number of iterations to find optimized quality value
+L = 1                 # Left pointer
+R = 100               # Right pointer
+quality = 50          # Starting quality value
 
 # This resize function can be used as a sort of binary search algorithm that 
 # recursively passes values to the quality parameter in order to progressively
@@ -28,7 +27,7 @@ quality = 50
 #   name              - image file without extension
 #   dimension         - (horizontal, vertical) 2-tuple size in pixels
 #   dimension_factor  - factor by which in increase the dimension() tuple
-#   i                 - iterations
+#   i                 - iteration 
 #   L                 - image quality from 1 to 100, max 95 per documentation,
 #                       left pointer
 #   https://pillow.readthedocs.io/en/5.1.x/handbook/image-file-formats.html
@@ -43,7 +42,7 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
     return print("Max iterations have been reached for {}".format(file))
 
   # Open the image file, alter its dimensions, and save it to a new image file.
-  if L <= 95:
+  if quality <= 95:
     im = Image.open(file)
     new_dimension = (dimension[0] * dimension_factor, dimension[1] * dimension_factor)
     im.thumbnail(new_dimension, Image.ANTIALIAS)
@@ -55,7 +54,7 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
     # parameter that produces an image with a file size, in bytes, as close 
     # to size_target as possible using a binary search-type of algorithm
     if os.path.getsize('./' + new_name) < size_target:
-      print('Resulting image size is LESS than {} bytes:'.format(size_target), os.path.getsize('./' + new_name), 'bytes, quality =', quality)
+      print('Resulting image size is LESS    than {} bytes:'.format(size_target), os.path.getsize('./' + new_name), 'bytes, quality =', quality)
       L = quality
       quality = int((R + L) / 2)
       resize_img(file, name, dimension, dimension_factor, i + 1, quality, L, R)
@@ -68,14 +67,35 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
       print('Resulting image size equals {} bytes:'.format(size_target), os.path.getsize('./' + new_name), 'bytes, quality =', quality)
     return
 
-# sizes = [(320, 320), (567, 567), (768, 768), (992, 992), (1200, 1200), (1440, 1440)]
-dimensions = [(567, 567)]
+# The Pillow *.thumbnail() method takes a tuple as its first argument, and it
+# maintains aspect ratio, so the resulting thumbnail's height, width, or both
+# will not exceed their respective values within the tuple (I think).
+dimensions = []
+def create_dimensions_list_of_tuples():
+  # dimensions_list = [320, 567, 768, 992, 1200, 1440]
+  dimensions_list = [320, 567]
+  for value in dimensions_list:
+    dimensions.append((value, value))
+create_dimensions_list_of_tuples()
+
+# dimensions = [(320, 320), (567, 567), (768, 768), (992, 992), (1200, 1200), (1440, 1440)]
+# dimensions = [(567, 567)]
 
 for root, dirs, files in os.walk('.', topdown=False):
   for file in files:
     name = os.path.splitext(file)[0]
     if os.path.splitext(file)[1] != '.py':
       for dimension in dimensions:
+        print('=== Resizing:', file, dimension)
+
+        # Create 1x images
+        try: 
+          # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
+          resize_img(file, name, dimension, 1, 1, quality, L, R)
+        except IOError as e:
+          print(e, "Error: cannot convert {} to {}x.".format(file, dimension_factor))
+        
+        # Create 2x images
         try: 
           # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
           resize_img(file, name, dimension, 2, 1, quality, L, R)

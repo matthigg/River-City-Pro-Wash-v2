@@ -13,13 +13,28 @@ from PIL import Image
 import os, sys
 
 # Ideal image size (in bytes) & number of times to run each resize function
-size_target = 150000
+size_target = 140000
 max_iterations = 7
+L = 1
+R = 100
+quality = 50
 
 # This resize function can be used as a sort of binary search algorithm that 
 # recursively passes values to the quality parameter in order to progressively
 # produce images with file sizes that approach the size_target value.
-def resize_1x(file, name, dimension, i, quality=50):
+#
+# Parameters:
+#   file              - image file
+#   name              - image file without extension
+#   dimension         - (horizontal, vertical) 2-tuple size in pixels
+#   dimension_factor  - factor by which in increase the dimension() tuple
+#   i                 - iterations
+#   L                 - image quality from 1 to 100, max 95 per documentation,
+#                       left pointer
+#   https://pillow.readthedocs.io/en/5.1.x/handbook/image-file-formats.html
+#   R                 - upper bound for quality, right pointer
+#
+def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
 
   # If the size of the file (in bytes) is already below the size_target, return.
   if os.path.getsize(file) < size_target:
@@ -28,28 +43,33 @@ def resize_1x(file, name, dimension, i, quality=50):
     return print("Max iterations have been reached for {}".format(file))
 
   # Open the image file, alter its dimensions, and save it to a new image file.
-  # Max quality = 95 per documentation. 
-  # https://pillow.readthedocs.io/en/5.1.x/handbook/image-file-formats.html
-  if quality <= 95:
+  if L <= 95:
     im = Image.open(file)
-    im.thumbnail(dimension, Image.ANTIALIAS)
-    new_1x_prefix = '1x-'
-    new_1x_name = new_1x_prefix + name + '-' + str(dimension[0]) + '.jpg'
-    im.save(new_1x_name, "JPEG", quality=quality)
+    new_dimension = (dimension[0] * dimension_factor, dimension[1] * dimension_factor)
+    im.thumbnail(new_dimension, Image.ANTIALIAS)
+    new_prefix = '{}x-'.format(dimension_factor)
+    new_name = new_prefix + name + '-' + str(dimension[0]) + '.jpg'
+    im.save(new_name, "JPEG", quality=quality)
 
-    # Determine whether or not to continue to resize the image.
-    if os.path.getsize('./' + new_1x_name) < size_target:
-      print('Resulting image size is LESS than {} bytes:'.format(size_target), os.path.getsize('./' + new_1x_name), 'bytes, quality =', quality)
-      resize_1x(file, name, dimension, i + 1, int(quality + (100 - quality) / 2))
-    elif os.path.getsize('./' + new_1x_name) > size_target:
-      print('Resulting image size is GREATER than {} bytes:'.format(size_target), os.path.getsize('./' + new_1x_name), 'bytes, quality =', quality)
-      resize_1x(file, name, dimension, i + 1, int(quality - (100 - quality) / 2))
+    # Use L and R pointers to move closer to a value for the 'quality' 
+    # parameter that produces an image with a file size, in bytes, as close 
+    # to size_target as possible using a binary search-type of algorithm
+    if os.path.getsize('./' + new_name) < size_target:
+      print('Resulting image size is LESS than {} bytes:'.format(size_target), os.path.getsize('./' + new_name), 'bytes, quality =', quality)
+      L = quality
+      quality = int((R + L) / 2)
+      resize_img(file, name, dimension, dimension_factor, i + 1, quality, L, R)
+    elif os.path.getsize('./' + new_name) > size_target:
+      print('Resulting image size is GREATER than {} bytes:'.format(size_target), os.path.getsize('./' + new_name), 'bytes, quality =', quality)
+      R = quality
+      quality = int((R + L) / 2)
+      resize_img(file, name, dimension, dimension_factor, i + 1, quality, L, R)
     else:
-      print('Resulting image size equals {} bytes:'.format(size_target), os.path.getsize('./' + new_1x_name), 'bytes, quality =', quality)
+      print('Resulting image size equals {} bytes:'.format(size_target), os.path.getsize('./' + new_name), 'bytes, quality =', quality)
     return
 
 # sizes = [(320, 320), (567, 567), (768, 768), (992, 992), (1200, 1200), (1440, 1440)]
-dimensions = [(320, 320)]
+dimensions = [(567, 567)]
 
 for root, dirs, files in os.walk('.', topdown=False):
   for file in files:
@@ -57,7 +77,7 @@ for root, dirs, files in os.walk('.', topdown=False):
     if os.path.splitext(file)[1] != '.py':
       for dimension in dimensions:
         try: 
-          resize_1x(file, name, dimension, 1)
+          # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
+          resize_img(file, name, dimension, 2, 1, quality, L, R)
         except IOError as e:
-          print(e, "Error: cannot convert", file, "to 1x")
-        
+          print(e, "Error: cannot convert {} to {}x.".format(file, dimension_factor))

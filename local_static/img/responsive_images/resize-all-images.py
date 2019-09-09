@@ -86,18 +86,21 @@ for root, dirs, files in os.walk('.', topdown=False):
     name = os.path.splitext(file)[0]
     if os.path.splitext(file)[1] != '.py':
       for dimension in dimensions:
-        print('=== Resizing:', file, dimension)
 
         # Create 1x images
         try: 
           # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
-          resize_img(file, name, dimension, 1, 1, quality, L, R)
+          dimension_factor = 1
+          print('=== Resizing: {}, {}, {}x'.format(file, dimension, dimension_factor))
+          resize_img(file, name, dimension, dimension_factor, 1, quality, L, R)
         except IOError as e:
-          print(e, "Error: cannot convert {} to {}x.".format(file, dimension_factor))
+          print(e, "Error: cannot convert {} to {}x".format(file, dimension_factor))
         
         # Create 2x images
         try: 
           # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
-          resize_img(file, name, dimension, 2, 1, quality, L, R)
+          dimension_factor = 2
+          print('=== Resizing: {}, {}, {}x'.format(file, dimension, dimension_factor))
+          resize_img(file, name, dimension, dimension_factor, 1, quality, L, R)
         except IOError as e:
-          print(e, "Error: cannot convert {} to {}x.".format(file, dimension_factor))
+          print(e, "Error: cannot convert {} to {}x".format(file, dimension_factor))

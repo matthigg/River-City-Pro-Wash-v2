@@ -16,11 +16,14 @@ def faq(request):
 def index(request):
   form = CreateContactForm
   context = { 'form': form, }
-  print(context)
   return render(request, 'index.html', context)
 
 def our_work(request):
 
+  # When someone visits our-work.html, query the database for anything in the
+  # table represented by the UploadedImages model and store it in the context{}
+  # dictionary, which contains key:value pairs where each value is a list of
+  # objects that represent each image in a category represented by the 'key'
   from collections import defaultdict
   context = defaultdict(list)
   for img in UploadedImages.objects.all():

@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.contact_form',
     'apps.uploaded_images',
-    # 'storages',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -160,7 +160,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
   os.path.join(BASE_DIR, 'local_static'),
-  os.path.join(BASE_DIR, 'local_static/img/house-01/340kB'),
   os.path.join(BASE_DIR, 'apps/contact_form/static/contact_form'),
 ]
 
@@ -194,9 +193,9 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 # conveniently separates static & media files
 # https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
 
-# if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
-#   STATICFILES_LOCATION = 'static'
-#   STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
+  STATICFILES_LOCATION = 'static'
+  STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'

@@ -312,7 +312,7 @@
   }
 }
 
-.section-1-row .card .card-img-top .card-img-house-washing, .section-1-row .card .card-img-top .card-img-deck-and-patio-washing, .section-1-row .card .card-img-top .card-img-deck-staining, .section-1-row .card .card-img-top .card-img-concrete-and-brick-washing, .section-1-row .card .card-img-top .card-img-fence-cleaning, .section-1-row .card .card-img-top .card-img-graffiti-removal {
+.section-1-row .card .card-img-top .card-img-house-washing, .section-1-row .card .card-img-top .card-img-deck-and-patio-washing, .section-1-row .card .card-img-top .card-img-deck-staining, .section-1-row .card .card-img-top .img-concrete-and-brick-washing, .section-1-row .card .card-img-top .card-img-fence-cleaning, .section-1-row .card .card-img-top .card-img-graffiti-removal {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -414,7 +414,6 @@
 }
 
 .section-1-row .card:hover .card-img-zoom {
-  background-position: center;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: 0.15s ease-in;
@@ -494,10 +493,19 @@
 }
 
 .service-wrapper .service-row .service-col-image .service-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: calc(1rem + 1vw);
-  height: 100%;
+  height: 30vh;
   margin: auto;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .service-wrapper .service-row .service-col-image .service-image {
+    height: 100%;
+  }
 }
 
 .service-wrapper .service-row .service-col-text {

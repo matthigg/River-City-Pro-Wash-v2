@@ -138,27 +138,21 @@ $card-transition: 0.15s ease-in;
       overflow: hidden;
       width: 100%;
       & .card-img-house-washing {
-        // background-image: url('/static/img/house-02.jpg');
         @extend %card-img;
       }
       & .card-img-deck-and-patio-washing {
-        // background-image: url('/static/img/deck-washing-01.jpg');
         @extend %card-img;
       }
       & .card-img-deck-staining {
-        // background-image: url('/static/img/deck-staining-01.jpg');
         @extend %card-img;
       }
-      & .card-img-concrete-and-brick-washing {
-        // background-image: url('/static/img/brick-washing-01.jpg');
+      & .img-concrete-and-brick-washing {
         @extend %card-img;
       }
       & .card-img-fence-cleaning {
-        // background-image: url('/static/img/wooden-fence-01.jpg');
         @extend %card-img;
       }
       & .card-img-graffiti-removal {
-        // background-image: url('/static/img/graffiti-02.jpg');
         @extend %card-img;
       }
       @media (max-width: 767.98px) {
@@ -200,7 +194,6 @@ $card-transition: 0.15s ease-in;
     &:hover {
       text-decoration: none;
       & .card-img-zoom {
-      background-position: center;
       transform: scale(1.1);
       transition: $card-transition;
       }

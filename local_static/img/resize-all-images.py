@@ -85,7 +85,7 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
 # both will not exceed their respective values within the tuple (I think).
 dimensions = []
 def create_dimensions_list_of_tuples():
-  dimensions_list = [320, 567, 768, 992, 1200, 1440]
+  dimensions_list = [320, 576, 768, 992, 1200, 1440]
   # dimensions_list = [320]
   for value in dimensions_list:
     dimensions.append((value, value))

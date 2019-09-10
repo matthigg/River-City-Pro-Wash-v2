@@ -312,7 +312,7 @@
   }
 }
 
-.section-1-row .card .card-img-top .card-img-house-washing, .section-1-row .card .card-img-top .card-img-deck-and-patio-washing, .section-1-row .card .card-img-top .card-img-deck-staining, .section-1-row .card .card-img-top .img-concrete-and-brick-washing, .section-1-row .card .card-img-top .card-img-fence-cleaning, .section-1-row .card .card-img-top .card-img-graffiti-removal {
+.section-1-row .card .card-img-top .img-house-washing, .section-1-row .card .card-img-top .img-deck-and-patio-washing, .section-1-row .card .card-img-top .img-deck-staining, .section-1-row .card .card-img-top .img-concrete-and-brick-washing, .section-1-row .card .card-img-top .img-fence-cleaning, .section-1-row .card .card-img-top .img-graffiti-removal {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

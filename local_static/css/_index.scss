@@ -137,22 +137,22 @@ $card-transition: 0.15s ease-in;
       height: 20vh;
       overflow: hidden;
       width: 100%;
-      & .card-img-house-washing {
+      & .img-house-washing {
         @extend %card-img;
       }
-      & .card-img-deck-and-patio-washing {
+      & .img-deck-and-patio-washing {
         @extend %card-img;
       }
-      & .card-img-deck-staining {
+      & .img-deck-staining {
         @extend %card-img;
       }
       & .img-concrete-and-brick-washing {
         @extend %card-img;
       }
-      & .card-img-fence-cleaning {
+      & .img-fence-cleaning {
         @extend %card-img;
       }
-      & .card-img-graffiti-removal {
+      & .img-graffiti-removal {
         @extend %card-img;
       }
       @media (max-width: 767.98px) {

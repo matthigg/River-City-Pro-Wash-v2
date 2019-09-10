@@ -1,32 +1,3 @@
-.landing-page-background {
-  background-color: $quinary-color;
-  // background-image: 
-  //   linear-gradient(
-  //   rgba(2, 3, 5, 0.35),
-  //   rgba(2, 3, 5, 0.35),
-  //   ),
-  //   url('/static/img/house-01.jpg');
-  // background-image: url('/static/img/house-01.jpg');
-  // background-image: -webkit-image-set(url('/static/img/house-01.jpg') 1x, url('/static/img/house-01.jpg') 2x);  
-  // background-image:         image-set(url('/static/img/house-01.jpg') 1x, url('/static/img/house-01.jpg') 2x);
-  // @media (max-width: 991.98px) { 
-  //   background-image: -webkit-image-set(url('/static/img/house-02.jpg') 1x, url('/static/img/house-02.jpg') 2x);  
-  //   background-image:         image-set(url('/static/img/house-02.jpg') 1x, url('/static/img/house-02.jpg') 2x);
-  // }
-  // @media (max-width: 767.98px) { 
-  //   background-image: -webkit-image-set(url('/static/img/house-03.jpg') 1x, url('/static/img/house-03.jpg') 2x);  
-  //   background-image:         image-set(url('/static/img/house-03.jpg') 1x, url('/static/img/house-03.jpg') 2x);
-  // }
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
-
 .landing-page-row {
   height: calc(100vh - #{$navbar-spacer-height-desktop} - #{$landing-page-footer-height-desktop}); // navbar + landing page footer height
   & .landing-page-col-left {

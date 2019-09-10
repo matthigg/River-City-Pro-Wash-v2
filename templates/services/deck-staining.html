@@ -15,50 +15,47 @@
 <!-- Content -->
 {% block content %}
 
-<!-- Service Page Background -->
-<div class="service-page-background"></div>
+  <!-- Service -->
+  <div class="service-wrapper">
 
-<!-- Service -->
-<div class="service-wrapper">
+    <!-- Navbar Spacer -->
+    <div class="navbar-spacer"></div>
 
-  <!-- Navbar Spacer -->
-  <div class="navbar-spacer"></div>
+    <!-- Spacer for "Call Now" and "Free Quote" buttons -->
+    <div class="beginning-of-page-spacer-mobile"></div>
 
-  <!-- Spacer for "Call Now" and "Free Quote" buttons -->
-  <div class="beginning-of-page-spacer-mobile"></div>
+    <!-- Service Title -->
+    <h1 class="service-header">Deck Staining Services</h1>
 
-  <!-- Service Title -->
-  <h1 class="service-header">Deck Staining Services</h1>
+    <!-- Service Copy -->
+    <section class="row service-row">
+      <div class="col-md-6 service-col-image">
+        {% include '../responsive_images/ri-deck-staining.html' %}
+      </div>
+      <div class="col-md-6 service-col-text">
+        <p>
+          Decks can be a valuable (and costly) addition to any home,
+          that's why important to treat your deck with a high-quality
+          stain that not only looks great, but protects your investment
+          for years to come. 
+        </p>
+        <p>
+          If your deck is in need of a good old-fashioned high-quality
+          water-resistant stain, contact 
+          {% include 'svg/nav-logo-text.svg' %} today!
+        </p>
+      </div>
+    </section>
 
-  <!-- Service Copy -->
-  <section class="row service-row">
-    <div class="col-md-6 service-col-image">
-      {% include '../responsive_images/ri-deck-staining.html' %}
-    </div>
-    <div class="col-md-6 service-col-text">
-      <p>
-        Decks can be a valuable (and costly) addition to any home,
-        that's why important to treat your deck with a high-quality
-        stain that not only looks great, but protects your investment
-        for years to come. 
-      </p>
-      <p>
-        If your deck is in need of a good old-fashioned high-quality
-        water-resistant stain, contact 
-        {% include 'svg/nav-logo-text.svg' %} today!
-      </p>
-    </div>
-  </section>
-
-  <!-- Service Contact Form -->
-  <section class="row service-row">
-    <div class="col-md-6 service-col-text">
-      {% include 'business_information/contact-form-copy.html' %}
-    </div>
-    <div class="col-md-6 service-col-contact-form">
-      {% include 'contact_form/contact-form.html' %}
-    </div>
-  </section>
-</div>
+    <!-- Service Contact Form -->
+    <section class="row service-row">
+      <div class="col-md-6 service-col-text">
+        {% include 'business_information/contact-form-copy.html' %}
+      </div>
+      <div class="col-md-6 service-col-contact-form">
+        {% include 'contact_form/contact-form.html' %}
+      </div>
+    </section>
+  </div>
 
 {% endblock %}

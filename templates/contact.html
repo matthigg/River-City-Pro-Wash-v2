@@ -15,30 +15,27 @@
 <!-- Content -->
 {% block content %}
 
-<!-- Contact Page Background -->
-<div class="contact-page-background"></div>
+  <!-- Contact -->
+  <div class="contact-wrapper">
 
-<!-- Contact -->
-<div class="contact-wrapper">
+    <!-- Navbar Spacer -->
+    <div class="navbar-spacer"></div>
 
-  <!-- Navbar Spacer -->
-  <div class="navbar-spacer"></div>
+    <!-- Spacer for "Call Now" and "Free Quote" buttons -->
+    <div class="beginning-of-page-spacer-mobile"></div>
 
-  <!-- Spacer for "Call Now" and "Free Quote" buttons -->
-  <div class="beginning-of-page-spacer-mobile"></div>
+    <!-- Contact Header -->
+    <h1 class="contact-header">Contact Us</h1>
 
-  <!-- Contact Header -->
-  <h1 class="contact-header">Contact Us</h1>
-
-  <!-- Contact Form -->
-  <section class="row contact-row">
-    <div class="col-md-6 contact-col-contact-form">
-      {% include 'contact_form/contact-form.html' %}
-    </div>
-    <div class="col-md-6 contact-col-text">
-      {% include 'business_information/contact-form-copy.html' %}
-    </div>
-  </section>
-</div>
+    <!-- Contact Form -->
+    <section class="row contact-row">
+      <div class="col-md-6 contact-col-contact-form">
+        {% include 'contact_form/contact-form.html' %}
+      </div>
+      <div class="col-md-6 contact-col-text">
+        {% include 'business_information/contact-form-copy.html' %}
+      </div>
+    </section>
+  </div>
 
 {% endblock %}

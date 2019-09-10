@@ -33,6 +33,18 @@ html {
   scroll-behavior: smooth;
 }
 
+.background-image {
+  background-color: $quinary-color;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
 // This spacer is supposed to accommodate for the space beneath the
 // navbar
 .navbar-spacer {

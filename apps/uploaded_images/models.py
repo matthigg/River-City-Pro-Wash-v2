@@ -14,8 +14,12 @@ class UploadedImages(Model):
   # Define the user image input fields in the Django admin panel
   Category                    = CharField(max_length=64, null=True)
   Before_Picture_Description  = CharField(max_length=64, null=True)
+  # Before_Picture_Size_kB      = IntegerField(max_length=12, null=True)
+  # Before_Picture_Dimension    = IntegerField(max_length=12, null=True)
   Before_Picture              = ImageField(upload_to='images/', null=True)
   After_Picture_Description   = CharField(max_length=64, null=True)
+  # After_Picture_Size_kB       = IntegerField(max_length=12, null=True)
+  # Before_Picture_Dimension    = IntegerField(max_length=12, null=True)
   After_Picture               = ImageField(upload_to='images/', null=True)
   date                        = DateTimeField(auto_now_add=True, null=True)
   Notes                       = TextField(max_length = 200, null=True)
@@ -27,6 +31,7 @@ class UploadedImages(Model):
 
       # Note: this will overwrite the image uploaded by the user
       self.Before_Picture = self.resize_image(self.Before_Picture)
+      self.After_Picture = self.resize_image(self.After_Picture)
     super(UploadedImages, self).save(*args, **kwargs)
 
   # Resize user-uploaded images
@@ -34,14 +39,14 @@ class UploadedImages(Model):
   def resize_image(self, picture):
 
     # Set variables for the *.binary_search() method
-    size_target = 140000  # Ideal image size (in bytes)
-    dimensions = [(768, 768)]
-    dimension_factor = 1
-    i = 1                 # Iteration starting point
-    max_i = 7             # Max number of iterations 
-    quality = 50          # Starting quality value
-    L = 1                 # Left pointer
-    R = 100               # Right pointer
+    size_target = 140000      # Ideal image size (in bytes)
+    dimensions = [(768, 768)] # Dimensions, *.thumbnail() requires tuple
+    dimension_factor = 1      # For generating 1x, 2x (retina), or higher res.
+    i = 1                     # Iteration starting point
+    max_i = 7                 # Max number of iterations 
+    quality = 50              # Starting quality value
+    L = 1                     # Left pointer
+    R = 100                   # Right pointer
 
     # Run the binary search algorithm once for each set of dimensions you want to
     # create images at, ie. 320, 576, 768, etc. Currently there is no implementation
@@ -95,19 +100,19 @@ class UploadedImages(Model):
       im_buffer = BytesIO()
       im.save(im_buffer, "JPEG", quality=quality)
 
-    # Use L and R pointers to move closer to a value for the 'quality' parameter 
-    # that produces an image with a file size, in bytes, as close 
-    # to size_target as possible using a binary search-type of algorithm
-    if im_buffer.getbuffer().nbytes < size_target:
-      print('Resulting image size is LESS    than {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
-      L = quality
-      quality = int((R + L) / 2)
-      return self.binary_search(picture, size_target, dimension, dimension_factor, i + 1, max_i, quality, L, R, im_buffer)
-    elif im_buffer.getbuffer().nbytes > size_target:
-      print('Resulting image size is GREATER than {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
-      R = quality
-      quality = int((R + L) / 2)
-      return self.binary_search(picture, size_target, dimension, dimension_factor, i + 1, max_i, quality, L, R, im_buffer)
-    else:
-      print('Resulting image size EQUALS {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
-      return im_buffer
+      # Use L and R pointers to move closer to a value for the 'quality' parameter 
+      # that produces an image with a file size, in bytes, as close 
+      # to size_target as possible using a binary search-type of algorithm
+      if im_buffer.getbuffer().nbytes < size_target:
+        print('Resulting image size is LESS    than {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
+        L = quality
+        quality = int((R + L) / 2)
+        return self.binary_search(picture, size_target, dimension, dimension_factor, i + 1, max_i, quality, L, R, im_buffer)
+      elif im_buffer.getbuffer().nbytes > size_target:
+        print('Resulting image size is GREATER than {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
+        R = quality
+        quality = int((R + L) / 2)
+        return self.binary_search(picture, size_target, dimension, dimension_factor, i + 1, max_i, quality, L, R, im_buffer)
+      else:
+        print('Resulting image size EQUALS {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
+        return im_buffer

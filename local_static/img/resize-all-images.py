@@ -48,7 +48,8 @@ quality = 50          # Starting quality value
 #
 def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
 
-  # If the size of the file (in bytes) is already below the size_target, return.
+  # If the size of the file (in bytes) is already below the size_target, or if
+  # the maximum number of iterations has been reached, return.
   if os.path.getsize(file_input_path + file) < size_target:
     return print("{} is already less than {} bytes".format(file, size_target))
   if i > max_iterations:
@@ -59,7 +60,7 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
     im = Image.open(file_input_path + file)
     new_dimension = (dimension[0] * dimension_factor, dimension[1] * dimension_factor)
     im.thumbnail(new_dimension, Image.ANTIALIAS)
-    new_prefix = '{}x-'.format(dimension_factor)
+    new_prefix = '{}x-'.format(dimension_factor)az
     new_name = new_prefix + name + '-' + str(dimension[0]) + '.jpg'
     im.save(file_output_path + new_name, "JPEG", quality=quality)
 

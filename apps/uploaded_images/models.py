@@ -24,6 +24,8 @@ class UploadedImages(Model):
   # via the *.super() method
   def save(self, *args, **kwargs):
     if self.Before_Picture:
+
+      # Note: this will overwrite the image uploaded by the user
       self.Before_Picture = self.resize_image(self.Before_Picture)
     super(UploadedImages, self).save(*args, **kwargs)
 
@@ -31,21 +33,23 @@ class UploadedImages(Model):
   # https://stackoverflow.com/questions/3723220/how-do-you-convert-a-pil-image-to-a-django-file
   def resize_image(self, picture):
 
-    # Use PIL to open the image file and *.thumbnail() to resize it
-    # im = Image.open(picture)
-    # im.thumbnail((50, 50), Image.ANTIALIAS)
-
     # Set variables for the *.binary_search() method
-    size_target = 5000  # Ideal image size (in bytes)
-    dimension = (480, 480)
+    size_target = 140000  # Ideal image size (in bytes)
+    dimensions = [(768, 768)]
     dimension_factor = 1
     i = 1                 # Iteration starting point
     max_i = 7             # Max number of iterations 
     quality = 50          # Starting quality value
     L = 1                 # Left pointer
     R = 100               # Right pointer
-    im_buffer = self.binary_search(picture, size_target, dimension, dimension_factor, i, max_i, quality, L, R)
-    print(im_buffer)
+
+    # Run the binary search algorithm once for each set of dimensions you want to
+    # create images at, ie. 320, 576, 768, etc. Currently there is no implementation
+    # on the front-end to support more than one set of dimensions, but I'm keeping
+    # the FOR loop here anyways so I know where to start if I implement multiple
+    # dimensions later in order to support responsive images.
+    for dimension in dimensions:
+      im_buffer = self.binary_search(picture, size_target, dimension, dimension_factor, i, max_i, quality, L, R)
 
     # When files are uploaded in Django they are stored in a dictionary called
     # request.FILES as "UploadedFile" objects (or a subclass like 

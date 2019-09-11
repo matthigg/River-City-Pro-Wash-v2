@@ -158,10 +158,6 @@ $card-transition: 0.15s ease-in;
         }
       }
     }
-    & [class^="col-"],
-    & [class*="col-"] {
-      padding: 0 calc(0.5rem + 0.5vw);
-    }
     &:hover {
       text-decoration: none;
       & .card-img-zoom {

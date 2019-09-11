@@ -1,4 +1,4 @@
-from django.db.models import CharField, DateTimeField, ImageField, Model, TextField
+from django.db.models import CharField, DateTimeField, ImageField, IntegerField, Model, TextField
 from PIL import Image
 import os, sys
 
@@ -12,17 +12,17 @@ class UploadedImages(Model):
     verbose_name_plural = "Uploaded Images" 
 
   # Define the user image input fields in the Django admin panel
-  Category                    = CharField(max_length=64, null=True)
-  Before_Picture_Description  = CharField(max_length=64, null=True)
-  # Before_Picture_Size_kB      = IntegerField(max_length=12, null=True)
-  # Before_Picture_Dimension    = IntegerField(max_length=12, null=True)
-  Before_Picture              = ImageField(upload_to='images/', null=True)
-  After_Picture_Description   = CharField(max_length=64, null=True)
-  # After_Picture_Size_kB       = IntegerField(max_length=12, null=True)
-  # Before_Picture_Dimension    = IntegerField(max_length=12, null=True)
-  After_Picture               = ImageField(upload_to='images/', null=True)
-  date                        = DateTimeField(auto_now_add=True, null=True)
-  Notes                       = TextField(max_length = 200, null=True)
+  Category                      = CharField(max_length=64, null=True)
+  Before_Picture_Description    = CharField(max_length=64, null=True, blank=True)
+  Before_Picture_Size_kB        = IntegerField(null=True)
+  Before_Picture_Max_Dimension  = IntegerField(null=True)
+  Before_Picture                = ImageField(upload_to='images/', null=True)
+  After_Picture_Description     = CharField(max_length=64, null=True, blank=True)
+  After_Picture_Size_kB         = IntegerField(null=True)
+  After_Picture_Max_Dimension   = IntegerField(null=True)
+  After_Picture                 = ImageField(upload_to='images/', null=True)
+  date                          = DateTimeField(auto_now_add=True, null=True)
+  Notes                         = TextField(max_length = 200, null=True, blank=True)
 
   # Add some extra functionality to the default behavior of the *.save() method
   # via the *.super() method
@@ -30,17 +30,17 @@ class UploadedImages(Model):
     if self.Before_Picture:
 
       # Note: this will overwrite the image uploaded by the user
-      self.Before_Picture = self.resize_image(self.Before_Picture)
-      self.After_Picture = self.resize_image(self.After_Picture)
+      self.Before_Picture = self.resize_image(self.Before_Picture, self.Before_Picture_Size_kB, self.Before_Picture_Max_Dimension)
+      self.After_Picture = self.resize_image(self.After_Picture, self.After_Picture_Size_kB, self.After_Picture_Max_Dimension)
     super(UploadedImages, self).save(*args, **kwargs)
 
   # Resize user-uploaded images
   # https://stackoverflow.com/questions/3723220/how-do-you-convert-a-pil-image-to-a-django-file
-  def resize_image(self, picture):
+  def resize_image(self, picture, size_target, max_dim):
 
     # Set variables for the *.binary_search() method
-    size_target = 140000      # Ideal image size (in bytes)
-    dimensions = [(768, 768)] # Dimensions, *.thumbnail() requires tuple
+    size_target = size_target * 1000   # Ideal image size (in bytes)
+    dimensions = [(max_dim, max_dim)]  # Dimensions for *.thumbnail() 
     dimension_factor = 1      # For generating 1x, 2x (retina), or higher res.
     i = 1                     # Iteration starting point
     max_i = 7                 # Max number of iterations 

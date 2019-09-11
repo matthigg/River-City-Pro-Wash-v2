@@ -284,10 +284,10 @@
 }
 
 .landing-page-footer .landing-page-footer-wrapper .icon-phone {
-  height: calc(1rem + 0.5vw);
+  height: calc(1rem + 1vw);
   fill: #EFF4F8;
   margin: 0 calc(0.25rem + 0.1vw);
-  width: calc(1rem + 0.5vw);
+  width: calc(1rem + 1vw);
 }
 
 @media (max-width: 767.98px) {

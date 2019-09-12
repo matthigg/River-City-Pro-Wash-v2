@@ -40,13 +40,14 @@ quality = 50          # Starting quality value
 #   name              - image file without extension
 #   dimension         - (horizontal, vertical) 2-tuple size in pixels
 #   dimension_factor  - factor by which in increase the dimension() tuple
+#   ext               - file extension as a tuple, ie. ('.jpg', 'JPEG')
 #   i                 - iteration 
 #   L                 - image quality from 1 to 100, max 95 per documentation,
 #                       left pointer
 #   https://pillow.readthedocs.io/en/5.1.x/handbook/image-file-formats.html
 #   R                 - right pointer
 #
-def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
+def resize_img(file, name, dimension, dimension_factor, ext, i, quality, L, R):
 
   # If the size of the file (in bytes) is already below the size_target, or if
   # the maximum number of iterations has been reached, return.
@@ -60,9 +61,9 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
     im = Image.open(file_input_path + file)
     new_dimension = (dimension[0] * dimension_factor, dimension[1] * dimension_factor)
     im.thumbnail(new_dimension, Image.ANTIALIAS)
-    new_prefix = '{}x-'.format(dimension_factor)az
-    new_name = new_prefix + name + '-' + str(dimension[0]) + '.jpg'
-    im.save(file_output_path + new_name, "JPEG", quality=quality)
+    new_prefix = '{}x-'.format(dimension_factor)
+    new_name = new_prefix + name + '-' + str(dimension[0]) + ext[0]
+    im.save(file_output_path + new_name, ext[1], quality=quality)
 
     # Use L and R pointers to move closer to a value for the 'quality' 
     # parameter that produces an image with a file size, in bytes, as close 
@@ -71,29 +72,42 @@ def resize_img(file, name, dimension, dimension_factor, i, quality, L, R):
       print('Resulting image size is LESS    than {} bytes:'.format(size_target), os.path.getsize(file_output_path + new_name), 'bytes, quality =', quality)
       L = quality
       quality = int((R + L) / 2)
-      resize_img(file, name, dimension, dimension_factor, i + 1, quality, L, R)
+      resize_img(file, name, dimension, dimension_factor, ext, i + 1, quality, L, R)
     elif os.path.getsize(file_output_path + new_name) > size_target:
       print('Resulting image size is GREATER than {} bytes:'.format(size_target), os.path.getsize(file_output_path + new_name), 'bytes, quality =', quality)
       R = quality
       quality = int((R + L) / 2)
-      resize_img(file, name, dimension, dimension_factor, i + 1, quality, L, R)
+      resize_img(file, name, dimension, dimension_factor, ext, i + 1, quality, L, R)
     else:
       print('Resulting image size equals {} bytes:'.format(size_target), os.path.getsize(file_output_path + new_name), 'bytes, quality =', quality)
     return
 
 # The Pillow *.thumbnail() method takes a tuple as its first argument, and it
 # also maintains aspect ratio, so the resulting thumbnail's height, width, or 
-# both will not exceed their respective values within the tuple (I think).
-dimensions = []
-def create_dimensions_list_of_tuples():
-  dimensions_list = [320, 576, 768, 992, 1200, 1440]
-  # dimensions_list = [320]
-  for value in dimensions_list:
-    dimensions.append((value, value))
-create_dimensions_list_of_tuples()
+# both will not exceed their respective values within the tuple.
+dimensions_1x = [320, 576, 768, 992, 1200, 1440]
+# dimensions_1x = [320, 576, 768]
+dimensions_1x_tuples = []
+dimensions_2x = [320, 576, 768]
+# dimensions_2x = [320, 576]
+dimensions_2x_tuples = []
+def create_dimensions_list_of_tuples(dimensions, dimensions_tuples):
+  for value in dimensions:
+    dimensions_tuples.append((value, value))
+create_dimensions_list_of_tuples(dimensions_1x, dimensions_1x_tuples)
+create_dimensions_list_of_tuples(dimensions_2x, dimensions_2x_tuples)
 
-# Use the Python os library's *.walk() method to look at every file in a 
-# specified directory, ie. sys.argv[1]
+# Use the Python os library's *.walk() method to look at every file in a specified
+# directory in order to pass those files to the resize_img() function, and take the
+# output from that function and save them to another directory. This script
+# assumes that all of the files in the sys.argv[1] directory, including sub-
+# directories, are images.
+# 
+# Parameters:
+#   file_input_path     - location to being os.walk()'ing, also searches 
+#                         subdirectories
+#   file_output_path    - save the results from the resize_img() function here
+#
 file_input_path = './' + sys.argv[1] + '/'
 file_output_path = './' + sys.argv[2] + '/'
 for root, dirs, files in os.walk(file_input_path, topdown=False):
@@ -101,22 +115,58 @@ for root, dirs, files in os.walk(file_input_path, topdown=False):
   for file in files:
     name = os.path.splitext(file)[0]
     if os.path.splitext(file)[1] != '.py':
-      for dimension in dimensions:
 
-        # Create 1x images
+      # Use the dimensions_1x_tuples list to create 1x images
+      for dimension in dimensions_1x_tuples:
+        dimension_factor = 1
+
+        # Parameters:
+        #   dimension_factor - integer used to multiply dimensions, specifically
+        #                      meant to create images for retina displays
+        #   file_ext         - image file extension for newly created files,
+        #                      ie. '.jpg'
+        #   file_ext_alias   - image file extension alias used by PIL's *.save() 
+        #                      method, ie. 'JPEG'
+        #
+        # Syntax:
+        # resize_img(file, name, dimension, dimension_factor, ext, i, quality, L, R)
+
+        # Create 1x JPEG images
         try: 
-          # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
-          dimension_factor = 1
-          print('=== Resizing: {}, {}, {}x'.format(file, dimension, dimension_factor))
-          resize_img(file, name, dimension, dimension_factor, 1, quality, L, R)
+          file_ext = '.jpg'
+          file_ext_alias = 'JPEG'
+          print('=== Resizing: {}, {}, {}, {}x'.format(file, dimension, file_ext, dimension_factor))
+          resize_img(file, name, dimension, dimension_factor, (file_ext, file_ext_alias), 1, quality, L, R)
         except IOError as e:
-          print(repr(e), "\nError: cannot convert {} to {} - {}x".format(file, dimension, dimension_factor))
+          print(e, "\nError: cannot convert {} to {} {}- {}x".format(file, dimension, file_ext, dimension_factor))
         
-        # Create 2x images
+        # Create 1x WEBP images
         try: 
-          # resize_img(file, name, dimension, dimension_factor, i, quality, L, R)
-          dimension_factor = 2
-          print('=== Resizing: {}, {}, {}x'.format(file, dimension, dimension_factor))
-          resize_img(file, name, dimension, dimension_factor, 1, quality, L, R)
+          file_ext = '.webp'
+          file_ext_alias = 'WEBP'
+          print('=== Resizing: {}, {}, {}, {}x'.format(file, dimension, file_ext, dimension_factor))
+          resize_img(file, name, dimension, dimension_factor, (file_ext, file_ext_alias), 1, quality, L, R)
         except IOError as e:
-          print(e, "Error: cannot convert {} to {} - {}x".format(file, dimension, dimension_factor))
+          print(e, "\nError: cannot convert {} to {} {}- {}x".format(file, dimension, file_ext, dimension_factor))
+
+      # Use the dimensions_2x_tuples list to create 2x images
+      for dimension in dimensions_2x_tuples:
+        dimension_factor = 2
+
+        # Create 2x JPEG images
+        try: 
+          file_ext = '.jpg'
+          file_ext_alias = 'JPEG'
+          print('=== Resizing: {}, {}, {}, {}x'.format(file, dimension, file_ext, dimension_factor))
+          resize_img(file, name, dimension, dimension_factor, (file_ext, file_ext_alias), 1, quality, L, R)
+        except IOError as e:
+          print(e, "\nError: cannot convert {} to {} {}- {}x".format(file, dimension, file_ext, dimension_factor))
+        
+        # Create 2x WEBP images
+        try: 
+          file_ext = '.webp'
+          file_ext_alias = 'WEBP'
+          print('=== Resizing: {}, {}, {}, {}x'.format(file, dimension, file_ext, dimension_factor))
+          resize_img(file, name, dimension, dimension_factor, (file_ext, file_ext_alias), 1, quality, L, R)
+        except IOError as e:
+          print(e, "\nError: cannot convert {} to {} {}- {}x".format(file, dimension, file_ext, dimension_factor))

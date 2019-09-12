@@ -78,19 +78,16 @@ class UploadedImages(Model):
     # picture.name: *.name is a Django File object attribute that includes the
     # name of the file plus its relative path from MEDIA_ROOT
     # 
-    # im_buffer.tell: *.tell() is an io.IOBase class method that returns
-    # the current stream position, ie. where the cursor is in an open file (I 
-    # think), which I guess basically tells you the size of the file if the 
-    # current stream position is at the end of the file
-    # 
     # Syntax:
     # InMemoryUploadedFile(file, field_name, name, content_type, size, charset)
     im_resized_file = InMemoryUploadedFile(im_buffer, None, picture.name, 'image/jpeg', im_buffer.getbuffer().nbytes, None)
-
-    # print(picture.size, '\n', im, '\n', im_resized_file, '\n', im_resized_file.size(), '\n', im_buffer.tell())
-
     return im_resized_file
 
+  # Binary search algorithm that uses 3 pointers -- L, R, and quality, where the
+  # value for quality is used by PIL's *.save() method to set the quality of an
+  # image -- in an attempt to find a quality that produces an image with an file
+  # size that is as close to the value for size_target as max_i number of
+  # iterations will allow (close, but not perfect, could be memoized I think).
   def binary_search(self, picture, size_target, dimension, dimension_factor, i, max_i, quality, L, R, im_buffer=None):
 
     # If the size of the picture (in bytes) is already below the size_target, or 

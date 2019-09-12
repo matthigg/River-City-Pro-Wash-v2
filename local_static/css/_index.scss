@@ -17,19 +17,19 @@
         display: none;
       }
     }
-    // & .landing-page-logo {
-    //   display: flex;
-    //   justify-content: center;
-    //   margin: calc(1rem + 1vw);
-    //   & .logo-rcpw {
-    //     height: 30vh;
-    //   }
-    //   @media (max-width: 767.98px) {
-    //     display: flex;
-    //     justify-content: center;
-    //     margin-top: 20vh;
-    //   }
-    // }
+    & .landing-page-logo {
+      display: flex;
+      justify-content: center;
+      margin: calc(1rem + 1vw);
+      & .logo-rcpw {
+        height: 30vh;
+      }
+      @media (max-width: 767.98px) {
+        display: flex;
+        justify-content: center;
+        margin-top: 20vh;
+      }
+    }
   }
   & .landing-page-col-right {
     padding: calc(0.5rem + 0.5vw);

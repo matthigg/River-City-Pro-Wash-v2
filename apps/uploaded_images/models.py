@@ -111,8 +111,8 @@ class UploadedImages(Model):
       im.save(im_buffer, "JPEG", quality=quality)
 
       # Use L and R pointers to move closer to a value for the 'quality' parameter 
-      # that produces an image with a file size, in bytes, as close 
-      # to size_target as possible using a binary search-type of algorithm
+      # that produces an image with a file size, in bytes, as close to size_target
+      # as possible using a binary search-type of algorithm.
       if im_buffer.getbuffer().nbytes < size_target:
         print('Resulting image size is LESS    than {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
         L = quality

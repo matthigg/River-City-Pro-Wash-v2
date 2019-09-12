@@ -127,3 +127,5 @@ class UploadedImages(Model):
       else:
         print('Resulting image size EQUALS {} bytes:'.format(size_target), im_buffer.getbuffer().nbytes, 'bytes, quality =', quality)
         return im_buffer
+    else:
+      return im_buffer

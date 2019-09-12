@@ -215,32 +215,6 @@
   }
 }
 
-.landing-page-row .landing-page-col-left .landing-page-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: calc(1rem + 1vw);
-}
-
-.landing-page-row .landing-page-col-left .landing-page-logo .logo-rcpw {
-  height: 30vh;
-}
-
-@media (max-width: 767.98px) {
-  .landing-page-row .landing-page-col-left .landing-page-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-top: 20vh;
-  }
-}
-
 .landing-page-row .landing-page-col-right {
   padding: calc(0.5rem + 0.5vw);
 }

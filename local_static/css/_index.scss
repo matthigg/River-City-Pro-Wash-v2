@@ -9,6 +9,7 @@
       font-size: calc(0.5rem + 0.5vw);
       font-style: italic;
       font-weight: 600;
+      margin: auto;
       padding: calc(0.5rem + 0.25vw);
       text-align: center;
       width: max-content;
@@ -17,7 +18,9 @@
       }
     }
     & .landing-page-logo {
-      display: none;
+      display: flex;
+      justify-content: center;
+      margin: calc(1rem + 1vw);
       & .logo-rcpw {
         height: 30vh;
       }

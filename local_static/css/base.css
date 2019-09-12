@@ -392,11 +392,6 @@
   transition: 0.15s ease-in;
 }
 
-.section-1-row .card [class^="col-"],
-.section-1-row .card [class*="col-"] {
-  padding: 0 calc(0.5rem + 0.5vw);
-}
-
 .section-1-row .card:hover {
   text-decoration: none;
 }
@@ -1256,13 +1251,18 @@ footer .footer-recaptcha {
   font-size: calc(1rem + 0.25vw);
 }
 
-.thanks-wrapper .thanks-row .thanks-image img {
-  border-radius: calc(1rem + 1vw);
-  display: block;
-  margin: calc(1rem + 1vw) auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 50vw;
+.thanks-wrapper .thanks-row .thanks-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.thanks-wrapper .thanks-row .thanks-image .logo-rcpw {
+  height: 35vh;
+  margin: calc(1rem + 1vw);
 }
 
 * {

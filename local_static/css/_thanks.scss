@@ -40,12 +40,11 @@
       font-size: calc(1rem + 0.25vw);
     }
     & .thanks-image {
-      & img {
-        border-radius: calc(1rem + 1vw);
-        display: block;
-        margin: calc(1rem + 1vw) auto;
-        object-fit: cover;
-        width: 50vw;
+      display: flex;
+      justify-content: center;
+      & .logo-rcpw {
+        height: 35vh;
+        margin: calc(1rem + 1vw);
       }
     }
   }

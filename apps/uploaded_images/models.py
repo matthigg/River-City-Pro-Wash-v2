@@ -11,6 +11,16 @@ class UploadedImages(Model):
   class Meta:
     verbose_name_plural = "Uploaded Images" 
 
+  # Define image categories to be displayed under in ~/templates/our-work.html
+  CATEGORIES = (
+    ('Houses', 'Houses'),
+    ('Decks', 'Decks'),
+    ('Deck Staining', 'Deck Staining'),
+    ('Concrete & Brick', 'Concrete & Brick'),
+    ('Fences', 'Fences'),
+    ('Graffiti Removal', 'Graffiti Removal'),
+  )
+
   # Define the user image input fields in the Django admin panel
   Category                      = CharField(max_length=64, null=True)
   Before_Picture_Description    = CharField(max_length=64, null=True, blank=True)

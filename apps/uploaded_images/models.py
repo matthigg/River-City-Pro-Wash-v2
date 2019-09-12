@@ -13,6 +13,7 @@ class UploadedImages(Model):
 
   # Define image categories to be displayed under in ~/templates/our-work.html
   CATEGORIES = (
+    ('None', 'Select a Category'),
     ('Houses', 'Houses'),
     ('Decks', 'Decks'),
     ('Deck Staining', 'Deck Staining'),
@@ -22,7 +23,7 @@ class UploadedImages(Model):
   )
 
   # Define the user image input fields in the Django admin panel
-  Category                      = CharField(max_length=64, null=True)
+  Category                      = CharField(max_length=64, null=True, choices=CATEGORIES, default='None')
   Before_Picture_Description    = CharField(max_length=64, null=True, blank=True)
   Before_Picture_Size_kB        = IntegerField(null=True, default=140)
   Before_Picture_Max_Dimension  = IntegerField(null=True, default=768)

@@ -14,15 +14,14 @@
       gtag('config', 'UA-142679669-1');
     </script>
 
+    <!-- Meta Tags & Meta Description -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Meta Description -->
     {% block metatag %}{% endblock %}
 
     <!-- Custom JavaScript -->
-    <script src="{% static 'js/navbar.js' %}"></script>
+    <script async defer src="{% static 'js/navbar.js' %}"></script>
     {% block javascript %}{% endblock %}
     
     <!-- Bootstrap CSS -->

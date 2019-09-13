@@ -25,7 +25,7 @@
 from PIL import Image
 import os, sys
 
-size_target = 340000  # Ideal image size (in bytes)
+size_target = 140000  # Ideal image size (in bytes)
 max_iterations = 7    # Number of iterations to find optimized quality value
 L = 1                 # Left pointer
 R = 100               # Right pointer

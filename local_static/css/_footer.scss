@@ -77,20 +77,12 @@ footer {
       padding: calc(0.5rem + 0.5vw);
       width: 20vw;
     }
-    & .logo-pittsburgh-penguins {
-      padding: calc(0.5rem + 0.5vw);
-      width: 20vw;
-    }
     @media (min-width: 576px) and (max-width: 767.98px) {
       & .logo-facebook {
         padding: calc(1rem + 1vw);
         width: 40vw;
       }
       & .logo-google {
-        padding: calc(1rem + 1vw);
-        width: 40vw;
-      }
-      & .logo-pittsburgh-penguins {
         padding: calc(1rem + 1vw);
         width: 40vw;
       }
@@ -101,10 +93,6 @@ footer {
         width: 60vw;
       }
       & .logo-google {
-        padding: calc(1rem + 1vw);
-        width: 60vw;
-      }
-      & .logo-pittsburgh-penguins {
         padding: calc(1rem + 1vw);
         width: 60vw;
       }

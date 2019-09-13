@@ -1128,21 +1128,12 @@ footer .footer-flair .logo-google {
   width: 20vw;
 }
 
-footer .footer-flair .logo-pittsburgh-penguins {
-  padding: calc(0.5rem + 0.5vw);
-  width: 20vw;
-}
-
 @media (min-width: 576px) and (max-width: 767.98px) {
   footer .footer-flair .logo-facebook {
     padding: calc(1rem + 1vw);
     width: 40vw;
   }
   footer .footer-flair .logo-google {
-    padding: calc(1rem + 1vw);
-    width: 40vw;
-  }
-  footer .footer-flair .logo-pittsburgh-penguins {
     padding: calc(1rem + 1vw);
     width: 40vw;
   }
@@ -1154,10 +1145,6 @@ footer .footer-flair .logo-pittsburgh-penguins {
     width: 60vw;
   }
   footer .footer-flair .logo-google {
-    padding: calc(1rem + 1vw);
-    width: 60vw;
-  }
-  footer .footer-flair .logo-pittsburgh-penguins {
     padding: calc(1rem + 1vw);
     width: 60vw;
   }

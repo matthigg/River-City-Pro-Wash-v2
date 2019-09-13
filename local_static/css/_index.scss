@@ -1,3 +1,9 @@
+@media (max-width: 767.98px) {
+  & .nav-free-quote {
+    display: block;
+  }
+}
+
 .landing-page-row {
   height: calc(100vh - #{$navbar-spacer-height-desktop} - #{$landing-page-footer-height-desktop}); // navbar + landing page footer height
   & .landing-page-col-left {

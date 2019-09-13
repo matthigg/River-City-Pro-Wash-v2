@@ -186,6 +186,12 @@
   }
 }
 
+@media (max-width: 767.98px) {
+  .nav-free-quote {
+    display: block;
+  }
+}
+
 .landing-page-row {
   height: calc(100vh - 133px - 60px);
 }

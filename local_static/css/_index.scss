@@ -20,7 +20,12 @@
   }
   & .landing-page-col-right {
     padding: calc(0.5rem + 0.5vw);
-    @media(max-width: 767.98px) {
+    @media (max-width: 767.98px) {
+      & .contact-form-wrapper {
+        display: none;
+      }
+    }
+    @media (max-height: 700px) {
       & .contact-form-wrapper {
         display: none;
       }

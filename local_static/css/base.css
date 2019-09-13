@@ -571,18 +571,10 @@
   padding: calc(1rem + 1vw);
 }
 
-.our-work-page-background {
-  background-color: #000B28;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 3, 5, 0.35)), to(rgba(2, 3, 5, 0.35))), url("/static/img/house-01.jpg");
-  background-image: linear-gradient(rgba(2, 3, 5, 0.35), rgba(2, 3, 5, 0.35)), url("/static/img/house-01.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: -1;
+@media (max-width: 767.98px) {
+  .nav-free-quote {
+    display: block;
+  }
 }
 
 .our-work-wrapper {

@@ -1,35 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // Show 'FREE Quote' button
-  if (window.innerWidth < 768) {
-    document.querySelector('.nav-free-quote').style.display = 'block'
-  }
-
-  // Modals
-  //
-  // Add a 'click' event listener to each 'before-and-after' group of images that
-  // looks for a data-category attribute and, if it finds one, grabs the before &
-  // after image URL's, hosted on AWS S3, and sends them to the modal template for
-  // display.
-  const baap_groups = document.querySelectorAll('.our-work-baap-group');
-  baap_groups.forEach((baap_group) => {
-    baap_group.addEventListener('click', (event) => {
-      let element = event.target;
-      if (element.dataset.category === undefined) {
-        while (element.parentNode) {
-          element = element.parentNode;
-          if (element.dataset.category) {
-            assignModalBAAPImage(element.dataset.beforeSrc, element.dataset.afterSrc);
-            return
-          } 
-        }
-      } else {
-        assignModalBAAPImage(element.dataset.beforeSrc, element.dataset.afterSrc);
+// Modals
+//
+// Add a 'click' event listener to each 'before-and-after' group of images that
+// looks for a data-category attribute and, if it finds one, grabs the before &
+// after image URL's, hosted on AWS S3, and sends them to the modal template for
+// display.
+const baap_groups = document.querySelectorAll('.our-work-baap-group');
+baap_groups.forEach((baap_group) => {
+  baap_group.addEventListener('click', (event) => {
+    let element = event.target;
+    if (element.dataset.category === undefined) {
+      while (element.parentNode) {
+        element = element.parentNode;
+        if (element.dataset.category) {
+          assignModalBAAPImage(element.dataset.beforeSrc, element.dataset.afterSrc);
+          return
+        } 
       }
-    })
+    } else {
+      assignModalBAAPImage(element.dataset.beforeSrc, element.dataset.afterSrc);
+    }
   })
-  function assignModalBAAPImage(before_src, after_src) {
-    document.querySelector('.modal-baap-group-img-before').src = before_src
-    document.querySelector('.modal-baap-group-img-after').src = after_src
-  }
 })
+function assignModalBAAPImage(before_src, after_src) {
+  document.querySelector('.modal-baap-group-img-before').src = before_src
+  document.querySelector('.modal-baap-group-img-after').src = after_src
+}

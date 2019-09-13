@@ -85,8 +85,8 @@ def resize_img(file, name, dimension, dimension_factor, ext, i, quality, L, R):
 # The Pillow *.thumbnail() method takes a tuple as its first argument, and it
 # also maintains aspect ratio, so the resulting thumbnail's height, width, or 
 # both will not exceed their respective values within the tuple.
-dimensions_1x = [320, 576, 768, 992, 1200, 1440]
-# dimensions_1x = [320, 576, 768]
+# dimensions_1x = [320, 576, 768, 992, 1200, 1440]
+dimensions_1x = [320, 576, 768]
 dimensions_1x_tuples = []
 dimensions_2x = [320, 576, 768]
 # dimensions_2x = [320, 576]

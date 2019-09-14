@@ -103,6 +103,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 20vh;
     padding: calc(2rem + 1vw);
     & .footer-map-iframe {
       height: 100%;

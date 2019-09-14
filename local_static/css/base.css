@@ -1340,6 +1340,7 @@ footer .footer-map {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  min-height: 20vh;
   padding: calc(2rem + 1vw);
 }
 

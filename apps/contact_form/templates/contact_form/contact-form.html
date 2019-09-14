@@ -36,3 +36,50 @@
     </fieldset>
   </form>
 </div>
+
+<!-- reCAPTCHA V3 -->
+<script>
+
+  // Add event listeners to all contact form input fields that, when focused, 
+  // will trigger the download of the reCAPTCHA API library
+  document.querySelectorAll('input').forEach(input_field => {
+    input_field.addEventListener('focus', getRecaptchaLibrary)
+  })
+
+  // Remove event listeners that trigger downloading the reCAPTCHA API library
+  function removeRecaptchaEventListeners() {
+    document.querySelectorAll('input').forEach(input_field => {
+      input_field.removeEventListener('focus', getRecaptchaLibrary)
+    })
+  }
+
+  // Create a <script> tag used to download the reCAPTCHA API library, and then
+  // call removeRecaptchaEventListers() afterwards to prevent future attempts to 
+  // download the library 
+  function getRecaptchaLibrary() {
+    console.log('x')
+    const script = document.createElement('script')
+    script.src = 'https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj&onload=onloadCallback'
+    document.querySelector('.contact-form-wrapper').appendChild(script)
+    removeRecaptchaEventListeners()
+  }
+
+  // Execute this code as a part of a callback function appended to the end of
+  // the reCAPTCHA API URL as an argument to the 'onload' parameter/key
+  function onloadCallback() {
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj', {action: 'homepage'}).then(function(token) {
+
+        // If '.contact-form' exists, the Google reCAPTCHA token will hitch a ride
+        // with it to the backend
+        if (document.querySelector('.contact-form')) {
+          const input_recaptcha = document.createElement('input')
+          input_recaptcha.style.display = 'none';
+          input_recaptcha.setAttribute('name', 'g-recaptcha-response');
+          input_recaptcha.value = token;
+          document.querySelector('.contact-form').appendChild(input_recaptcha);
+        };
+      });
+    });
+  }
+</script>

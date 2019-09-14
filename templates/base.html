@@ -57,22 +57,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
     <!-- reCAPTCHA V3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj"></script>
+    <script async defer src="https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj&onload=onloadCallback"></script>
     <script>
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj', {action: 'homepage'}).then(function(token) {
+      function onloadCallback() {
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj', {action: 'homepage'}).then(function(token) {
 
-          // If '.contact-form' exists, the Google reCAPTCHA token will hitch a ride
-          // with it to the backend
-          if (document.querySelector('.contact-form')) {
-            const input_recaptcha = document.createElement('input')
-            input_recaptcha.style.display = 'none';
-            input_recaptcha.setAttribute('name', 'g-recaptcha-response');
-            input_recaptcha.value = token;
-            document.querySelector('.contact-form').appendChild(input_recaptcha);
-          };
+            // If '.contact-form' exists, the Google reCAPTCHA token will hitch a ride
+            // with it to the backend
+            if (document.querySelector('.contact-form')) {
+              const input_recaptcha = document.createElement('input')
+              input_recaptcha.style.display = 'none';
+              input_recaptcha.setAttribute('name', 'g-recaptcha-response');
+              input_recaptcha.value = token;
+              document.querySelector('.contact-form').appendChild(input_recaptcha);
+            };
+          });
         });
-      });
+      }
     </script>
   </body>
 

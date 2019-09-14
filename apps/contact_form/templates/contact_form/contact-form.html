@@ -57,7 +57,6 @@
   // call removeRecaptchaEventListers() afterwards to prevent future attempts to 
   // download the library 
   function getRecaptchaLibrary() {
-    console.log('x')
     const script = document.createElement('script')
     script.src = 'https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj&onload=onloadCallback'
     document.querySelector('.contact-form-wrapper').appendChild(script)

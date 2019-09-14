@@ -1458,18 +1458,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.background-image {
-  background-color: #000B28;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
-
 .navbar-spacer {
   height: 133px;
   width: 100%;

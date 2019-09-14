@@ -14,9 +14,18 @@
       gtag('config', 'UA-142679669-1');
     </script>
 
+    <script class="script-placeholder"></script>
+
     <!-- reCAPTCHA V3 -->
-    <script defer src="https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj&onload=onloadCallback"></script>
+    {% comment %} <script defer src="https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj&onload=onloadCallback"></script> {% endcomment %}
     <script>
+      function getRecaptchaLibrary() {
+        const script = document.createElement('script')
+        script.src = 'https://www.google.com/recaptcha/api.js?render=6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj&onload=onloadCallback'
+        document.querySelector('.script-placeholder').appendChild(script)
+      }
+      getRecaptchaLibrary()
+
       function onloadCallback() {
         grecaptcha.ready(function() {
           grecaptcha.execute('6Lfsp6AUAAAAAKqgw2iGIvkiYepchQRy0LF2CnLj', {action: 'homepage'}).then(function(token) {

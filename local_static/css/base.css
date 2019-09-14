@@ -1304,6 +1304,17 @@ footer .footer-flair .logo-google {
   width: 20vw;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  footer .footer-flair .logo-facebook {
+    padding: calc(1rem + 1vw);
+    width: 30vw;
+  }
+  footer .footer-flair .logo-google {
+    padding: calc(1rem + 1vw);
+    width: 30vw;
+  }
+}
+
 @media (min-width: 576px) and (max-width: 767.98px) {
   footer .footer-flair .logo-facebook {
     padding: calc(1rem + 1vw);
@@ -1340,7 +1351,6 @@ footer .footer-map {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-height: 20vh;
   padding: calc(2rem + 1vw);
 }
 
@@ -1352,6 +1362,16 @@ footer .footer-map .footer-map-iframe {
 footer .footer-map .footer-map-text {
   font-size: calc(0.5rem + 0.35vw);
   padding: calc(0.5rem + 0.5vw);
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  footer .footer-map {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  footer .footer-map .footer-map-iframe {
+    height: 30vh;
+  }
 }
 
 @media (max-width: 767.98px) {

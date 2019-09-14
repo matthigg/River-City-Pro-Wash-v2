@@ -1270,6 +1270,12 @@ body {
   visibility: hidden;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: local("Roboto"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2");
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

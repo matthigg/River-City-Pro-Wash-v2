@@ -10,6 +10,7 @@ console.log('y')
 const baap_groups = document.querySelectorAll('.our-work-baap-group');
 baap_groups.forEach((baap_group) => {
   baap_group.addEventListener('click', (event) => {
+    console.log('click')
     let element = event.target;
     if (element.dataset.category === undefined) {
       while (element.parentNode) {

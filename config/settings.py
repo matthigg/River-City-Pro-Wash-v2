@@ -65,6 +65,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.gzip.GZipMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -168,22 +169,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # This will tell boto that when it uploads files to S3, it should set properties 
 # on them so that when S3 serves them, it'll include some HTTP headers in the 
 # response. Those HTTP headers, in turn, will tell browsers that they can cache 
-# these files for a very long time.
+# these files
 # https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
+    'CacheControl': 'max-age=360',
 }
 
 AWS_STORAGE_BUCKET_NAME = 'rcpw-eb-static-and-media-files'
-AWS_S3_REGION_NAME = 'us-east-1'  # e.g. us-east-2
+AWS_S3_REGION_NAME = 'us-east-1'
 AWS_ACCESS_KEY_ID = os.environ['RCPW_AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['RCPW_AWS_SECRET_ACCESS_KEY']
+AWS_CLOUDFRONT_DOMAIN = 'dczid2jsu4h09.cloudfront.net'
 
 # Tell django-storages the domain to use to refer to static files.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
 
-# Use to silence some S3Boto3Storage warning
+# While using S3Boto3Storage this setting is supposed to allow static and media
+# files (or whatever is stored in S3 via Boto3) to inherit the bucket's ACL, or
+# "Access Control List", which is basically the read/write security settings for
+# an AWS S3 bucket.
 AWS_DEFAULT_ACL = None
 
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected 
@@ -194,10 +200,6 @@ AWS_DEFAULT_ACL = None
 # subclassing S3Boto3Storage. This creates 2 subdirectories in the S3 bucket and
 # conveniently separates static & media files
 # https://www.caktusgroup.com/blog/2014/11/10/Using-Amazon-S3-to-store-your-Django-sites-static-and-media-files/
-
-# if os.environ['RCPW_LOCAL_HOST'] == 'None' or os.environ['RCPW_LOCAL_HOST_IP'] == 'None':
-#   STATICFILES_LOCATION = 'static'
-#   STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'

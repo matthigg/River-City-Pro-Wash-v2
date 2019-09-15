@@ -1,23 +1,13 @@
 {% load static %}
 
 <script>
-
   document.addEventListener('DOMContentLoaded', () => {
-    const bg_img_blurred = document.querySelector('.background-image.blurred-image')
-    setTimeout(() => {
-      bg_img_blurred.classList.add('hide-image')
-    }, 0)
-
-    const bg_img_final = document.querySelector('.background-image.final-image')
-    setTimeout(() => {
-      bg_img_final.classList.add('show-image')
-    }, 0)
+    document.querySelector('.background-image.blurred-image').classList.add('hide-image')
+    document.querySelector('.background-image.final-image').classList.add('show-image')
   })
-
 </script>
 
 <style scoped>
-
   .background-image {
     background-color: #000B28;
     background-position: center;
@@ -92,7 +82,6 @@
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-1440.jpg' %}) 1x);
     }
   }
-
 </style>
 
 <div class="background-image blurred-image"></div>

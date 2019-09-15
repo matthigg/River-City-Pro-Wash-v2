@@ -1,22 +1,28 @@
 {% load static %}
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.img-deck-and-patio-washing').classList.add('show-image')
+  })
+</script>
+
 <style scoped>
   @media (min-width: 320px) {
-    .img-deck-and-patio-washing {
+    .img-deck-and-patio-washing.show-image {
       background-image:                   url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-320.jpg' %});
       background-image: -webkit-image-set(url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-320.webp' %}) 1x, url({% static 'img/deck-washing-01/140kb/2x-deck-washing-01-320.webp' %}) 2x);  
       background-image:         image-set(url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-320.jpg' %}) 1x, url({% static 'img/deck-washing-01/140kb/2x-deck-washing-01-320.jpg' %}) 2x);
     }
   }
   @media (min-width: 576px) {
-    .img-deck-and-patio-washing {
+    .img-deck-and-patio-washing.show-image {
       background-image:                   url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-576.jpg' %});
       background-image: -webkit-image-set(url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-576.webp' %}) 1x, url({% static 'img/deck-washing-01/140kb/2x-deck-washing-01-576.webp' %}) 2x);  
       background-image:         image-set(url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-576.jpg' %}) 1x, url({% static 'img/deck-washing-01/140kb/2x-deck-washing-01-576.jpg' %}) 2x);
     }
   }
   @media (min-width: 768px) {
-    .img-deck-and-patio-washing {
+    .img-deck-and-patio-washing.show-image {
       background-image:                   url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-768.jpg' %});
       background-image: -webkit-image-set(url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-768.webp' %}) 1x, url({% static 'img/deck-washing-01/140kb/2x-deck-washing-01-768.webp' %}) 2x);  
       background-image:         image-set(url({% static 'img/deck-washing-01/140kb/1x-deck-washing-01-768.jpg' %}) 1x, url({% static 'img/deck-washing-01/140kb/2x-deck-washing-01-768.jpg' %}) 2x);

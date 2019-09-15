@@ -19,7 +19,7 @@
 <style scoped>
 
   .background-image {
-    background-color: $quinary-color;
+    background-color: #000B28;
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -31,13 +31,14 @@
   }
 
   .background-image.blurred-image {
-    background-image: url({% static 'img/house-01/340kb/1x-house-01-320.jpg' %});
+    background-image: url({% static 'img/house-01/340kb/1x-house-01-50.jpg' %});
+    filter: blur(4px);
     opacity: 1;
   }
 
   .background-image.blurred-image.hide-image {
     opacity: 0;
-    transition: 2s ease-in-out;
+    transition: 1s ease-in-out;
   }
 
   .background-image.final-image {
@@ -46,7 +47,7 @@
 
   .background-image.final-image.show-image {
     opacity: 1;
-    transition: 2s ease-in-out;
+    transition: 1s ease-in-out;
   }
 
   @media (min-width: 320px) {
@@ -91,6 +92,8 @@
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-1440.jpg' %}) 1x);
     }
   }
+
 </style>
+
 <div class="background-image blurred-image"></div>
 <div class="background-image final-image"></div>

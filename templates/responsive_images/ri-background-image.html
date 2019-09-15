@@ -1,13 +1,16 @@
 {% load static %}
 
 <script>
+  
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.background-image.blurred-image').classList.add('hide-image')
     document.querySelector('.background-image.final-image').classList.add('show-image')
   })
+
 </script>
 
 <style scoped>
+
   .background-image {
     background-color: #000B28;
     background-position: center;
@@ -40,20 +43,14 @@
     transition: 1s ease-in-out;
   }
 
-  @media (min-width: 320px) {
-    .background-image.final-image.show-image {
-      background-image:                   url({% static 'img/house-01/340kb/1x-house-01-320.jpg' %});
-      background-image: -webkit-image-set(url({% static 'img/house-01/340kb/1x-house-01-320.webp' %}) 1x, url({% static 'img/house-01/340kb/2x-house-01-320.webp' %}) 2x);  
-      background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-320.jpg' %}) 1x, url({% static 'img/house-01/340kb/2x-house-01-320.jpg' %}) 2x);
-    }
-  }
-  @media (min-width: 576px) {
+  @media (min-width: 0px) {
     .background-image.final-image.show-image {
       background-image:                   url({% static 'img/house-01/340kb/1x-house-01-576.jpg' %});
       background-image: -webkit-image-set(url({% static 'img/house-01/340kb/1x-house-01-576.webp' %}) 1x, url({% static 'img/house-01/340kb/2x-house-01-576.webp' %}) 2x);  
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-576.jpg' %}) 1x, url({% static 'img/house-01/340kb/2x-house-01-576.jpg' %}) 2x);
     }
   }
+
   @media (min-width: 768px) {
     .background-image.final-image.show-image {
       background-image:                   url({% static 'img/house-01/340kb/1x-house-01-768.jpg' %});
@@ -61,6 +58,7 @@
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-768.jpg' %}) 1x, url({% static 'img/house-01/340kb/2x-house-01-768.jpg' %}) 2x);
     }
   }
+
   @media (min-width: 992px) {
     .background-image.final-image.show-image {
       background-image:                   url({% static 'img/house-01/340kb/1x-house-01-992.jpg' %});
@@ -68,6 +66,7 @@
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-992.jpg' %}) 1x);
     }
   }
+
   @media (min-width: 1200px) {
     .background-image.final-image.show-image {
       background-image:                   url({% static 'img/house-01/340kb/1x-house-01-1200.jpg' %});
@@ -75,6 +74,7 @@
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-1200.jpg' %}) 1x);
     }
   }
+
   @media (min-width: 1440px) {
     .background-image.final-image.show-image {
       background-image:                   url({% static 'img/house-01/340kb/1x-house-01-1440.jpg' %});
@@ -82,6 +82,7 @@
       background-image:         image-set(url({% static 'img/house-01/340kb/1x-house-01-1440.jpg' %}) 1x);
     }
   }
+
 </style>
 
 <div class="background-image blurred-image"></div>

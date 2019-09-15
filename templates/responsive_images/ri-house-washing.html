@@ -1,19 +1,23 @@
 {% load static %}
 
 <script>
+
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.img-house-washing').classList.add('show-image')
   })
+  
 </script>
 
 <style scoped>
-  @media (min-width: 320px) {
+
+  @media (min-width: 0px) {
     .img-house-washing.show-image {
       background-image:                   url({% static 'img/house-02/140kb/1x-house-02-320.jpg' %});
       background-image: -webkit-image-set(url({% static 'img/house-02/140kb/1x-house-02-320.webp' %}) 1x, url({% static 'img/house-02/140kb/2x-house-02-320.webp' %}) 2x);  
       background-image:         image-set(url({% static 'img/house-02/140kb/1x-house-02-320.jpg' %}) 1x, url({% static 'img/house-02/140kb/2x-house-02-320.jpg' %}) 2x);
     }
   }
+
   @media (min-width: 576px) {
     .img-house-washing.show-image {
       background-image:                   url({% static 'img/house-02/140kb/1x-house-02-576.jpg' %});
@@ -21,6 +25,7 @@
       background-image:         image-set(url({% static 'img/house-02/140kb/1x-house-02-576.jpg' %}) 1x, url({% static 'img/house-02/140kb/2x-house-02-576.jpg' %}) 2x);
     }
   }
+
   @media (min-width: 768px) {
     .img-house-washing.show-image {
       background-image:                   url({% static 'img/house-02/140kb/1x-house-02-768.jpg' %});
@@ -28,5 +33,7 @@
       background-image:         image-set(url({% static 'img/house-02/140kb/1x-house-02-768.jpg' %}) 1x, url({% static 'img/house-02/140kb/2x-house-02-768.jpg' %}) 2x);
     }
   }
+
 </style>
+
 <div class="service-image img-house-washing card-img-zoom"></div>

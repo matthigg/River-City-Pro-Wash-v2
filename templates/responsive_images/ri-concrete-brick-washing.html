@@ -1,19 +1,22 @@
 {% load static %}
 
 <script>
+
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.img-concrete-and-brick-washing').classList.add('show-image')
   })
+  
 </script>
 
 <style scoped>
-  @media (min-width: 320px) {
+  @media (min-width: 0px) {
     .img-concrete-and-brick-washing.show-image {
       background-image:                   url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-320.jpg' %});
       background-image: -webkit-image-set(url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-320.webp' %}) 1x, url({% static 'img/brick-washing-01/140kb/2x-brick-washing-01-320.webp' %}) 2x);  
       background-image:         image-set(url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-320.jpg' %}) 1x, url({% static 'img/brick-washing-01/140kb/2x-brick-washing-01-320.jpg' %}) 2x);
     }
   }
+
   @media (min-width: 576px) {
     .img-concrete-and-brick-washing.show-image {
       background-image:                   url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-576.jpg' %});
@@ -21,6 +24,7 @@
       background-image:         image-set(url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-576.jpg' %}) 1x, url({% static 'img/brick-washing-01/140kb/2x-brick-washing-01-576.jpg' %}) 2x);
     }
   }
+
   @media (min-width: 768px) {
     .img-concrete-and-brick-washing.show-image {
       background-image:                   url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-768.jpg' %});
@@ -28,6 +32,7 @@
       background-image:         image-set(url({% static 'img/brick-washing-01/140kb/1x-brick-washing-01-768.jpg' %}) 1x, url({% static 'img/brick-washing-01/140kb/2x-brick-washing-01-768.jpg' %}) 2x);
     }
   }
+
 </style>
 
 <div class="service-image img-concrete-and-brick-washing card-img-zoom"></div>

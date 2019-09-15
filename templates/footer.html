@@ -20,7 +20,15 @@
 
     </div>
     <div class="col-lg-4 footer-map">
-      <iframe class="footer-map-iframe"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101257.30763953361!2d-77.56330151745047!3d37.52464026981911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b111095799c9ed%3A0xbfd83e6de2423cc5!2sRichmond%2C%20VA!5e0!3m2!1sen!2sus!4v1568309312553!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+      <!-- Lazy-load the footer map -->
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.footer-map-iframe').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101257.30763953361!2d-77.56330151745047!3d37.52464026981911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b111095799c9ed%3A0xbfd83e6de2423cc5!2sRichmond%2C%20VA!5e0!3m2!1sen!2sus!4v1568309312553!5m2!1sen!2sus"
+      })
+      </script>
+
+      <iframe class="footer-map-iframe" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       <div class="footer-map-text">
         Richmond VA &middot;
         Manassas VA &middot;

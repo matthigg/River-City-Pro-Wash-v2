@@ -4,6 +4,9 @@
 // looks for a data-category attribute and, if it finds one, grabs the before &
 // after image URL's, hosted on AWS S3, and sends them to the modal template for
 // display.
+
+console.log('y')
+
 const baap_groups = document.querySelectorAll('.our-work-baap-group');
 baap_groups.forEach((baap_group) => {
   baap_group.addEventListener('click', (event) => {
@@ -22,6 +25,7 @@ baap_groups.forEach((baap_group) => {
   })
 })
 function assignModalBAAPImage(before_src, after_src) {
+  console.log('x')
   document.querySelector('.modal-baap-group-img-before').src = before_src
   document.querySelector('.modal-baap-group-img-after').src = after_src
 }

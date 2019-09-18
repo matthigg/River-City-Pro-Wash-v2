@@ -8,7 +8,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const baap_groups = document.querySelectorAll('.our-work-baap-group');
-  console.log(baap_groups)
   baap_groups.forEach((baap_group) => {
     baap_group.addEventListener('click', (event) => {
       let element = event.target;
@@ -30,5 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.modal-baap-group-img-before').src = before_src
     document.querySelector('.modal-baap-group-img-after').src = after_src
   }
-
 })

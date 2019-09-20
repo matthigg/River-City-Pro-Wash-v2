@@ -104,20 +104,12 @@ $nav-logo-transition: 0.25s;
       border-radius: 10px;
       color: $primary-color;
       display: flex;
-      font-size: calc(1rem + 1vw);
       font-style: italic;
       height: 3rem;
       left: 5vw;
       padding: 0 calc(0.5rem + 0.5vw);
       position: fixed;
-      top: $call-now-free-quote-buttons-top-offset;
       z-index: 2;
-      & .icon-phone {
-        height: 2rem;
-        fill: $primary-color;
-        margin-right: calc(0.5rem + 0.25vw);
-        width: 2rem;
-      }
       &:focus {
         background-color: $tertiary-color;
         box-shadow: none;
@@ -125,11 +117,37 @@ $nav-logo-transition: 0.25s;
       }
     }
   }
+  @media (min-height: 400px) {
+    & .nav-call-now-button {
+      font-size: calc(1rem + 1vw);
+      height: 3rem;
+      top: $call-now-free-quote-buttons-top-offset;
+    }
+    & .icon-phone {
+      height: 2rem;
+      fill: $primary-color;
+      margin-right: calc(0.5rem + 0.25vw);
+      width: 2rem;
+    }
+  }
+  @media (max-height: 399.98px) {
+    & .nav-call-now-button {
+      font-size: calc(0.5rem 0.25vw);
+      height: 2.5rem;
+      top: 20vh;
+    }
+    & .icon-phone {
+      height: 1rem;
+      fill: $primary-color;
+      margin-right: calc(0.5rem + 0.25vw);
+      width: 1rem;
+    }
+  }
 }
 
 .nav-free-quote {
   display: none;
-  @media (max-width: 767.98px) and (min-height: 576px) {
+  @media (max-width: 767.98px){
     position: relative;
     & .nav-free-quote-button {
       align-items: center;
@@ -138,13 +156,10 @@ $nav-logo-transition: 0.25s;
       border-radius: 10px;
       color: $primary-color;
       display: flex;
-      font-size: calc(1rem + 1vw);
       font-style: italic;
-      height: 3rem;
-      right: 5vw;
       padding: 0 calc(0.5rem + 0.5vw);
       position: fixed;
-      top: $call-now-free-quote-buttons-top-offset;
+      right: 5vw;
       z-index: 2;
       &:focus {
         background-color: $tertiary-color;
@@ -153,11 +168,18 @@ $nav-logo-transition: 0.25s;
       }
     }
   }
-  @media (max-width: 767.98px) and (max-height: 575.98px) {
+  @media (min-height: 400px) {
+    & .nav-free-quote-button {
+      font-size: calc(1rem + 1vw);
+      height: 3rem;
+      top: $call-now-free-quote-buttons-top-offset;
+    }
+  }
+  @media (max-height: 399.98px) {
     & .nav-free-quote-button {
       font-size: calc(0.5rem 0.25vw);
-      padding: 0 calc(0.25rem + 0.25vw);
-      top: 30vh;
+      height: 2.5rem;
+      top: 20vh;
     }
   }
 }

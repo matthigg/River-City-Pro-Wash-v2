@@ -127,20 +127,12 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: calc(1rem + 1vw);
     font-style: italic;
     height: 3rem;
     left: 5vw;
     padding: 0 calc(0.5rem + 0.5vw);
     position: fixed;
-    top: 12vh;
     z-index: 2;
-  }
-  .nav-call-now .nav-call-now-button .icon-phone {
-    height: 2rem;
-    fill: #EFF4F8;
-    margin-right: calc(0.5rem + 0.25vw);
-    width: 2rem;
   }
   .nav-call-now .nav-call-now-button:focus {
     background-color: #00AEEF;
@@ -150,11 +142,39 @@
   }
 }
 
+@media (min-height: 400px) {
+  .nav-call-now .nav-call-now-button {
+    font-size: calc(1rem + 1vw);
+    height: 3rem;
+    top: 12vh;
+  }
+  .nav-call-now .icon-phone {
+    height: 2rem;
+    fill: #EFF4F8;
+    margin-right: calc(0.5rem + 0.25vw);
+    width: 2rem;
+  }
+}
+
+@media (max-height: 399.98px) {
+  .nav-call-now .nav-call-now-button {
+    font-size: calc(0.5rem 0.25vw);
+    height: 2.5rem;
+    top: 20vh;
+  }
+  .nav-call-now .icon-phone {
+    height: 1rem;
+    fill: #EFF4F8;
+    margin-right: calc(0.5rem + 0.25vw);
+    width: 1rem;
+  }
+}
+
 .nav-free-quote {
   display: none;
 }
 
-@media (max-width: 767.98px) and (min-height: 576px) {
+@media (max-width: 767.98px) {
   .nav-free-quote {
     position: relative;
   }
@@ -169,13 +189,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: calc(1rem + 1vw);
     font-style: italic;
-    height: 3rem;
-    right: 5vw;
     padding: 0 calc(0.5rem + 0.5vw);
     position: fixed;
-    top: 12vh;
+    right: 5vw;
     z-index: 2;
   }
   .nav-free-quote .nav-free-quote-button:focus {
@@ -186,11 +203,19 @@
   }
 }
 
-@media (max-width: 767.98px) and (max-height: 575.98px) {
+@media (min-height: 400px) {
+  .nav-free-quote .nav-free-quote-button {
+    font-size: calc(1rem + 1vw);
+    height: 3rem;
+    top: 12vh;
+  }
+}
+
+@media (max-height: 399.98px) {
   .nav-free-quote .nav-free-quote-button {
     font-size: calc(0.5rem 0.25vw);
-    padding: 0 calc(0.25rem + 0.25vw);
-    top: 30vh;
+    height: 2.5rem;
+    top: 20vh;
   }
 }
 

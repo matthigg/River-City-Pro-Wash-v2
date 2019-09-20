@@ -27,8 +27,10 @@ from django.conf.urls.static import static
 # Sitemap
 # https://docs.djangoproject.com/en/2.2/ref/contrib/sitemaps/
 from django.contrib.sitemaps.views import sitemap
-path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-     name='django.contrib.sitemaps.views.sitemap')
+from .sitemaps import StaticViewSitemap
+sitemaps = {
+  'static': StaticViewSitemap
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,6 +39,7 @@ urlpatterns = [
     path('contact/',  contact,  name='contact'),
     path('faq/',      faq,      name='faq'),
     path('our-work/', our_work, name='our-work'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('services/', services, name='services'),
     path('services/house-washing',          house_washing,          name='house-washing'),
     path('services/concrete-brick-washing', concrete_brick_washing, name='concrete-brick-washing'),

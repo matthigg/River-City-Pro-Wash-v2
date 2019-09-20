@@ -129,7 +129,7 @@ $nav-logo-transition: 0.25s;
 
 .nav-free-quote {
   display: none;
-  @media (max-width: 767.98px) {
+  @media (max-width: 767.98px) and (min-height: 576px) {
     position: relative;
     & .nav-free-quote-button {
       align-items: center;
@@ -153,7 +153,7 @@ $nav-logo-transition: 0.25s;
       }
     }
   }
-  @media (max-height: 575.98px) {
+  @media (max-width: 767.98px) and (max-height: 575.98px) {
     & .nav-free-quote-button {
       font-size: calc(0.5rem 0.25vw);
       padding: 0 calc(0.25rem + 0.25vw);

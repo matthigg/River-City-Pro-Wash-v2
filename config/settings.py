@@ -182,9 +182,13 @@ AWS_ACCESS_KEY_ID = os.environ['RCPW_AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = os.environ['RCPW_AWS_SECRET_ACCESS_KEY']
 AWS_CLOUDFRONT_DOMAIN = 'dczid2jsu4h09.cloudfront.net'
 
-# Tell django-storages the domain to use to refer to static files.
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
+# Tell django-storages the domain to use to refer to static files. You can choose
+# between serving static files from an AWS S3 bucket or AWS Cloudfront - note 
+# that Cloudfront typically takes 24 hours to update their cache unless you
+# specifically invalidate a file or use object versioning. For quick changes,
+# it's easier to use the S3 bucket.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_CUSTOM_DOMAIN = AWS_CLOUDFRONT_DOMAIN
 
 # While using S3Boto3Storage this setting is supposed to allow static and media
 # files (or whatever is stored in S3 via Boto3) to inherit the bucket's ACL, or

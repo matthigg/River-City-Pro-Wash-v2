@@ -24,6 +24,12 @@ from .views import house_washing, concrete_brick_washing, deck_patio_washing, de
 from django.conf import settings
 from django.conf.urls.static import static
 
+# Sitemap
+# https://docs.djangoproject.com/en/2.2/ref/contrib/sitemaps/
+from django.contrib.sitemaps.views import sitemap
+path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+     name='django.contrib.sitemaps.views.sitemap')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',          index,    name='index'),

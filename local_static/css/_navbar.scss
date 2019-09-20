@@ -153,4 +153,11 @@ $nav-logo-transition: 0.25s;
       }
     }
   }
+  @media (max-height: 575.98px) {
+    & .nav-free-quote-button {
+      font-size: calc(0.5rem 0.25vw);
+      padding: 0 calc(0.25rem + 0.25vw);
+      top: 30vh;
+    }
+  }
 }

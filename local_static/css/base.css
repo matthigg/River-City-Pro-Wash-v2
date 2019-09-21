@@ -479,6 +479,7 @@
 @media (max-width: 767.98px) {
   .landing-page-footer .landing-page-caption-footer {
     display: block;
+    font-size: calc(1rem + 0.25vw);
   }
 }
 

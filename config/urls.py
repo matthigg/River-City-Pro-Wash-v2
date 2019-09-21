@@ -40,7 +40,6 @@ urlpatterns = [
     path('faq/',      faq,      name='faq'),
     path('our-work/', our_work, name='our-work'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-    path('services/', services, name='services'),
     path('services/house-washing',          house_washing,          name='house-washing'),
     path('services/concrete-brick-washing', concrete_brick_washing, name='concrete-brick-washing'),
     path('services/deck-patio-washing',     deck_patio_washing,     name='deck-patio-washing'),

@@ -10,6 +10,7 @@ $nav-logo-transition: 0.25s;
   z-index: 3;
   & .navbar-nav {
     & .nav-item {
+      cursor: pointer;
       position: relative;
       & .nav-link {
         color: $primary-color;
@@ -26,7 +27,6 @@ $nav-logo-transition: 0.25s;
         }
       }
       &:hover {
-        cursor: pointer;
         & .nav-link::before {
           transition: $nav-transition;
           width: 100%;

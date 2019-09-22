@@ -8,6 +8,7 @@
 }
 
 .navbar .navbar-nav .nav-item {
+  cursor: pointer;
   position: relative;
 }
 

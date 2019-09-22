@@ -32,6 +32,20 @@ $baap-transition: 0.2s ease-out;
     margin-bottom: 0;
     text-align: center;
   }
+  & .our-work-copy {
+    font-size: calc(1rem + 0.5vw);
+    padding: calc(1rem + 1vw);
+    & p {
+      padding: calc(1rem + 1vw);
+    }
+    & a {
+      color: $tertiary-color;
+      &:hover {
+        color: $quarternary-color;
+        text-decoration: none;
+      }
+    }
+  }
   & .our-work-row {
     background-color: $primary-color;
     justify-content: space-around;

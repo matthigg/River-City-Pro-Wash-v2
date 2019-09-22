@@ -529,6 +529,26 @@
   width: 100%;
 }
 
+.section-1-copy {
+  background-color: #EFF4F8;
+  color: #000B28;
+  font-size: calc(1rem + 0.5vw);
+  padding: 0 calc(1rem + 1vw) calc(2rem + 2vw) calc(1rem + 1vw);
+}
+
+.section-1-copy p {
+  padding: 0 calc(1rem + 1vw);
+}
+
+.section-1-copy a {
+  color: #00AEEF;
+}
+
+.section-1-copy a:hover {
+  color: #262262;
+  text-decoration: none;
+}
+
 .section-1-row {
   background-color: #EFF4F8;
   display: -webkit-box;
@@ -814,6 +834,24 @@
   font-style: italic;
   margin-bottom: 0;
   text-align: center;
+}
+
+.our-work-wrapper .our-work-copy {
+  font-size: calc(1rem + 0.5vw);
+  padding: calc(1rem + 1vw);
+}
+
+.our-work-wrapper .our-work-copy p {
+  padding: calc(1rem + 1vw);
+}
+
+.our-work-wrapper .our-work-copy a {
+  color: #00AEEF;
+}
+
+.our-work-wrapper .our-work-copy a:hover {
+  color: #262262;
+  text-decoration: none;
 }
 
 .our-work-wrapper .our-work-row {

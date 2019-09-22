@@ -104,6 +104,23 @@ $card-transition: 0.15s ease-in;
   width: 100%;
 }
 
+.section-1-copy {
+  background-color: $primary-color;
+  color: $quinary-color;
+  font-size: calc(1rem + 0.5vw);
+  padding: 0 calc(1rem + 1vw) calc(2rem + 2vw) calc(1rem + 1vw);
+  & p {
+    padding: 0 calc(1rem + 1vw);
+  }
+  & a {
+    color: $tertiary-color;
+    &:hover {
+      color: $quarternary-color;
+      text-decoration: none;
+    }
+  }
+}
+
 .section-1-row {
   background-color: $primary-color;
   display: flex;

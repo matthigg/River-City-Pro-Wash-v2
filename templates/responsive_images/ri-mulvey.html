@@ -1,0 +1,55 @@
+{% load static %}
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.img-mulvey').classList.add('show-image')
+  })
+  
+</script>
+
+<style scoped>
+
+  .img-mulvey {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: calc(1.5rem + 0.5vw);
+    height: 100%;
+    padding: calc(1rem + 1vw);
+    width: 100%;
+  }
+
+  @media (max-width: 767.98px) {
+    .img-mulvey {
+      height: 30vh;
+    }
+  }
+
+  @media (min-width: 0px) {
+    .img-mulvey.show-image {
+      background-image:                   url({% static 'img/mulvey-01/140kb/1x-mulvey-01-320.jpg' %});
+      background-image: -webkit-image-set(url({% static 'img/mulvey-01/140kb/1x-mulvey-01-320.webp' %}) 1x, url({% static 'img/mulvey-01/140kb/2x-mulvey-01-320.webp' %}) 2x);  
+      background-image:         image-set(url({% static 'img/mulvey-01/140kb/1x-mulvey-01-320.jpg' %}) 1x, url({% static 'img/mulvey-01/140kb/2x-mulvey-01-320.jpg' %}) 2x);
+    }
+  }
+
+  @media (min-width: 576px) {
+    .img-mulvey.show-image {
+      background-image:                   url({% static 'img/mulvey-01/140kb/1x-mulvey-01-576.jpg' %});
+      background-image: -webkit-image-set(url({% static 'img/mulvey-01/140kb/1x-mulvey-01-576.webp' %}) 1x, url({% static 'img/mulvey-01/140kb/2x-mulvey-01-576.webp' %}) 2x);  
+      background-image:         image-set(url({% static 'img/mulvey-01/140kb/1x-mulvey-01-576.jpg' %}) 1x, url({% static 'img/mulvey-01/140kb/2x-mulvey-01-576.jpg' %}) 2x);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .img-mulvey.show-image {
+      background-image:                   url({% static 'img/mulvey-01/140kb/1x-mulvey-01-768.jpg' %});
+      background-image: -webkit-image-set(url({% static 'img/mulvey-01/140kb/1x-mulvey-01-768.webp' %}) 1x, url({% static 'img/mulvey-01/140kb/2x-mulvey-01-768.webp' %}) 2x);  
+      background-image:         image-set(url({% static 'img/mulvey-01/140kb/1x-mulvey-01-768.jpg' %}) 1x, url({% static 'img/mulvey-01/140kb/2x-mulvey-01-768.jpg' %}) 2x);
+    }
+  }
+
+</style>
+
+<div class="img-mulvey"></div>

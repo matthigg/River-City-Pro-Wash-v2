@@ -30,6 +30,25 @@
   <!-- Our Work Title -->
   <h1 class="our-work-header">Our Work</h1>
 
+  <section class="row our-work-copy">
+    <div class="col-md-6">
+      {% include 'responsive_images/ri-mulvey.html' %}
+    </div>
+    <div class="col-md-6">
+      <p>
+        We take pride in our power washing services. Over time, it's inevitable 
+        that outdoor property will start to accumulate dirt, dust, and possibly
+        mold, mildew, and other natural debris. Whether it's your home, driveway, 
+        deck, sidewalk, or walkway, we can clean it for you!
+      </p>
+      <p>
+        If your home, business, or property needs cleaning, then give us a call 
+        or send us a message and see what we can do for you - 
+        <a href="{% url 'contact' %}">send a message</a>!
+      </p>
+    </div>
+  </section>
+
   <!-- BAAP, Houses -->
   {% if Houses %}
     <h2 class="our-work-subsection-heading">Houses</h2>

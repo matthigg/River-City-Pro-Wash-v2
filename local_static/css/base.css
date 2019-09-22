@@ -533,7 +533,11 @@
   background-color: #EFF4F8;
   color: #000B28;
   font-size: calc(1rem + 0.5vw);
-  padding: 0 calc(1rem + 1vw) calc(2rem + 2vw) calc(1rem + 1vw);
+  padding: 0 calc(2rem + 2vw) calc(2rem + 2vw) calc(2rem + 2vw);
+}
+
+.section-1-copy .section-1-copy-image {
+  margin-bottom: calc(1rem + 1vw);
 }
 
 .section-1-copy p {
@@ -838,11 +842,15 @@
 
 .our-work-wrapper .our-work-copy {
   font-size: calc(1rem + 0.5vw);
-  padding: calc(1rem + 1vw);
+  padding: calc(2rem + 2vw);
+}
+
+.our-work-wrapper .our-work-copy .our-work-copy-image {
+  margin-bottom: calc(1rem + 1vw);
 }
 
 .our-work-wrapper .our-work-copy p {
-  padding: calc(1rem + 1vw);
+  padding: 0 calc(1rem + 1vw);
 }
 
 .our-work-wrapper .our-work-copy a {

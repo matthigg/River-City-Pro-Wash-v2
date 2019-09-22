@@ -34,9 +34,12 @@ $baap-transition: 0.2s ease-out;
   }
   & .our-work-copy {
     font-size: calc(1rem + 0.5vw);
-    padding: calc(1rem + 1vw);
+    padding: calc(2rem + 2vw);
+    & .our-work-copy-image {
+      margin-bottom: calc(1rem + 1vw);
+    }
     & p {
-      padding: calc(1rem + 1vw);
+      padding: 0 calc(1rem + 1vw);
     }
     & a {
       color: $tertiary-color;

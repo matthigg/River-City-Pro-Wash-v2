@@ -108,7 +108,10 @@ $card-transition: 0.15s ease-in;
   background-color: $primary-color;
   color: $quinary-color;
   font-size: calc(1rem + 0.5vw);
-  padding: 0 calc(1rem + 1vw) calc(2rem + 2vw) calc(1rem + 1vw);
+  padding: 0 calc(2rem + 2vw) calc(2rem + 2vw) calc(2rem + 2vw);
+  & .section-1-copy-image {
+    margin-bottom: calc(1rem + 1vw);
+  }
   & p {
     padding: 0 calc(1rem + 1vw);
   }

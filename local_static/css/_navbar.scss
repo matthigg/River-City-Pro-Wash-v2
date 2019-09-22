@@ -26,6 +26,7 @@ $nav-logo-transition: 0.25s;
         }
       }
       &:hover {
+        cursor: pointer;
         & .nav-link::before {
           transition: $nav-transition;
           width: 100%;

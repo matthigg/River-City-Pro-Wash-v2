@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
   function assignModalBAAPImage(before_src, after_src) {
-    console.log('x')
     document.querySelector('.modal-baap-group-img-before').src = before_src
     document.querySelector('.modal-baap-group-img-after').src = after_src
   }

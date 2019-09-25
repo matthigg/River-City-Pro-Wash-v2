@@ -1,33 +1,24 @@
 <footer>
   <div class="row footer-row">
-    <div class="col-lg-4 footer-contact">
 
+    <!-- Footer contact & hours of operation information -->
+    <div class="col-lg-4 footer-contact">
       <div class="footer-contact-text">
         If you need it cleaned, we've got you covered! See why home owners, business owners, and property managers rely on {% include 'svg/nav-logo-text.svg' %} for pressure washing services in {% include 'business_information/location.html' %}. Call us today for a FREE quote!
       </div>
-
       <div class="footer-contact-phone">
         {% include 'svg/icon-phone.svg' %}
         {% include 'business_information/phone-number.html' %}
       </div>
-
       <div class="footer-contact-hours-of-operation">
         {% include 'svg/icon-hours-of-operation.svg' %}
         {% include 'business_information/hours-of-operation.html' %}
       </div>
-
       {% include 'svg/logo-rcpw.svg' %}
-
     </div>
+
+    <!-- Footer map -->
     <div class="col-lg-4 footer-map">
-
-      <!-- Lazy-load the footer map -->
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          document.querySelector('.footer-map-iframe').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101257.30763953361!2d-77.56330151745047!3d37.52464026981911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b111095799c9ed%3A0xbfd83e6de2423cc5!2sRichmond%2C%20VA!5e0!3m2!1sen!2sus!4v1568309312553!5m2!1sen!2sus"
-        })
-      </script>
-
       <iframe class="footer-map-iframe" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       <div class="footer-map-text">
         Richmond VA &middot;
@@ -48,12 +39,30 @@
         Washington DC
       </div>
     </div>
+
+    <!-- Lazy-load the footer map -->
+    <script>
+      let options = {
+        root: document.querySelector('.footer-map'),
+        rootMargin: '0px',
+        threshold: 0.5
+      }
+      let observer = new IntersectionObserver(showMap, options)
+      let target = document.querySelector('.footer-map-iframe')
+      observer.observe(target)
+      function showMap() {
+        document.querySelector('.footer-map-iframe').src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101257.30763953361!2d-77.56330151745047!3d37.52464026981911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b111095799c9ed%3A0xbfd83e6de2423cc5!2sRichmond%2C%20VA!5e0!3m2!1sen!2sus!4v1568309312553!5m2!1sen!2sus"
+      }
+    </script>
+
+    <!-- Footer flair -->
     <div class="col-lg-4 footer-flair">
       <a href="https://g.page/river-city-pro-wash-manassas?share" target="_blank" rel="noopener noreferrer">{% include 'svg/logo-google.svg' %}</a>
       <a href="https://www.facebook.com/River-City-Pro-Wash-722079708136598/" target="_blank" rel="noopener noreferrer">{% include 'svg/logo-facebook.svg' %}</a>
     </div>
   </div>
 
+  <!-- Copyright, back-to-top, and reCAPTCHA terms -->
   <div class="row footer-row">
     <div class="col-lg-4 footer-copyright">River City Pro Wash © 2019</div>
     <div class="col-lg-4 footer-back-to-top">

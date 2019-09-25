@@ -43,11 +43,17 @@
     <!-- Lazy-load the footer map -->
     <script>
       let options = {
-        root: document.querySelector('.footer-map'),
+        root: null,
         rootMargin: '0px',
-        threshold: 0.5
+        threshold: 0
       }
-      let observer = new IntersectionObserver(showMap, options)
+      let observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            showMap()
+          }
+        })
+      }, options)
       let target = document.querySelector('.footer-map-iframe')
       observer.observe(target)
       function showMap() {

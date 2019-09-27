@@ -18,13 +18,14 @@ class CreateContactForm(ModelForm):
       'message',
     ]
     widgets = {
-      'name': TextInput(attrs={'placeholder': 'name'}),
-      'address': TextInput(attrs={'placeholder': 'address'}),
-      'email': TextInput(attrs={'placeholder': 'email'}),
-      'phone': TextInput(attrs={'placeholder': 'phone'}),
+      'name': TextInput(attrs={'placeholder': 'name', 'aria-required': 'true'}),
+      'address': TextInput(attrs={'placeholder': 'address', 'aria-required': 'true'}),
+      'email': TextInput(attrs={'placeholder': 'email', 'aria-required': 'true'}),
+      'phone': TextInput(attrs={'placeholder': 'phone', 'aria-required': 'true'}),
       'message': Textarea(attrs={
         'placeholder': 'message',
         'rows': 3,
         'cols': 40,
+        'aria-required': 'true',
         }),
     }

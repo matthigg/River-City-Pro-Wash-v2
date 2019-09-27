@@ -530,6 +530,13 @@
   width: 100%;
 }
 
+.section-1-copy-header {
+  background-color: #EFF4F8;
+  color: #000B28;
+  margin-bottom: 0;
+  text-align: center;
+}
+
 .section-1-copy {
   background-color: #EFF4F8;
   color: #000B28;

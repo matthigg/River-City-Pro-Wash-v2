@@ -115,6 +115,7 @@ footer {
     justify-content: center;
     padding: calc(2rem + 1vw);
     & .footer-map-iframe {
+      background-color: $primary-color;
       height: 100%;
       width: 100%;
     }

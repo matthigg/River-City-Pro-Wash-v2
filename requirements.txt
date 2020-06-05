@@ -2,7 +2,7 @@ boto3==1.9.222
 botocore==1.12.222
 certifi==2019.6.16
 chardet==3.0.4
-Django==2.1.11
+Django==2.2.13
 django-storages==1.7.1
 docutils==0.15.2
 idna==2.8
